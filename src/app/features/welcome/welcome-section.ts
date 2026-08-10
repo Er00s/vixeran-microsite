@@ -23,6 +23,7 @@ import { MediaPlaceholder } from '../../shared/components/media-placeholder';
           ratio="auto"
         />
       </div>
+      
 
       <div class="vx-container grid gap-10 py-20 md:py-28 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div>
