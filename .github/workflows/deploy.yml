@@ -1,0 +1,66 @@
+# Publica el microsite en GitHub Pages en cada push a main.
+# Activacion (una sola vez): repo -> Settings -> Pages -> Source: "GitHub Actions".
+# URL final: https://er00s.github.io/vixeran-microsite/
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita despliegues pisandose entre si; deja terminar el que ya esta corriendo.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # base-href debe coincidir con el nombre del repo para que los assets
+      # y el router resuelvan bien bajo /vixeran-microsite/.
+      - name: Build (production)
+        run: npm run build -- --configuration production --base-href /vixeran-microsite/
+
+      # Pages no conoce las rutas del SPA (/legal/:document): servir index.html
+      # como 404 hace que el router de Angular tome el control en deep links.
+      - name: SPA fallback + .nojekyll
+        run: |
+          cp dist/vixeran-microsite/browser/index.html dist/vixeran-microsite/browser/404.html
+          touch dist/vixeran-microsite/browser/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/vixeran-microsite/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

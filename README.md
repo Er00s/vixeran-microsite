@@ -94,3 +94,35 @@ Cada placeholder está rotulado con la imagen que le corresponde.
   corporativo. Cuando lleguen las tipografías de marca, se auto-hospedan.
 - **Los popups del mapa se traducen** mediante un `effect()` que observa el idioma
   activo y reconstruye los marcadores.
+
+## Demo pública (GitHub Pages)
+
+La demo se publica automáticamente en:
+
+**https://er00s.github.io/vixeran-microsite/**
+
+### Cómo funciona
+
+`.github/workflows/deploy.yml` corre en cada push a `main` (y también a mano
+desde la pestaña *Actions* → *Deploy to GitHub Pages* → *Run workflow*):
+
+1. `npm ci`
+2. `npm run build -- --configuration production --base-href /vixeran-microsite/`
+3. copia `index.html` a `404.html` y agrega `.nojekyll`
+4. sube `dist/vixeran-microsite/browser` y lo despliega en Pages
+
+### Activación (una sola vez)
+
+En GitHub: **Settings → Pages → Build and deployment → Source: `GitHub Actions`**.
+El repositorio debe ser público (o tener GitHub Pro/Team para Pages privado).
+
+### Detalles a tener en cuenta
+
+- **`--base-href /vixeran-microsite/`**: Pages sirve el sitio en un subdirectorio,
+  no en la raíz. Si el repo se renombra, hay que actualizar el flag en el workflow
+  y en el script `build:pages`.
+- **`404.html`**: Pages no sabe nada de las rutas del SPA (`/legal/:document`).
+  Servir una copia de `index.html` como página 404 deja que el router de Angular
+  resuelva el deep link.
+- **`.nojekyll`**: evita que Jekyll ignore archivos y carpetas que empiezan con `_`.
+- Para reproducir el build de Pages en local: `npm run build:pages`.
