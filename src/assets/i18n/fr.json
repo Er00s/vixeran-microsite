@@ -1,0 +1,294 @@
+{
+  "header": {
+    "tagline": "Libérez l'azote de la nature",
+    "navLabel": "Navigation principale",
+    "menu": "Ouvrir le menu"
+  },
+  "nav": {
+    "journeyLabel": "Parcours de la campagne",
+    "welcome": {
+      "title": "Bienvenue sur le chantier",
+      "subtitle": "L'automne, saison des fondations",
+      "short": "Accueil"
+    },
+    "foundations": {
+      "title": "Poser les fondations",
+      "subtitle": "Pourquoi l'implantation d'automne est décisive",
+      "short": "Pourquoi l'automne"
+    },
+    "bioEngineers": {
+      "title": "Les bio-ingénieurs",
+      "subtitle": "Comment agit VIXERAN®",
+      "short": "Mode d'action"
+    },
+    "trials": {
+      "title": "Explorer les chantiers",
+      "subtitle": "Carte des essais et tableau de bord météo",
+      "short": "Essais"
+    },
+    "success": {
+      "title": "Des réussites partout en Europe",
+      "subtitle": "Témoignages d'agriculteurs et d'experts",
+      "short": "Témoignages"
+    },
+    "contact": {
+      "title": "Prêt à bâtir la vôtre ?",
+      "subtitle": "Contactez votre interlocuteur Syngenta",
+      "short": "Contact"
+    }
+  },
+  "welcome": {
+    "eyebrow": "Bienvenue sur le chantier",
+    "headlineTop": "L'automne,",
+    "headlineBottom": "saison des fondations",
+    "subheadline": "Bâtissez les fondations d'une culture plus solide avec l'azote de l'air.",
+    "intro": "VIXERAN® permet au colza d'accéder à une source supplémentaire d'azote fixé biologiquement, au stade le plus critique de l'implantation.",
+    "cta": "Découvrir le fonctionnement"
+  },
+  "foundations": {
+    "eyebrow": "Poser les fondations",
+    "title": "Pourquoi l'implantation d'automne est décisive",
+    "lead": "Les premières semaines après la levée déterminent les performances futures.",
+    "pillars": {
+      "roots": {
+        "title": "Développement racinaire",
+        "body": "Un système racinaire vigoureux améliore l'absorption d'eau et d'éléments nutritifs."
+      },
+      "biomass": {
+        "title": "Accumulation de biomasse",
+        "body": "Plus de biomasse à l'automne, c'est plus de potentiel au printemps."
+      },
+      "winter": {
+        "title": "Meilleure résistance hivernale",
+        "body": "Une culture bien préparée traverse mieux les conditions hivernales."
+      },
+      "spring": {
+        "title": "Reprise plus vigoureuse",
+        "body": "Des fondations solides offrent un potentiel de rendement supérieur."
+      }
+    }
+  },
+  "bioEngineers": {
+    "eyebrow": "Les bio-ingénieurs",
+    "title": "Comment agit VIXERAN®",
+    "body1": "VIXERAN® contient Azotobacter salinestris, une bactérie endophyte naturelle qui colonise la plante de l'intérieur.",
+    "body2": "Elle capte l'azote atmosphérique et le transforme en ammonium, apportant une source d'azote complémentaire au moment où la culture en a le plus besoin.",
+    "moa": {
+      "capture": "Capte l'azote atmosphérique",
+      "convert": "Le convertit en ammonium",
+      "growth": "Soutient la croissance"
+    },
+    "benefitsTitle": "Bénéfices clés",
+    "benefits": {
+      "nitrogen": "Apporte un azote supplémentaire issu de l'air",
+      "establishment": "Favorise une implantation automnale vigoureuse",
+      "roots": "Stimule le développement racinaire",
+      "biomass": "Augmente la biomasse d'automne",
+      "winter": "Prépare la culture à l'hiver",
+      "spring": "Soutient les performances de printemps"
+    }
+  },
+  "trials": {
+    "eyebrow": "Explorer les chantiers",
+    "title": "Carte des essais et tableau de bord météo",
+    "lead": "Explorez les essais au champ dans toute l'Europe et découvrez le comportement de VIXERAN® selon les conditions de culture.",
+    "tabsLabel": "Vues des données d'essais",
+    "tab": {
+      "map": "Carte des essais",
+      "weather": "Tableau de bord météo"
+    },
+    "source": "Source : 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza d'hiver 2022–2025. Produits : VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) et les codes expérimentaux A23780 / A19464. Données météo : export horaire MeteoBlue."
+  },
+  "map": {
+    "ariaLabel": "Carte interactive des essais européens VIXERAN",
+    "loading": "Chargement de la carte…",
+    "filters": {
+      "title": "Filtres",
+      "country": "Pays",
+      "season": "Campagne",
+      "metric": "Indicateur",
+      "allCountries": "Tous les pays",
+      "allSeasons": "Toutes les campagnes",
+      "metricAll": "Rendement + biomasse",
+      "metricYield": "Rendement seul",
+      "metricBiomass": "Biomasse seule",
+      "reset": "Réinitialiser les filtres"
+    },
+    "stats": {
+      "shown": "Essais affichés",
+      "avgYield": "Gain de rendement moyen",
+      "avgBiomass": "Gain de biomasse moyen"
+    },
+    "legend": {
+      "title": "Légende",
+      "shape": "Forme selon l'indicateur",
+      "shapeYield": "Gain de rendement (%) — récolte renseignée",
+      "shapeBiomass": "Gain de biomasse (%) — récolte non renseignée",
+      "shapeNone": "Ni rendement ni biomasse renseignés",
+      "color": "Couleur = ampleur du gain (%)",
+      "size": "La taille du marqueur augmente avec le gain absolu.",
+      "gain": {
+        "strong": "+10 % ou plus",
+        "mid": "+3 % à +10 %",
+        "light": "0 à +3 %"
+      },
+      "loss": {
+        "light": "−3 % à 0",
+        "mid": "−10 % à −3 %",
+        "strong": "Perte supérieure à −10 %"
+      }
+    },
+    "popup": {
+      "trialId": "Identifiant d'essai",
+      "season": "Campagne",
+      "variety": "Variété",
+      "region": "Région",
+      "soil": "Sol",
+      "product": "Produit",
+      "yieldGain": "Gain de rendement",
+      "biomassGain": "Gain de biomasse",
+      "control": "Témoin",
+      "source": "Source",
+      "noData": "aucune donnée"
+    }
+  },
+  "weather": {
+    "noData": "Aucune donnée pour cette sélection",
+    "metric": {
+      "yield": "Gain de rendement (%)",
+      "biomass": "Gain de biomasse (%)"
+    },
+    "controls": {
+      "metric": "Axe Y",
+      "countries": "Pays"
+    },
+    "summary": {
+      "trials": "Essais affichés",
+      "withYield": "Avec données de rendement",
+      "avgYield": "Gain de rendement moyen",
+      "withBiomass": "Avec données de biomasse",
+      "avgBiomass": "Gain de biomasse moyen"
+    },
+    "findings": {
+      "title": "Signaux les plus marqués dans ce jeu de données",
+      "higher": "le gain tend à être plus élevé lorsque cette variable augmente.",
+      "lower": "le gain tend à être plus faible lorsque cette variable augmente.",
+      "none": "Aucun signal au-dessus du seuil de bruit.",
+      "disclaimer": "Corrélation de Pearson entre sites d'essai. |r| inférieur à 0,2 est faible, 0,2–0,4 modeste, 0,4–0,6 modéré, au-delà de 0,6 fort. Corrélation ne vaut pas causalité et l'effectif par variable est réduit."
+    },
+    "vars": {
+      "autumnPrecipitation": {
+        "label": "Précipitations d'automne",
+        "note": "Pluie cumulée du 1er sept. au 30 nov. de l'année de semis"
+      },
+      "autumnMeanTemp": {
+        "label": "Température moyenne d'automne",
+        "note": "Température moyenne du 1er sept. au 30 nov."
+      },
+      "autumnDryDays": {
+        "label": "Jours secs d'automne",
+        "note": "Jours avec moins de 0,5 mm de pluie"
+      },
+      "autumnHeavyRainDays": {
+        "label": "Jours de fortes pluies d'automne",
+        "note": "Jours avec 10 mm de pluie ou plus"
+      },
+      "earlyAutumnPrecipitation": {
+        "label": "Précipitations de début d'automne",
+        "note": "1er sept. – 15 oct. — fenêtre d'implantation de VIXERAN"
+      },
+      "earlyAutumnMeanTemp": {
+        "label": "Température moyenne de début d'automne",
+        "note": "1er sept. – 15 oct."
+      },
+      "winterMinTemp": {
+        "label": "Température minimale hivernale",
+        "note": "Relevé horaire le plus bas du 1er déc. au 28 févr."
+      },
+      "winterFrostDays": {
+        "label": "Jours de gel en hiver",
+        "note": "Jours avec température minimale inférieure à 0 °C"
+      },
+      "springPrecipitation": {
+        "label": "Précipitations de printemps",
+        "note": "1er mars – 31 mai"
+      },
+      "springMeanTemp": {
+        "label": "Température moyenne de printemps",
+        "note": "1er mars – 31 mai"
+      },
+      "maxDryStretch": {
+        "label": "Plus longue période sèche d'automne",
+        "note": "Plus longue série de jours secs consécutifs en automne"
+      }
+    }
+  },
+  "success": {
+    "eyebrow": "Des réussites partout en Europe",
+    "title": "Témoignages d'agriculteurs et d'experts",
+    "stats": {
+      "trials": "Sites d'essai",
+      "seasons": "Campagnes de données",
+      "countries": "Pays",
+      "positive": "Réponse positive en rendement",
+      "positiveNote": "Essais présentant un gain de rendement supérieur à zéro, parmi ceux avec récolte renseignée."
+    },
+    "testimonials": {
+      "grower": {
+        "quote": "VIXERAN® a aidé notre colza à s'implanter plus vite à l'automne et à aborder l'hiver plus vigoureux. Nous avons vu la différence au printemps.",
+        "role": "Agriculteur",
+        "origin": "République tchèque"
+      },
+      "expert": {
+        "quote": "Accompagner la culture pendant la phase d'implantation est l'un des meilleurs moyens de maximiser son potentiel pour le reste de la campagne.",
+        "role": "Expert Syngenta",
+        "origin": "Product Manager"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Prêt à bâtir la vôtre ?",
+    "title": "Contactez votre interlocuteur Syngenta",
+    "lead": "Contactez votre interlocuteur Syngenta local et bâtissez des cultures plus solides cet automne.",
+    "form": {
+      "country": "Pays",
+      "countryPlaceholder": "Sélectionnez votre pays",
+      "submit": "Trouver mon interlocuteur",
+      "result": "Nous vous mettrons en relation avec l'équipe Syngenta en {{country}}.",
+      "disclaimer": "Ce formulaire est un espace réservé de la phase 1 et n'envoie encore aucune donnée."
+    }
+  },
+  "footer": {
+    "legalLabel": "Liens légaux",
+    "legalNotice": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "cookiePolicy": "Politique relative aux cookies",
+    "termsOfUse": "Conditions d'utilisation",
+    "sitemap": "Plan du site",
+    "contact": "Contact",
+    "copyright": "© {{year}} Syngenta Group Company.",
+    "rights": "Tous droits réservés."
+  },
+  "legal": {
+    "back": "Retour au microsite",
+    "pending": "Ce document est en attente du texte définitif du service juridique de Syngenta.",
+    "legal-notice": {
+      "title": "Mentions légales"
+    },
+    "privacy-policy": {
+      "title": "Politique de confidentialité"
+    },
+    "cookie-policy": {
+      "title": "Politique relative aux cookies"
+    },
+    "terms-of-use": {
+      "title": "Conditions d'utilisation"
+    },
+    "sitemap": {
+      "title": "Plan du site"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "header": {
+    "tagline": "Libera el nitrógeno de la naturaleza",
+    "navLabel": "Navegación principal",
+    "menu": "Abrir menú"
+  },
+  "nav": {
+    "journeyLabel": "Recorrido de la campaña",
+    "welcome": {
+      "title": "Bienvenido a la obra",
+      "subtitle": "El otoño es temporada de construcción",
+      "short": "Inicio"
+    },
+    "foundations": {
+      "title": "Construye los cimientos",
+      "subtitle": "Por qué importa la implantación de otoño",
+      "short": "Por qué el otoño"
+    },
+    "bioEngineers": {
+      "title": "Conoce a los bioingenieros",
+      "subtitle": "Cómo funciona VIXERAN®",
+      "short": "Cómo funciona"
+    },
+    "trials": {
+      "title": "Explora las obras",
+      "subtitle": "Mapa de ensayos y panel meteorológico",
+      "short": "Ensayos"
+    },
+    "success": {
+      "title": "Construyendo éxito en Europa",
+      "subtitle": "Experiencias de agricultores y expertos",
+      "short": "Casos de éxito"
+    },
+    "contact": {
+      "title": "¿Listo para construir la tuya?",
+      "subtitle": "Contacta con tu representante de Syngenta",
+      "short": "Contacto"
+    }
+  },
+  "welcome": {
+    "eyebrow": "Bienvenido a la obra",
+    "headlineTop": "El otoño",
+    "headlineBottom": "es temporada de construcción",
+    "subheadline": "Construye los cimientos de un cultivo más fuerte con nitrógeno del aire.",
+    "intro": "VIXERAN® ayuda a la colza a acceder a una fuente adicional de nitrógeno fijado biológicamente durante la etapa más crítica de la implantación.",
+    "cta": "Descubre cómo funciona"
+  },
+  "foundations": {
+    "eyebrow": "Construye los cimientos",
+    "title": "Por qué importa la implantación de otoño",
+    "lead": "Las primeras semanas tras la emergencia definen el rendimiento futuro.",
+    "pillars": {
+      "roots": {
+        "title": "Desarrollo radicular fuerte",
+        "body": "Un sistema radicular potente mejora la absorción de nutrientes y agua."
+      },
+      "biomass": {
+        "title": "Acumulación de biomasa",
+        "body": "Más biomasa en otoño significa más potencial en primavera."
+      },
+      "winter": {
+        "title": "Mayor resistencia al invierno",
+        "body": "Los cultivos mejor preparados resisten mejor las condiciones invernales."
+      },
+      "spring": {
+        "title": "Mejor arranque en primavera",
+        "body": "Unos cimientos sólidos generan mayor potencial de rendimiento."
+      }
+    }
+  },
+  "bioEngineers": {
+    "eyebrow": "Conoce a los bioingenieros",
+    "title": "Cómo funciona VIXERAN®",
+    "body1": "VIXERAN® contiene Azotobacter salinestris, una bacteria endofítica de origen natural que coloniza la planta desde su interior.",
+    "body2": "Captura el nitrógeno atmosférico y lo convierte en amonio, aportando una fuente adicional de nitrógeno cuando el cultivo más lo necesita.",
+    "moa": {
+      "capture": "Captura nitrógeno atmosférico",
+      "convert": "Lo convierte en amonio",
+      "growth": "Impulsa el crecimiento del cultivo"
+    },
+    "benefitsTitle": "Beneficios clave",
+    "benefits": {
+      "nitrogen": "Aporta nitrógeno adicional a partir del aire",
+      "establishment": "Favorece una implantación otoñal sólida",
+      "roots": "Promueve el desarrollo radicular",
+      "biomass": "Aumenta la biomasa de otoño",
+      "winter": "Prepara al cultivo para el invierno",
+      "spring": "Mejora el comportamiento en primavera"
+    }
+  },
+  "trials": {
+    "eyebrow": "Explora las obras",
+    "title": "Mapa de ensayos y panel meteorológico",
+    "lead": "Explora los ensayos de campo en toda Europa y comprueba cómo se comporta VIXERAN® en distintas condiciones de cultivo.",
+    "tabsLabel": "Vistas de datos de ensayos",
+    "tab": {
+      "map": "Mapa de ensayos",
+      "weather": "Panel meteorológico"
+    },
+    "source": "Fuente: 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza de invierno 2022–2025. Productos: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) y los códigos experimentales A23780 / A19464. Datos meteorológicos: exportación horaria de MeteoBlue."
+  },
+  "map": {
+    "ariaLabel": "Mapa interactivo de los ensayos europeos de VIXERAN",
+    "loading": "Cargando el mapa…",
+    "filters": {
+      "title": "Filtros",
+      "country": "País",
+      "season": "Campaña",
+      "metric": "Métrica",
+      "allCountries": "Todos los países",
+      "allSeasons": "Todas las campañas",
+      "metricAll": "Rendimiento + biomasa",
+      "metricYield": "Solo rendimiento",
+      "metricBiomass": "Solo biomasa",
+      "reset": "Restablecer filtros"
+    },
+    "stats": {
+      "shown": "Ensayos mostrados",
+      "avgYield": "Ganancia media de rendimiento",
+      "avgBiomass": "Ganancia media de biomasa"
+    },
+    "legend": {
+      "title": "Leyenda",
+      "shape": "Forma según la métrica",
+      "shapeYield": "Ganancia de rendimiento (%) — cosecha registrada",
+      "shapeBiomass": "Ganancia de biomasa (%) — cosecha no registrada",
+      "shapeNone": "Sin datos de rendimiento ni biomasa",
+      "color": "Color = magnitud de la ganancia (%)",
+      "size": "El tamaño del marcador crece con la ganancia absoluta.",
+      "gain": {
+        "strong": "+10 % o más",
+        "mid": "+3 % a +10 %",
+        "light": "0 a +3 %"
+      },
+      "loss": {
+        "light": "−3 % a 0",
+        "mid": "−10 % a −3 %",
+        "strong": "Pérdida superior al −10 %"
+      }
+    },
+    "popup": {
+      "trialId": "ID del ensayo",
+      "season": "Campaña",
+      "variety": "Variedad",
+      "region": "Región",
+      "soil": "Suelo",
+      "product": "Producto",
+      "yieldGain": "Ganancia de rendimiento",
+      "biomassGain": "Ganancia de biomasa",
+      "control": "Testigo",
+      "source": "Fuente",
+      "noData": "sin datos"
+    }
+  },
+  "weather": {
+    "noData": "Sin datos para esta selección",
+    "metric": {
+      "yield": "Ganancia de rendimiento (%)",
+      "biomass": "Ganancia de biomasa (%)"
+    },
+    "controls": {
+      "metric": "Eje Y",
+      "countries": "Países"
+    },
+    "summary": {
+      "trials": "Ensayos mostrados",
+      "withYield": "Con datos de rendimiento",
+      "avgYield": "Ganancia media de rendimiento",
+      "withBiomass": "Con datos de biomasa",
+      "avgBiomass": "Ganancia media de biomasa"
+    },
+    "findings": {
+      "title": "Señales más fuertes en este conjunto de datos",
+      "higher": "la ganancia tiende a ser mayor cuando esta variable aumenta.",
+      "lower": "la ganancia tiende a ser menor cuando esta variable aumenta.",
+      "none": "No hay señales por encima del umbral de ruido.",
+      "disclaimer": "Correlación de Pearson entre localizaciones de ensayo. |r| por debajo de 0,2 es débil; 0,2–0,4 modesta; 0,4–0,6 moderada; por encima de 0,6 fuerte. Correlación no implica causalidad y el tamaño muestral por variable es pequeño."
+    },
+    "vars": {
+      "autumnPrecipitation": {
+        "label": "Precipitación de otoño",
+        "note": "Lluvia total del 1 sep al 30 nov del año de siembra"
+      },
+      "autumnMeanTemp": {
+        "label": "Temperatura media de otoño",
+        "note": "Temperatura media del 1 sep al 30 nov"
+      },
+      "autumnDryDays": {
+        "label": "Días secos de otoño",
+        "note": "Días con menos de 0,5 mm de lluvia"
+      },
+      "autumnHeavyRainDays": {
+        "label": "Días de lluvia intensa en otoño",
+        "note": "Días con 10 mm o más de lluvia"
+      },
+      "earlyAutumnPrecipitation": {
+        "label": "Precipitación de otoño temprano",
+        "note": "1 sep – 15 oct — ventana de implantación de VIXERAN"
+      },
+      "earlyAutumnMeanTemp": {
+        "label": "Temperatura media de otoño temprano",
+        "note": "1 sep – 15 oct"
+      },
+      "winterMinTemp": {
+        "label": "Temperatura mínima invernal",
+        "note": "Lectura horaria más baja del 1 dic al 28 feb"
+      },
+      "winterFrostDays": {
+        "label": "Días de helada en invierno",
+        "note": "Días con temperatura mínima inferior a 0 °C"
+      },
+      "springPrecipitation": {
+        "label": "Precipitación de primavera",
+        "note": "1 mar – 31 may"
+      },
+      "springMeanTemp": {
+        "label": "Temperatura media de primavera",
+        "note": "1 mar – 31 may"
+      },
+      "maxDryStretch": {
+        "label": "Racha seca más larga de otoño",
+        "note": "Serie más larga de días secos consecutivos en otoño"
+      }
+    }
+  },
+  "success": {
+    "eyebrow": "Construyendo éxito en Europa",
+    "title": "Experiencias de agricultores y expertos",
+    "stats": {
+      "trials": "Localizaciones de ensayo",
+      "seasons": "Campañas de datos",
+      "countries": "Países",
+      "positive": "Respuesta positiva en rendimiento",
+      "positiveNote": "Ensayos con ganancia de rendimiento superior a cero, sobre los que registraron cosecha."
+    },
+    "testimonials": {
+      "grower": {
+        "quote": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte. Vimos la diferencia en primavera.",
+        "role": "Agricultor",
+        "origin": "República Checa"
+      },
+      "expert": {
+        "quote": "Apoyar al cultivo durante la fase de implantación es una de las mejores formas de maximizar su potencial durante el resto de la campaña.",
+        "role": "Experto de Syngenta",
+        "origin": "Product Manager"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "¿Listo para construir la tuya?",
+    "title": "Contacta con tu representante local de Syngenta",
+    "lead": "Contacta con tu representante local de Syngenta y construye cultivos más fuertes este otoño.",
+    "form": {
+      "country": "País",
+      "countryPlaceholder": "Selecciona tu país",
+      "submit": "Encuentra tu representante",
+      "result": "Te pondremos en contacto con el equipo de Syngenta en {{country}}.",
+      "disclaimer": "Este formulario es un marcador de posición de la Fase 1 y todavía no envía datos."
+    }
+  },
+  "footer": {
+    "legalLabel": "Enlaces legales",
+    "legalNotice": "Aviso legal",
+    "privacyPolicy": "Política de privacidad",
+    "cookiePolicy": "Política de cookies",
+    "termsOfUse": "Términos de uso",
+    "sitemap": "Mapa del sitio",
+    "contact": "Contacto",
+    "copyright": "© {{year}} Syngenta Group Company.",
+    "rights": "Todos los derechos reservados."
+  },
+  "legal": {
+    "back": "Volver al micrositio",
+    "pending": "Este documento está pendiente del texto definitivo del departamento legal de Syngenta.",
+    "legal-notice": {
+      "title": "Aviso legal"
+    },
+    "privacy-policy": {
+      "title": "Política de privacidad"
+    },
+    "cookie-policy": {
+      "title": "Política de cookies"
+    },
+    "terms-of-use": {
+      "title": "Términos de uso"
+    },
+    "sitemap": {
+      "title": "Mapa del sitio"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
+  }
+}

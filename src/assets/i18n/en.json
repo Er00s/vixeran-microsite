@@ -1,0 +1,294 @@
+{
+  "header": {
+    "tagline": "Unlock nature's nitrogen",
+    "navLabel": "Main navigation",
+    "menu": "Open menu"
+  },
+  "nav": {
+    "journeyLabel": "Campaign journey",
+    "welcome": {
+      "title": "Welcome to the Building Site",
+      "subtitle": "Autumn is Building Season",
+      "short": "Home"
+    },
+    "foundations": {
+      "title": "Lay the Foundations",
+      "subtitle": "Why autumn establishment matters",
+      "short": "Why autumn matters"
+    },
+    "bioEngineers": {
+      "title": "Meet the Bio Engineers",
+      "subtitle": "How VIXERAN® works",
+      "short": "How it works"
+    },
+    "trials": {
+      "title": "Explore the Construction Sites",
+      "subtitle": "Interactive Trial Map & Weather Dashboard",
+      "short": "Field trials"
+    },
+    "success": {
+      "title": "Building Success Across Europe",
+      "subtitle": "Grower & Expert Experiences",
+      "short": "Success stories"
+    },
+    "contact": {
+      "title": "Ready to Build Yours?",
+      "subtitle": "Contact your local Syngenta representative",
+      "short": "Contact"
+    }
+  },
+  "welcome": {
+    "eyebrow": "Welcome to the Building Site",
+    "headlineTop": "Autumn",
+    "headlineBottom": "is Building Season",
+    "subheadline": "Build the foundations of a stronger crop with nitrogen from the air.",
+    "intro": "VIXERAN® helps Oilseed Rape unlock an additional source of biologically fixed nitrogen during the most critical stage of establishment.",
+    "cta": "Discover how it works"
+  },
+  "foundations": {
+    "eyebrow": "Lay the Foundations",
+    "title": "Why Autumn Establishment Matters",
+    "lead": "The first weeks after emergence define future performance.",
+    "pillars": {
+      "roots": {
+        "title": "Strong root development",
+        "body": "A strong root system improves nutrient and water uptake."
+      },
+      "biomass": {
+        "title": "Biomass accumulation",
+        "body": "More biomass in autumn means more potential in spring."
+      },
+      "winter": {
+        "title": "Better winter resilience",
+        "body": "Better prepared crops are more resilient to winter conditions."
+      },
+      "spring": {
+        "title": "Stronger spring performance",
+        "body": "Strong foundations deliver higher yield potential."
+      }
+    }
+  },
+  "bioEngineers": {
+    "eyebrow": "Meet the Bio Engineers",
+    "title": "How VIXERAN® Works",
+    "body1": "VIXERAN® contains Azotobacter salinestris, a naturally occurring endophytic bacterium that colonises the plant from within.",
+    "body2": "It captures atmospheric nitrogen and converts it into ammonium, providing an additional source of nitrogen when the crop needs it most.",
+    "moa": {
+      "capture": "Captures atmospheric nitrogen",
+      "convert": "Converts to ammonium",
+      "growth": "Supports crop growth"
+    },
+    "benefitsTitle": "Key benefits",
+    "benefits": {
+      "nitrogen": "Unlocks additional nitrogen from the air",
+      "establishment": "Supports strong autumn establishment",
+      "roots": "Promotes root development",
+      "biomass": "Increases autumn biomass",
+      "winter": "Helps crops prepare for winter",
+      "spring": "Supports spring performance"
+    }
+  },
+  "trials": {
+    "eyebrow": "Explore the Construction Sites",
+    "title": "Interactive Trial Map & Weather Dashboard",
+    "lead": "Explore field trials across Europe and see how VIXERAN® performs in different growing conditions.",
+    "tabsLabel": "Trial data views",
+    "tab": {
+      "map": "Trial map",
+      "weather": "Weather dashboard"
+    },
+    "source": "Source: 51 ARM Single Trial Reports (AT, DE, DK, FR, GB, LT, PL, SE), winter oilseed rape 2022–2025. Products: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) and the experimental codes A23780 / A19464. Weather data: MeteoBlue hourly export."
+  },
+  "map": {
+    "ariaLabel": "Interactive map of European VIXERAN field trials",
+    "loading": "Loading map…",
+    "filters": {
+      "title": "Filters",
+      "country": "Country",
+      "season": "Season",
+      "metric": "Metric",
+      "allCountries": "All countries",
+      "allSeasons": "All seasons",
+      "metricAll": "Yield + biomass",
+      "metricYield": "Yield only",
+      "metricBiomass": "Biomass only",
+      "reset": "Reset filters"
+    },
+    "stats": {
+      "shown": "Trials shown",
+      "avgYield": "Avg yield gain",
+      "avgBiomass": "Avg biomass gain"
+    },
+    "legend": {
+      "title": "Legend",
+      "shape": "Metric shape",
+      "shapeYield": "Yield gain (%) — grain harvest reported",
+      "shapeBiomass": "Biomass gain (%) — harvest not reported",
+      "shapeNone": "No yield or biomass reported",
+      "color": "Colour = size of the gain (%)",
+      "size": "Marker size grows with the absolute gain.",
+      "gain": {
+        "strong": "+10% or more",
+        "mid": "+3% to +10%",
+        "light": "0 to +3%"
+      },
+      "loss": {
+        "light": "−3% to 0",
+        "mid": "−10% to −3%",
+        "strong": "Loss greater than −10%"
+      }
+    },
+    "popup": {
+      "trialId": "Trial ID",
+      "season": "Season",
+      "variety": "Variety",
+      "region": "Region",
+      "soil": "Soil",
+      "product": "Product",
+      "yieldGain": "Yield gain",
+      "biomassGain": "Biomass gain",
+      "control": "Control",
+      "source": "Source",
+      "noData": "no data"
+    }
+  },
+  "weather": {
+    "noData": "No data for this selection",
+    "metric": {
+      "yield": "Yield gain (%)",
+      "biomass": "Biomass gain (%)"
+    },
+    "controls": {
+      "metric": "Y-axis",
+      "countries": "Countries"
+    },
+    "summary": {
+      "trials": "Trials shown",
+      "withYield": "With yield data",
+      "avgYield": "Avg yield gain",
+      "withBiomass": "With biomass data",
+      "avgBiomass": "Avg biomass gain"
+    },
+    "findings": {
+      "title": "Strongest signals in this dataset",
+      "higher": "the gain tends to be higher when this variable is higher.",
+      "lower": "the gain tends to be lower when this variable is higher.",
+      "none": "No signals above the noise threshold.",
+      "disclaimer": "Pearson correlation across trial sites. |r| below 0.2 is weak, 0.2–0.4 modest, 0.4–0.6 moderate, above 0.6 strong. Correlation is not causation and the sample size per variable is small."
+    },
+    "vars": {
+      "autumnPrecipitation": {
+        "label": "Autumn precipitation",
+        "note": "Total rain 1 Sep – 30 Nov of the sowing year"
+      },
+      "autumnMeanTemp": {
+        "label": "Autumn mean temperature",
+        "note": "Mean temperature 1 Sep – 30 Nov"
+      },
+      "autumnDryDays": {
+        "label": "Autumn dry days",
+        "note": "Days with less than 0.5 mm of rain"
+      },
+      "autumnHeavyRainDays": {
+        "label": "Autumn heavy rain days",
+        "note": "Days with 10 mm or more of rain"
+      },
+      "earlyAutumnPrecipitation": {
+        "label": "Early autumn precipitation",
+        "note": "1 Sep – 15 Oct — the VIXERAN establishment window"
+      },
+      "earlyAutumnMeanTemp": {
+        "label": "Early autumn mean temperature",
+        "note": "1 Sep – 15 Oct"
+      },
+      "winterMinTemp": {
+        "label": "Winter minimum temperature",
+        "note": "Lowest hourly reading 1 Dec – 28 Feb"
+      },
+      "winterFrostDays": {
+        "label": "Winter frost days",
+        "note": "Days with a minimum temperature below 0 °C"
+      },
+      "springPrecipitation": {
+        "label": "Spring precipitation",
+        "note": "1 Mar – 31 May"
+      },
+      "springMeanTemp": {
+        "label": "Spring mean temperature",
+        "note": "1 Mar – 31 May"
+      },
+      "maxDryStretch": {
+        "label": "Longest autumn dry stretch",
+        "note": "Longest run of consecutive dry days in autumn"
+      }
+    }
+  },
+  "success": {
+    "eyebrow": "Building Success Across Europe",
+    "title": "Grower & Expert Experiences",
+    "stats": {
+      "trials": "Trial locations",
+      "seasons": "Seasons of data",
+      "countries": "Countries",
+      "positive": "Positive yield response",
+      "positiveNote": "Trials with a yield gain above zero, out of those reporting harvest."
+    },
+    "testimonials": {
+      "grower": {
+        "quote": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger. We saw the difference in spring.",
+        "role": "Grower",
+        "origin": "Czech Republic"
+      },
+      "expert": {
+        "quote": "Supporting the crop during the establishment phase is one of the best ways to maximise its potential for the rest of the season.",
+        "role": "Syngenta expert",
+        "origin": "Product Manager"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Ready to Build Yours?",
+    "title": "Contact Your Local Syngenta Representative",
+    "lead": "Contact your local Syngenta representative and build stronger crops this autumn.",
+    "form": {
+      "country": "Country",
+      "countryPlaceholder": "Select your country",
+      "submit": "Find your representative",
+      "result": "We will connect you with the Syngenta team in {{country}}.",
+      "disclaimer": "This form is a Phase 1 placeholder and does not yet send data anywhere."
+    }
+  },
+  "footer": {
+    "legalLabel": "Legal links",
+    "legalNotice": "Legal Notice",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "termsOfUse": "Terms of Use",
+    "sitemap": "Sitemap",
+    "contact": "Contact",
+    "copyright": "© {{year}} Syngenta Group Company.",
+    "rights": "All rights reserved."
+  },
+  "legal": {
+    "back": "Back to the microsite",
+    "pending": "This document is pending final copy from Syngenta Legal.",
+    "legal-notice": {
+      "title": "Legal Notice"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy"
+    },
+    "cookie-policy": {
+      "title": "Cookie Policy"
+    },
+    "terms-of-use": {
+      "title": "Terms of Use"
+    },
+    "sitemap": {
+      "title": "Sitemap"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "header": {
+    "tagline": "Stickstoff aus der Natur nutzbar machen",
+    "navLabel": "Hauptnavigation",
+    "menu": "Menü öffnen"
+  },
+  "nav": {
+    "journeyLabel": "Kampagnen-Journey",
+    "welcome": {
+      "title": "Willkommen auf der Baustelle",
+      "subtitle": "Der Herbst ist Bausaison",
+      "short": "Start"
+    },
+    "foundations": {
+      "title": "Das Fundament legen",
+      "subtitle": "Warum die Herbstentwicklung zählt",
+      "short": "Warum Herbst"
+    },
+    "bioEngineers": {
+      "title": "Die Bio-Ingenieure",
+      "subtitle": "So wirkt VIXERAN®",
+      "short": "Wirkweise"
+    },
+    "trials": {
+      "title": "Die Baustellen erkunden",
+      "subtitle": "Interaktive Versuchskarte & Wetter-Dashboard",
+      "short": "Feldversuche"
+    },
+    "success": {
+      "title": "Erfolg in ganz Europa",
+      "subtitle": "Erfahrungen von Landwirten und Experten",
+      "short": "Erfolgsgeschichten"
+    },
+    "contact": {
+      "title": "Bereit für Ihr Fundament?",
+      "subtitle": "Kontaktieren Sie Ihre Syngenta-Ansprechperson",
+      "short": "Kontakt"
+    }
+  },
+  "welcome": {
+    "eyebrow": "Willkommen auf der Baustelle",
+    "headlineTop": "Der Herbst",
+    "headlineBottom": "ist Bausaison",
+    "subheadline": "Legen Sie mit Stickstoff aus der Luft das Fundament für einen stärkeren Bestand.",
+    "intro": "VIXERAN® erschließt für Winterraps eine zusätzliche Quelle biologisch fixierten Stickstoffs – genau in der kritischsten Phase der Bestandesetablierung.",
+    "cta": "So funktioniert es"
+  },
+  "foundations": {
+    "eyebrow": "Das Fundament legen",
+    "title": "Warum die Herbstentwicklung zählt",
+    "lead": "Die ersten Wochen nach dem Auflaufen entscheiden über die spätere Leistung.",
+    "pillars": {
+      "roots": {
+        "title": "Kräftige Wurzelentwicklung",
+        "body": "Ein starkes Wurzelsystem verbessert die Nährstoff- und Wasseraufnahme."
+      },
+      "biomass": {
+        "title": "Biomasseaufbau",
+        "body": "Mehr Biomasse im Herbst bedeutet mehr Potenzial im Frühjahr."
+      },
+      "winter": {
+        "title": "Bessere Winterhärte",
+        "body": "Gut vorbereitete Bestände überstehen den Winter widerstandsfähiger."
+      },
+      "spring": {
+        "title": "Stärkerer Start im Frühjahr",
+        "body": "Ein solides Fundament schafft höheres Ertragspotenzial."
+      }
+    }
+  },
+  "bioEngineers": {
+    "eyebrow": "Die Bio-Ingenieure",
+    "title": "So wirkt VIXERAN®",
+    "body1": "VIXERAN® enthält Azotobacter salinestris, ein natürlich vorkommendes endophytisches Bakterium, das die Pflanze von innen besiedelt.",
+    "body2": "Es bindet Luftstickstoff und wandelt ihn in Ammonium um – eine zusätzliche Stickstoffquelle genau dann, wenn der Bestand sie am dringendsten braucht.",
+    "moa": {
+      "capture": "Bindet Luftstickstoff",
+      "convert": "Wandelt ihn in Ammonium um",
+      "growth": "Fördert das Pflanzenwachstum"
+    },
+    "benefitsTitle": "Zentrale Vorteile",
+    "benefits": {
+      "nitrogen": "Erschließt zusätzlichen Stickstoff aus der Luft",
+      "establishment": "Unterstützt eine kräftige Herbstentwicklung",
+      "roots": "Fördert die Wurzelentwicklung",
+      "biomass": "Erhöht die Herbstbiomasse",
+      "winter": "Bereitet den Bestand auf den Winter vor",
+      "spring": "Unterstützt die Leistung im Frühjahr"
+    }
+  },
+  "trials": {
+    "eyebrow": "Die Baustellen erkunden",
+    "title": "Interaktive Versuchskarte & Wetter-Dashboard",
+    "lead": "Erkunden Sie Feldversuche in ganz Europa und sehen Sie, wie VIXERAN® unter verschiedenen Anbaubedingungen abschneidet.",
+    "tabsLabel": "Ansichten der Versuchsdaten",
+    "tab": {
+      "map": "Versuchskarte",
+      "weather": "Wetter-Dashboard"
+    },
+    "source": "Quelle: 51 ARM Single Trial Reports (AT, DE, DK, FR, GB, LT, PL, SE), Winterraps 2022–2025. Produkte: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) sowie die Versuchscodes A23780 / A19464. Wetterdaten: MeteoBlue-Stundenexport."
+  },
+  "map": {
+    "ariaLabel": "Interaktive Karte der europäischen VIXERAN-Feldversuche",
+    "loading": "Karte wird geladen…",
+    "filters": {
+      "title": "Filter",
+      "country": "Land",
+      "season": "Saison",
+      "metric": "Kennzahl",
+      "allCountries": "Alle Länder",
+      "allSeasons": "Alle Saisons",
+      "metricAll": "Ertrag + Biomasse",
+      "metricYield": "Nur Ertrag",
+      "metricBiomass": "Nur Biomasse",
+      "reset": "Filter zurücksetzen"
+    },
+    "stats": {
+      "shown": "Angezeigte Versuche",
+      "avgYield": "Ø Ertragszuwachs",
+      "avgBiomass": "Ø Biomassezuwachs"
+    },
+    "legend": {
+      "title": "Legende",
+      "shape": "Form nach Kennzahl",
+      "shapeYield": "Ertragszuwachs (%) — Ernte erfasst",
+      "shapeBiomass": "Biomassezuwachs (%) — keine Ernte erfasst",
+      "shapeNone": "Weder Ertrag noch Biomasse erfasst",
+      "color": "Farbe = Höhe des Zuwachses (%)",
+      "size": "Die Markergröße wächst mit dem absoluten Zuwachs.",
+      "gain": {
+        "strong": "+10 % oder mehr",
+        "mid": "+3 % bis +10 %",
+        "light": "0 bis +3 %"
+      },
+      "loss": {
+        "light": "−3 % bis 0",
+        "mid": "−10 % bis −3 %",
+        "strong": "Verlust größer als −10 %"
+      }
+    },
+    "popup": {
+      "trialId": "Versuchs-ID",
+      "season": "Saison",
+      "variety": "Sorte",
+      "region": "Region",
+      "soil": "Boden",
+      "product": "Produkt",
+      "yieldGain": "Ertragszuwachs",
+      "biomassGain": "Biomassezuwachs",
+      "control": "Kontrolle",
+      "source": "Quelle",
+      "noData": "keine Daten"
+    }
+  },
+  "weather": {
+    "noData": "Keine Daten für diese Auswahl",
+    "metric": {
+      "yield": "Ertragszuwachs (%)",
+      "biomass": "Biomassezuwachs (%)"
+    },
+    "controls": {
+      "metric": "Y-Achse",
+      "countries": "Länder"
+    },
+    "summary": {
+      "trials": "Angezeigte Versuche",
+      "withYield": "Mit Ertragsdaten",
+      "avgYield": "Ø Ertragszuwachs",
+      "withBiomass": "Mit Biomassedaten",
+      "avgBiomass": "Ø Biomassezuwachs"
+    },
+    "findings": {
+      "title": "Stärkste Signale in diesem Datensatz",
+      "higher": "der Zuwachs fällt tendenziell höher aus, wenn diese Variable steigt.",
+      "lower": "der Zuwachs fällt tendenziell niedriger aus, wenn diese Variable steigt.",
+      "none": "Keine Signale oberhalb der Rauschschwelle.",
+      "disclaimer": "Pearson-Korrelation über die Versuchsstandorte. |r| unter 0,2 ist schwach, 0,2–0,4 gering, 0,4–0,6 moderat, über 0,6 stark. Korrelation ist keine Kausalität, und die Stichprobe je Variable ist klein."
+    },
+    "vars": {
+      "autumnPrecipitation": {
+        "label": "Herbstniederschlag",
+        "note": "Gesamtniederschlag 1. Sep – 30. Nov des Aussaatjahres"
+      },
+      "autumnMeanTemp": {
+        "label": "Mittlere Herbsttemperatur",
+        "note": "Mitteltemperatur 1. Sep – 30. Nov"
+      },
+      "autumnDryDays": {
+        "label": "Trockentage im Herbst",
+        "note": "Tage mit weniger als 0,5 mm Niederschlag"
+      },
+      "autumnHeavyRainDays": {
+        "label": "Starkregentage im Herbst",
+        "note": "Tage mit 10 mm oder mehr Niederschlag"
+      },
+      "earlyAutumnPrecipitation": {
+        "label": "Niederschlag im Frühherbst",
+        "note": "1. Sep – 15. Okt — Etablierungsfenster von VIXERAN"
+      },
+      "earlyAutumnMeanTemp": {
+        "label": "Mitteltemperatur im Frühherbst",
+        "note": "1. Sep – 15. Okt"
+      },
+      "winterMinTemp": {
+        "label": "Minimaltemperatur im Winter",
+        "note": "Niedrigster Stundenwert 1. Dez – 28. Feb"
+      },
+      "winterFrostDays": {
+        "label": "Frosttage im Winter",
+        "note": "Tage mit Minimaltemperatur unter 0 °C"
+      },
+      "springPrecipitation": {
+        "label": "Frühjahrsniederschlag",
+        "note": "1. Mär – 31. Mai"
+      },
+      "springMeanTemp": {
+        "label": "Mittlere Frühjahrstemperatur",
+        "note": "1. Mär – 31. Mai"
+      },
+      "maxDryStretch": {
+        "label": "Längste Trockenphase im Herbst",
+        "note": "Längste Folge aufeinanderfolgender Trockentage im Herbst"
+      }
+    }
+  },
+  "success": {
+    "eyebrow": "Erfolg in ganz Europa",
+    "title": "Erfahrungen von Landwirten und Experten",
+    "stats": {
+      "trials": "Versuchsstandorte",
+      "seasons": "Datensaisons",
+      "countries": "Länder",
+      "positive": "Positive Ertragsreaktion",
+      "positiveNote": "Versuche mit einem Ertragszuwachs über null, bezogen auf die Versuche mit Ernteerfassung."
+    },
+    "testimonials": {
+      "grower": {
+        "quote": "VIXERAN® hat unserem Bestand geholfen, sich im Herbst schneller zu etablieren und kräftiger in den Winter zu gehen. Im Frühjahr haben wir den Unterschied gesehen.",
+        "role": "Landwirt",
+        "origin": "Tschechien"
+      },
+      "expert": {
+        "quote": "Den Bestand in der Etablierungsphase zu unterstützen ist einer der besten Wege, sein Potenzial für die gesamte Saison auszuschöpfen.",
+        "role": "Syngenta-Experte",
+        "origin": "Product Manager"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Bereit für Ihr Fundament?",
+    "title": "Kontaktieren Sie Ihre Syngenta-Ansprechperson",
+    "lead": "Sprechen Sie mit Ihrer lokalen Syngenta-Ansprechperson und bauen Sie in diesem Herbst stärkere Bestände auf.",
+    "form": {
+      "country": "Land",
+      "countryPlaceholder": "Land auswählen",
+      "submit": "Ansprechperson finden",
+      "result": "Wir bringen Sie mit dem Syngenta-Team in {{country}} zusammen.",
+      "disclaimer": "Dieses Formular ist ein Platzhalter der Phase 1 und versendet noch keine Daten."
+    }
+  },
+  "footer": {
+    "legalLabel": "Rechtliche Hinweise",
+    "legalNotice": "Impressum",
+    "privacyPolicy": "Datenschutzerklärung",
+    "cookiePolicy": "Cookie-Richtlinie",
+    "termsOfUse": "Nutzungsbedingungen",
+    "sitemap": "Sitemap",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} Syngenta Group Company.",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "legal": {
+    "back": "Zurück zur Microsite",
+    "pending": "Für dieses Dokument steht der finale Text der Syngenta-Rechtsabteilung noch aus.",
+    "legal-notice": {
+      "title": "Impressum"
+    },
+    "privacy-policy": {
+      "title": "Datenschutzerklärung"
+    },
+    "cookie-policy": {
+      "title": "Cookie-Richtlinie"
+    },
+    "terms-of-use": {
+      "title": "Nutzungsbedingungen"
+    },
+    "sitemap": {
+      "title": "Sitemap"
+    },
+    "contact": {
+      "title": "Kontakt"
+    }
+  }
+}

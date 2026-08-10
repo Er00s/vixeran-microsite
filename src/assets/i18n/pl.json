@@ -1,0 +1,294 @@
+{
+  "header": {
+    "tagline": "Uwolnij azot z natury",
+    "navLabel": "Nawigacja główna",
+    "menu": "Otwórz menu"
+  },
+  "nav": {
+    "journeyLabel": "Ścieżka kampanii",
+    "welcome": {
+      "title": "Witamy na budowie",
+      "subtitle": "Jesień to sezon budowy",
+      "short": "Start"
+    },
+    "foundations": {
+      "title": "Połóż fundamenty",
+      "subtitle": "Dlaczego jesienne krzewienie ma znaczenie",
+      "short": "Dlaczego jesień"
+    },
+    "bioEngineers": {
+      "title": "Poznaj bioinżynierów",
+      "subtitle": "Jak działa VIXERAN®",
+      "short": "Jak działa"
+    },
+    "trials": {
+      "title": "Zwiedź place budowy",
+      "subtitle": "Interaktywna mapa doświadczeń i panel pogodowy",
+      "short": "Doświadczenia"
+    },
+    "success": {
+      "title": "Sukces w całej Europie",
+      "subtitle": "Doświadczenia rolników i ekspertów",
+      "short": "Historie sukcesu"
+    },
+    "contact": {
+      "title": "Gotowy, by zbudować swój?",
+      "subtitle": "Skontaktuj się z przedstawicielem Syngenta",
+      "short": "Kontakt"
+    }
+  },
+  "welcome": {
+    "eyebrow": "Witamy na budowie",
+    "headlineTop": "Jesień",
+    "headlineBottom": "to sezon budowy",
+    "subheadline": "Zbuduj fundamenty silniejszej plantacji, wykorzystując azot z powietrza.",
+    "intro": "VIXERAN® zapewnia rzepakowi dodatkowe źródło azotu wiązanego biologicznie w najbardziej krytycznej fazie rozwoju jesiennego.",
+    "cta": "Zobacz, jak to działa"
+  },
+  "foundations": {
+    "eyebrow": "Połóż fundamenty",
+    "title": "Dlaczego jesienne krzewienie ma znaczenie",
+    "lead": "Pierwsze tygodnie po wschodach decydują o późniejszych wynikach.",
+    "pillars": {
+      "roots": {
+        "title": "Silny rozwój korzeni",
+        "body": "Mocny system korzeniowy poprawia pobieranie wody i składników pokarmowych."
+      },
+      "biomass": {
+        "title": "Przyrost biomasy",
+        "body": "Więcej biomasy jesienią to większy potencjał wiosną."
+      },
+      "winter": {
+        "title": "Lepsza odporność zimowa",
+        "body": "Lepiej przygotowane rośliny łatwiej znoszą warunki zimowe."
+      },
+      "spring": {
+        "title": "Mocniejszy start wiosną",
+        "body": "Solidne fundamenty przekładają się na wyższy potencjał plonowania."
+      }
+    }
+  },
+  "bioEngineers": {
+    "eyebrow": "Poznaj bioinżynierów",
+    "title": "Jak działa VIXERAN®",
+    "body1": "VIXERAN® zawiera Azotobacter salinestris — naturalnie występującą bakterię endofityczną, która zasiedla roślinę od wewnątrz.",
+    "body2": "Wiąże azot atmosferyczny i przekształca go w jon amonowy, dostarczając dodatkowe źródło azotu wtedy, gdy roślina potrzebuje go najbardziej.",
+    "moa": {
+      "capture": "Wiąże azot z powietrza",
+      "convert": "Przekształca go w jon amonowy",
+      "growth": "Wspiera wzrost rośliny"
+    },
+    "benefitsTitle": "Najważniejsze korzyści",
+    "benefits": {
+      "nitrogen": "Udostępnia dodatkowy azot z powietrza",
+      "establishment": "Wspiera silny rozwój jesienny",
+      "roots": "Stymuluje rozwój systemu korzeniowego",
+      "biomass": "Zwiększa biomasę jesienną",
+      "winter": "Przygotowuje plantację do zimy",
+      "spring": "Wspiera wyniki wiosenne"
+    }
+  },
+  "trials": {
+    "eyebrow": "Zwiedź place budowy",
+    "title": "Interaktywna mapa doświadczeń i panel pogodowy",
+    "lead": "Przeglądaj doświadczenia polowe w całej Europie i sprawdź, jak VIXERAN® działa w różnych warunkach uprawy.",
+    "tabsLabel": "Widoki danych doświadczalnych",
+    "tab": {
+      "map": "Mapa doświadczeń",
+      "weather": "Panel pogodowy"
+    },
+    "source": "Źródło: 51 raportów ARM Single Trial Report (AT, DE, DK, FR, GB, LT, PL, SE), rzepak ozimy 2022–2025. Produkty: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) oraz kody doświadczalne A23780 / A19464. Dane pogodowe: eksport godzinowy MeteoBlue."
+  },
+  "map": {
+    "ariaLabel": "Interaktywna mapa europejskich doświadczeń z VIXERAN",
+    "loading": "Wczytywanie mapy…",
+    "filters": {
+      "title": "Filtry",
+      "country": "Kraj",
+      "season": "Sezon",
+      "metric": "Wskaźnik",
+      "allCountries": "Wszystkie kraje",
+      "allSeasons": "Wszystkie sezony",
+      "metricAll": "Plon + biomasa",
+      "metricYield": "Tylko plon",
+      "metricBiomass": "Tylko biomasa",
+      "reset": "Wyczyść filtry"
+    },
+    "stats": {
+      "shown": "Wyświetlone doświadczenia",
+      "avgYield": "Śr. przyrost plonu",
+      "avgBiomass": "Śr. przyrost biomasy"
+    },
+    "legend": {
+      "title": "Legenda",
+      "shape": "Kształt wg wskaźnika",
+      "shapeYield": "Przyrost plonu (%) — zbiór zaraportowany",
+      "shapeBiomass": "Przyrost biomasy (%) — brak danych o zbiorze",
+      "shapeNone": "Brak danych o plonie i biomasie",
+      "color": "Kolor = wielkość przyrostu (%)",
+      "size": "Rozmiar znacznika rośnie wraz z bezwzględnym przyrostem.",
+      "gain": {
+        "strong": "+10 % lub więcej",
+        "mid": "+3 % do +10 %",
+        "light": "0 do +3 %"
+      },
+      "loss": {
+        "light": "−3 % do 0",
+        "mid": "−10 % do −3 %",
+        "strong": "Strata większa niż −10 %"
+      }
+    },
+    "popup": {
+      "trialId": "ID doświadczenia",
+      "season": "Sezon",
+      "variety": "Odmiana",
+      "region": "Region",
+      "soil": "Gleba",
+      "product": "Produkt",
+      "yieldGain": "Przyrost plonu",
+      "biomassGain": "Przyrost biomasy",
+      "control": "Kontrola",
+      "source": "Źródło",
+      "noData": "brak danych"
+    }
+  },
+  "weather": {
+    "noData": "Brak danych dla tego wyboru",
+    "metric": {
+      "yield": "Przyrost plonu (%)",
+      "biomass": "Przyrost biomasy (%)"
+    },
+    "controls": {
+      "metric": "Oś Y",
+      "countries": "Kraje"
+    },
+    "summary": {
+      "trials": "Wyświetlone doświadczenia",
+      "withYield": "Z danymi o plonie",
+      "avgYield": "Śr. przyrost plonu",
+      "withBiomass": "Z danymi o biomasie",
+      "avgBiomass": "Śr. przyrost biomasy"
+    },
+    "findings": {
+      "title": "Najsilniejsze sygnały w tym zbiorze danych",
+      "higher": "przyrost bywa wyższy, gdy ta zmienna rośnie.",
+      "lower": "przyrost bywa niższy, gdy ta zmienna rośnie.",
+      "none": "Brak sygnałów powyżej progu szumu.",
+      "disclaimer": "Korelacja Pearsona pomiędzy lokalizacjami doświadczeń. |r| poniżej 0,2 jest słaba, 0,2–0,4 umiarkowanie słaba, 0,4–0,6 umiarkowana, powyżej 0,6 silna. Korelacja nie oznacza przyczynowości, a liczebność próby dla każdej zmiennej jest niewielka."
+    },
+    "vars": {
+      "autumnPrecipitation": {
+        "label": "Opady jesienne",
+        "note": "Suma opadów od 1 wrz do 30 lis roku siewu"
+      },
+      "autumnMeanTemp": {
+        "label": "Średnia temperatura jesienią",
+        "note": "Średnia temperatura od 1 wrz do 30 lis"
+      },
+      "autumnDryDays": {
+        "label": "Dni suche jesienią",
+        "note": "Dni z opadem poniżej 0,5 mm"
+      },
+      "autumnHeavyRainDays": {
+        "label": "Dni z ulewami jesienią",
+        "note": "Dni z opadem 10 mm lub więcej"
+      },
+      "earlyAutumnPrecipitation": {
+        "label": "Opady wczesnej jesieni",
+        "note": "1 wrz – 15 paź — okno rozwoju po zabiegu VIXERAN"
+      },
+      "earlyAutumnMeanTemp": {
+        "label": "Średnia temperatura wczesnej jesieni",
+        "note": "1 wrz – 15 paź"
+      },
+      "winterMinTemp": {
+        "label": "Minimalna temperatura zimą",
+        "note": "Najniższy odczyt godzinowy od 1 gru do 28 lut"
+      },
+      "winterFrostDays": {
+        "label": "Dni mroźne zimą",
+        "note": "Dni z temperaturą minimalną poniżej 0 °C"
+      },
+      "springPrecipitation": {
+        "label": "Opady wiosenne",
+        "note": "1 mar – 31 maj"
+      },
+      "springMeanTemp": {
+        "label": "Średnia temperatura wiosną",
+        "note": "1 mar – 31 maj"
+      },
+      "maxDryStretch": {
+        "label": "Najdłuższa susza jesienna",
+        "note": "Najdłuższa seria kolejnych dni suchych jesienią"
+      }
+    }
+  },
+  "success": {
+    "eyebrow": "Sukces w całej Europie",
+    "title": "Doświadczenia rolników i ekspertów",
+    "stats": {
+      "trials": "Lokalizacje doświadczeń",
+      "seasons": "Sezony danych",
+      "countries": "Kraje",
+      "positive": "Dodatnia reakcja plonu",
+      "positiveNote": "Doświadczenia z przyrostem plonu powyżej zera, spośród tych z zaraportowanym zbiorem."
+    },
+    "testimonials": {
+      "grower": {
+        "quote": "VIXERAN® pomógł naszemu rzepakowi szybciej się rozwinąć jesienią i wejść w zimę w lepszej kondycji. Różnicę zobaczyliśmy wiosną.",
+        "role": "Rolnik",
+        "origin": "Czechy"
+      },
+      "expert": {
+        "quote": "Wsparcie plantacji w fazie rozwoju początkowego to jeden z najlepszych sposobów, aby wykorzystać jej potencjał w całym sezonie.",
+        "role": "Ekspert Syngenta",
+        "origin": "Product Manager"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Gotowy, by zbudować swój?",
+    "title": "Skontaktuj się z lokalnym przedstawicielem Syngenta",
+    "lead": "Skontaktuj się z lokalnym przedstawicielem Syngenta i zbuduj silniejsze plantacje tej jesieni.",
+    "form": {
+      "country": "Kraj",
+      "countryPlaceholder": "Wybierz swój kraj",
+      "submit": "Znajdź przedstawiciela",
+      "result": "Skontaktujemy Cię z zespołem Syngenta w kraju: {{country}}.",
+      "disclaimer": "Ten formularz jest elementem zastępczym Fazy 1 i nie wysyła jeszcze żadnych danych."
+    }
+  },
+  "footer": {
+    "legalLabel": "Linki prawne",
+    "legalNotice": "Nota prawna",
+    "privacyPolicy": "Polityka prywatności",
+    "cookiePolicy": "Polityka plików cookie",
+    "termsOfUse": "Warunki korzystania",
+    "sitemap": "Mapa strony",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} Syngenta Group Company.",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "legal": {
+    "back": "Powrót do mikrostrony",
+    "pending": "Ten dokument oczekuje na ostateczną treść od działu prawnego Syngenta.",
+    "legal-notice": {
+      "title": "Nota prawna"
+    },
+    "privacy-policy": {
+      "title": "Polityka prywatności"
+    },
+    "cookie-policy": {
+      "title": "Polityka plików cookie"
+    },
+    "terms-of-use": {
+      "title": "Warunki korzystania"
+    },
+    "sitemap": {
+      "title": "Mapa strony"
+    },
+    "contact": {
+      "title": "Kontakt"
+    }
+  }
+}

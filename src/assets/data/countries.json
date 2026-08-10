@@ -1,0 +1,42 @@
+[
+  {
+    "code": "AT",
+    "name": "Austria",
+    "locale": null
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "locale": null
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "locale": null
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "locale": null
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "locale": null
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "locale": null
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "locale": null
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "locale": null
+  }
+]

@@ -1,0 +1,151 @@
+/* ============================================================
+   VIXERAN Autumn Campaign Microsite - global styles
+   Tailwind CSS v4 (CSS-first config; there is no tailwind.config.js)
+
+   Leaflet + MarkerCluster stylesheets are registered in angular.json ->
+   architect.build.options.styles, so they are emitted before this file and
+   can be overridden at the bottom without specificity tricks.
+   ============================================================ */
+
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------
+   Design tokens - "Autumn is Building Season"
+   Every token below becomes a Tailwind utility automatically,
+   e.g. --color-brand-700 -> bg-brand-700 / text-brand-700
+   ------------------------------------------------------------ */
+@theme {
+  /* Syngenta / campaign greens */
+  --color-brand-50: #eef5f0;
+  --color-brand-100: #d6e8dc;
+  --color-brand-300: #7bc47f;
+  --color-brand-500: #2e8b57;
+  --color-brand-700: #0f6d3e;
+  --color-brand-900: #0b3d24;
+
+  /* Campaign neutrals - the paper / sand background of the key visual */
+  --color-sand-50: #fbf9f3;
+  --color-sand-100: #f4f0e4;
+  --color-sand-200: #e8e2d1;
+  --color-sand-300: #d8cfb8;
+
+  /* Construction-site accents */
+  --color-helmet-400: #f7c948;
+  --color-helmet-500: #f5b200;
+  --color-soil-700: #5a4630;
+  --color-soil-900: #33281a;
+
+  /* Data-viz scale (shared by the trial map and the weather dashboard) */
+  --color-gain-strong: #0b6623;
+  --color-gain-mid: #2e8b57;
+  --color-gain-light: #7bc47f;
+  --color-gain-neutral: #bdbdbd;
+  --color-loss-light: #e08a8a;
+  --color-loss-mid: #dc3545;
+  --color-loss-strong: #8b0000;
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Layout */
+  --spacing-side-nav: 15rem;
+}
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset for the sticky top bar when jumping to #anchors */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-sand-50 font-sans text-soil-900 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display uppercase tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-700;
+  }
+}
+
+/* ------------------------------------------------------------
+   Reusable campaign primitives
+
+   NOTE (Tailwind v4): a custom class cannot `@apply` another custom class,
+   so `.vx-btn-primary` repeats the base button utilities instead of applying
+   `.vx-btn`. Keep the three button rules in sync when editing.
+   ------------------------------------------------------------ */
+@utility vx-container {
+  @apply mx-auto w-full max-w-[1440px] px-5 md:px-10;
+}
+
+@utility vx-section {
+  @apply scroll-mt-20 py-16 md:py-24;
+}
+
+@utility vx-eyebrow {
+  @apply font-display text-sm font-semibold uppercase tracking-[0.18em] text-brand-700;
+}
+
+@utility vx-btn {
+  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
+    uppercase tracking-widest transition-colors duration-200;
+}
+
+@utility vx-btn-primary {
+  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
+    uppercase tracking-widest transition-colors duration-200;
+  @apply bg-brand-700 text-white hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+@utility vx-btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
+    uppercase tracking-widest transition-colors duration-200;
+  @apply border border-brand-700 text-brand-700 hover:bg-brand-50;
+}
+
+@utility vx-card {
+  @apply rounded-md border border-sand-200 bg-white p-5 shadow-sm;
+}
+
+/* ------------------------------------------------------------
+   Leaflet overrides so the map matches the campaign look
+   ------------------------------------------------------------ */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-sand-100);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 6px;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: color-mix(in srgb, var(--color-brand-500) 35%, transparent);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: var(--color-brand-700);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
