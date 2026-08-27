@@ -89,7 +89,9 @@ export class SectionShell {
     this.tone() === 'photo' ? 'text-soil-900' : 'text-white',
   );
 
-  protected readonly leadClass = computed(() =>
-    this.tone() === 'photo' ? 'text-soil-900' : 'text-mist-300',
-  );
+  protected readonly leadClass = computed(() => {
+    if (this.tone() === 'photo') return 'text-soil-900';
+    if (this.tone() === 'brand') return 'text-white';
+    return 'text-mist-300';
+  });
 }

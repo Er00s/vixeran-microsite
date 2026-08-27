@@ -128,7 +128,7 @@
   "nitrogenUptake": {
     "eyebrow": "VIXERAN® y la absorción de nitrógeno",
     "title": "Cómo VIXERAN® mejora la absorción de nitrógeno del cultivo",
-    "body": "El vídeo muestra cómo las bacterias fijadoras de nitrógeno de VIXERAN® colonizan la planta y complementan la fertilización durante la implantación."
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated."
   },
   "foundations": {
     "eyebrow": "Construye los cimientos",
@@ -317,7 +317,8 @@
   "success": {
     "eyebrow": "Construyendo éxito en Europa",
     "title": "Construyendo éxito en Europa",
-    "lead": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte.",
+    "lead": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte. Vimos la diferencia en primavera.",
+    "visualLabel": "Flores de colza en un campo europeo",
     "stats": {
       "trials": "Localizaciones de ensayo",
       "seasons": "Campañas de datos",
@@ -327,18 +328,18 @@
     },
     "testimonials": {
       "grower": {
-        "quote": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte. Vimos la diferencia en primavera.",
+        "quote": "Apoyar al cultivo durante la fase de implantación es una de las mejores formas de maximizar su potencial durante el resto de la campaña.",
         "role": "Agricultor",
-        "origin": "República Checa"
+        "origin": "República Checa",
+        "photoAlt": "Agricultor de la República Checa"
       },
       "expert": {
         "quote": "Apoyar al cultivo durante la fase de implantación es una de las mejores formas de maximizar su potencial durante el resto de la campaña.",
-        "role": "Experto de Syngenta",
-        "origin": "Product Manager"
+        "role": "Syngenta",
+        "origin": "Experto",
+        "photoAlt": "Experto de Syngenta"
       }
-    },
-    "title": "Construyendo éxito en Europa",
-    "lead": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte.",
+    }
   },
   "contact": {
     "eyebrow": "¿Listo para construir con VIXERAN®?",

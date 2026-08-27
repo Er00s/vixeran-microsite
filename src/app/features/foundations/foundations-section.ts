@@ -53,8 +53,8 @@ import { WinterCard } from './cards/winter-card';
 
       <div
         class="vx-found-stage relative mx-auto flex h-full min-h-svh
-               w-full max-w-[1920px] flex-col justify-between gap-8 px-5 py-10
-               md:px-10 md:py-12"
+               w-full max-w-[1920px] flex-col justify-between gap-8 px-5 pt-10 pb-16
+               md:px-10 md:pt-12 md:pb-24"
       >
         <div class="vx-found-copy max-w-xl">
           <p class="vx-eyebrow">04. {{ 'foundations.eyebrow' | translate }}</p>

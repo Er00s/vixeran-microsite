@@ -54,7 +54,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
       <img
         aria-hidden="true"
         class="vx-header-dots pointer-events-none absolute top-0 right-0 z-[1]
-               w-32 select-none md:w-48"
+               select-none"
         src="assets/vectores/topcircles.png"
         alt=""
       />
@@ -83,10 +83,10 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
         </a>
 
         <nav
-          class="vx-header-nav vx-desk-block hidden flex-1 items-center gap-3"
+          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center gap-3"
           [attr.aria-label]="'header.navLabel' | translate"
         >
-          <ul class="flex items-center justify-start gap-1">
+          <ul class="flex min-w-0 flex-1 items-center justify-start gap-1">
             @for (section of sections; track section.anchor) {
               <li>
                 <a

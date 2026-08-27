@@ -90,8 +90,10 @@ interface Callout {
               </span>
 
               <div class="vx-how-card-copy">
-                <h3>{{ callout.titleKey | translate }}</h3>
-                <p>{{ callout.bodyKey | translate }}</p>
+                <div class="vx-how-card-copy-inner">
+                  <h3>{{ callout.titleKey | translate }}</h3>
+                  <p>{{ callout.bodyKey | translate }}</p>
+                </div>
               </div>
             </li>
           }

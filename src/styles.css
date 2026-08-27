@@ -54,7 +54,7 @@
   --font-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 
   /* Layout - header bar is ~115px in the 1920 Figma crop.
-     `desk` is the 1920 artboard breakpoint: below it we keep a compact header. */
+     Nav pills stay visible from 1024px; the 1920 artboard layout starts at 1800px. */
   --spacing-side-nav: 15rem;
   --spacing-header: 4.5rem;
 }
@@ -88,9 +88,23 @@
   }
 }
 
+:root {
+  /* Same formula as .vx-header-plate so copy always clears the olive wave. */
+  --header-plate-height: max(var(--spacing-header), 100vw * 144 / 1920);
+  /* 223px = Figma hero offset (115px bar + 108px) on the 1920×1080 frame. */
+  --hero-offset-top: max(
+    calc(var(--header-plate-height) + 0.75rem),
+    min(13.9375rem, 100vw * 223 / 1920, 100svh * 223 / 1080)
+  );
+}
+
 /* Intro + CTA stay flush right and never run into the mascot on the left. */
 .vx-hero-bottom {
   max-width: calc(100% - var(--hero-minion-clearance, 12.5rem));
+}
+
+.vx-hero-stage {
+  padding-top: var(--hero-offset-top);
 }
 
 /*
@@ -122,8 +136,16 @@
   object-fit: fill;
 }
 
-/* 1920 Figma layout. Kept as raw CSS so these rules always win over `md:` utilities. */
-@media (width >= 1800px) {
+/* 200px on the 1920 artboard; shrinks with the header so it does not dominate laptops. */
+.vx-header-dots {
+  top: 0;
+  right: 0;
+  width: min(200px, calc(100cqw * 200 / 1920));
+  height: auto;
+}
+
+/* Section pills stay visible from laptop width; hamburger only below 1024. */
+@media (width >= 1024px) {
   .vx-desk-block {
     display: flex;
   }
@@ -132,6 +154,49 @@
     display: none;
   }
 
+  .vx-header-tools {
+    display: none;
+  }
+}
+
+/* Compact the six nav labels so they fit between laptop and the 1920 artboard. */
+@media (width >= 1024px) and (width < 1800px) {
+  .vx-header-inner {
+    gap: 0.5rem;
+  }
+
+  .vx-header-nav {
+    min-width: 0;
+    gap: 0.5rem;
+    padding-right: 7.5rem;
+  }
+
+  .vx-header-nav ul {
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.2rem;
+  }
+
+  .vx-header-nav li {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .vx-header-nav a {
+    justify-content: center;
+    height: auto;
+    min-height: 1.5rem;
+    padding: 0.2rem 0.4rem;
+    font-size: clamp(0.625rem, 0.85vw, 0.8125rem);
+    line-height: 1.2;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
+
+/* 1920 Figma layout. Kept as raw CSS so these rules always win over `md:` utilities. */
+@media (width >= 1800px) {
   .vx-header-inner {
     padding-inline: 20px;
   }
@@ -148,13 +213,6 @@
     height: 44px;
   }
 
-  .vx-header-dots {
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: auto;
-  }
-
   .vx-header-nav {
     padding-right: 6rem;
   }
@@ -162,13 +220,14 @@
   .vx-hero-stage,
   .vx-how-stage,
   .vx-benefits-stage,
-  .vx-found-stage {
+  .vx-found-stage,
+  .vx-success-stage {
     height: 100%;
     min-height: 0;
   }
 
   .vx-hero-stage {
-    padding: 0;
+    padding: var(--hero-offset-top) 0 0;
   }
 
   .vx-hero-minion {
@@ -179,10 +238,10 @@
   }
 
   .vx-hero-copy {
-    /* Header is fixed over the photo, so this offset starts below the olive bar. */
-    margin-top: calc(var(--spacing-header) + 108px);
+    /* Offset lives on .vx-hero-stage (--hero-offset-top) so it scales with the viewport. */
+    margin-top: 0;
     margin-left: 185px;
-    max-width: 520px;
+    max-width: 800px;
   }
 
   .vx-hero-title {
@@ -267,12 +326,9 @@
     row-gap: 56px;
   }
 
-  .vx-how-card-copy h3 {
-    font-size: 15px;
-  }
-
+  .vx-how-card-copy h3,
   .vx-how-card-copy p {
-    font-size: 13px;
+    font-size: 20px;
   }
 
   .vx-how-minion {
@@ -322,7 +378,7 @@
   }
 
   .vx-found-stage {
-    padding: 48px 64px 40px 191px;
+    padding: 48px 64px 160px 191px;
   }
 
   .vx-found-title {
@@ -338,6 +394,34 @@
     max-width: 520px;
     font-size: 28px;
     line-height: 34px;
+  }
+
+  .vx-success-stage {
+    padding: calc(max(var(--spacing-header), 100vw * 144 / 1920) + 16px)
+      72px 72px 191px;
+  }
+
+  .vx-success-copy {
+    max-width: 780px;
+  }
+
+  .vx-success-title {
+    margin-top: 28px;
+    max-width: 780px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 69px;
+  }
+
+  .vx-success-lead {
+    margin-top: 18px;
+    max-width: 640px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .vx-success-grid {
+    gap: 40px;
   }
 }
 
@@ -385,6 +469,12 @@
    viewport (and the 1080 Figma frame on desk) — do not subtract the bar. */
 @utility vx-slide-bg {
   @apply relative overflow-hidden bg-ink-900;
+}
+
+/* Slide 08: translucent #2F731A (brand-700) wash so the rape photo
+   stays visible while the CTA type sits on a monochrome green field. */
+.vx-contact-scrim {
+  background-color: color-mix(in srgb, var(--color-brand-700) 82%, transparent);
 }
 
 .vx-slide,
@@ -454,8 +544,9 @@
   position: absolute;
   inset: 5.8% 2.3% 5.3% 3%;
   border-radius: 8.2% / 18.5%;
-  background: rgb(255 255 255 / 0.1);
-  backdrop-filter: blur(14px);
+  background: rgb(255 255 255 / 0);
+  backdrop-filter: blur(2px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
 }
 
 .vx-how-frame {
@@ -469,17 +560,21 @@
 
 .vx-how-card-copy {
   position: absolute;
-  top: 18%;
-  right: 30%;
-  bottom: 16%;
-  left: 8%;
+  inset: 22% 18% 16%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
+.vx-how-card-copy-inner {
+  width: fit-content;
+  max-width: 100%;
+  text-align: left;
+}
+
 .vx-how-card-copy h3 {
-  font-size: 13px;
+  /* 13px on small screens → 20px from the 1920×1080 frame. */
+  font-size: clamp(13px, calc(8px + 0.625vw), 20px);
   font-weight: 600;
   line-height: 1.25;
   color: #fff;
@@ -487,7 +582,7 @@
 
 .vx-how-card-copy p {
   margin-top: 0.2em;
-  font-size: 12px;
+  font-size: clamp(12px, calc(8px + 0.625vw), 20px);
   line-height: 1.3;
   color: rgb(255 255 255 / 0.8);
 }
@@ -538,11 +633,6 @@
     left: 0;
     transform: translate(-45%, -30%);
   }
-
-  .vx-how-card--flip .vx-how-card-copy {
-    right: 8%;
-    left: 30%;
-  }
 }
 
 /* Slide 03: tall notched card. Geometry matches cuadro.svg (287.3 × 505.9). */
@@ -555,8 +645,9 @@
   position: absolute;
   inset: 11.35% 4.2% 2.2% 4%;
   border-radius: 11cqi;
-  background: rgb(0 0 0 / 0.42);
-  backdrop-filter: blur(12px);
+  background: rgb(255 255 255 / 0);
+  backdrop-filter: blur(2px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
 }
 
 .vx-benefits-icon {
@@ -623,6 +714,7 @@
 .vx-found-grid {
   overflow: visible;
   align-items: end;
+  margin-bottom: 2.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -654,6 +746,7 @@
     width: 100%;
     max-width: none;
     margin-left: 0;
+    margin-bottom: 0;
     grid-template-columns: 280px 280px minmax(240px, 1fr) 280px 280px;
     column-gap: 18px;
     row-gap: 0;
@@ -844,6 +937,132 @@
   right: 8%;
   width: 32px;
   height: 32px;
+}
+
+/* Slide 07: glass portrait cards. White frame is the card border (rx 28 / 2px
+   #F2F3FA, same as the old filete) so corners stay circular at any ratio. */
+.vx-success-stage {
+  padding-top: calc(max(var(--spacing-header), 100vw * 144 / 1920) + 12px);
+}
+
+.vx-success-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 13.5rem;
+  border: 2px solid #f2f3fa;
+  border-radius: 28px;
+  background: rgb(255 255 255 / 0.14);
+  backdrop-filter: blur(20px) saturate(1.25);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+}
+
+.vx-success-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  min-height: 13.5rem;
+}
+
+.vx-success-photo {
+  flex: none;
+  width: 38%;
+  margin: 8px 0 8px 8px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.vx-success-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vx-success-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 1.15rem 1.5rem 1.15rem 1.15rem;
+}
+
+.vx-success-card-copy h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.vx-success-origin {
+  margin-top: 0.15em;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.vx-success-card-copy blockquote {
+  margin-top: 0.7em;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(255 255 255 / 0.95);
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .vx-success-card,
+  .vx-success-card-inner {
+    min-height: 16rem;
+    aspect-ratio: 2.1 / 1;
+  }
+
+  .vx-success-card-copy h3 {
+    font-size: 1.35rem;
+  }
+
+  .vx-success-origin,
+  .vx-success-card-copy blockquote {
+    font-size: 0.95rem;
+  }
+}
+
+@media (width >= 1800px) {
+  .vx-success-photo {
+    width: 38%;
+    margin: 12px 0 12px 12px;
+    border-radius: 20px;
+  }
+
+  .vx-success-card-copy {
+    padding: 1.5rem 1.85rem 1.5rem 1.4rem;
+  }
+
+  .vx-success-card-copy h3 {
+    font-size: 24px;
+  }
+
+  .vx-success-origin,
+  .vx-success-card-copy blockquote {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 639px) {
+  .vx-success-card-inner {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .vx-success-photo {
+    width: auto;
+    aspect-ratio: 16 / 10;
+    margin: 10px 10px 0;
+  }
 }
 
 @utility vx-card {

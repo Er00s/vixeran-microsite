@@ -1,81 +1,104 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { TrialsService } from '../../core/services/trials.service';
-import { MediaPlaceholder } from '../../shared/components/media-placeholder';
-import { SectionShell } from '../../shared/components/section-shell';
-import { StatTile } from '../../shared/components/stat-tile';
+interface Testimonial {
+  quoteKey: string;
+  roleKey: string;
+  originKey: string;
+  photo: string;
+  photoAltKey: string;
+  objectPosition: string;
+}
 
-/** 07 - Building success across Europe / Grower & Expert Experiences. */
+/**
+ * 07 - Building success across Europe / Grower & Expert Experiences.
+ *
+ * Full-bleed rapeseed plate with copy at the top left and two glass
+ * portrait cards along the lower band. The white frame is a CSS border on
+ * the card — not the stretched slide-07/card-frame.svg overlay.
+ */
 @Component({
   selector: 'app-success-section',
-  imports: [TranslatePipe, SectionShell, StatTile, MediaPlaceholder],
+  imports: [TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <app-section-shell
-      anchor="success"
-      number="07"
-      eyebrowKey="success.eyebrow"
-      titleKey="success.title"
-      leadKey="success.lead"
-      tone="photo"
-      background="assets/img/bg7.png"
-      sectionClass="vx-slide-bg"
+    <section
+      id="success"
+      class="vx-slide relative overflow-hidden"
     >
-      <ul class="grid gap-6 md:grid-cols-2">
-        @for (t of testimonials; track t.quoteKey) {
-          <li class="vx-glass-card flex min-h-80 flex-col bg-ink-900/60">
-            <div class="mb-5 h-40 overflow-hidden rounded-xl">
-              <app-media-placeholder [label]="t.photoLabel" hint="Portrait still, 4:5" ratio="16 / 9" />
-            </div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-white">
-              {{ t.roleKey | translate }}
-              <span class="text-mist-300"> {{ t.originKey | translate }}</span>
-            </p>
-            <blockquote class="mt-3 grow text-sm leading-relaxed text-mist-100">
-              {{ t.quoteKey | translate }}
-            </blockquote>
-          </li>
-        }
-      </ul>
+      <img
+        src="assets/all/slide-07/fondo.webp"
+        class="absolute inset-0 size-full object-cover object-center"
+        loading="lazy"
+        [attr.alt]="'success.visualLabel' | translate"
+      />
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <app-stat-tile [value]="trialCount()" labelKey="success.stats.trials" />
-        <app-stat-tile [value]="seasonCount()" labelKey="success.stats.seasons" />
-        <app-stat-tile [value]="countryCount()" labelKey="success.stats.countries" />
-        <app-stat-tile
-          [value]="positiveShare()"
-          labelKey="success.stats.positive"
-          noteKey="success.stats.positiveNote"
-        />
+      <div
+        class="vx-success-stage relative z-[2] mx-auto flex h-full min-h-svh
+               w-full max-w-[1920px] flex-col justify-between gap-10 px-5 pb-16
+               md:px-10 md:pb-20"
+      >
+        <div class="vx-success-copy max-w-3xl">
+          <p class="vx-eyebrow">07. {{ 'success.eyebrow' | translate }}</p>
+
+          <h2
+            class="vx-success-title mt-5 text-3xl font-semibold leading-[1.1] text-white
+                   md:text-5xl md:leading-[1.1]"
+          >
+            {{ 'success.title' | translate }}
+          </h2>
+
+          <p
+            class="vx-success-lead mt-4 max-w-2xl text-base font-medium leading-snug text-white
+                   md:text-lg"
+          >
+            {{ 'success.lead' | translate }}
+          </p>
+        </div>
+
+        <ul class="vx-success-grid grid w-full gap-5 sm:gap-6 md:grid-cols-2 md:gap-8">
+          @for (t of testimonials; track t.quoteKey) {
+            <li class="vx-success-card">
+              <div class="vx-success-card-inner">
+                <div class="vx-success-photo">
+                  <img
+                    [src]="t.photo"
+                    [attr.alt]="t.photoAltKey | translate"
+                    [style.object-position]="t.objectPosition"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="vx-success-card-copy">
+                  <h3>{{ t.roleKey | translate }}</h3>
+                  <p class="vx-success-origin">{{ t.originKey | translate }}</p>
+                  <blockquote>{{ t.quoteKey | translate }}</blockquote>
+                </div>
+              </div>
+            </li>
+          }
+        </ul>
       </div>
-    </app-section-shell>
+    </section>
   `,
 })
 export class SuccessSection {
-  private readonly trialsService = inject(TrialsService);
-
-  protected readonly testimonials = [
+  protected readonly testimonials: readonly Testimonial[] = [
     {
       quoteKey: 'success.testimonials.grower.quote',
       roleKey: 'success.testimonials.grower.role',
       originKey: 'success.testimonials.grower.origin',
-      photoLabel: 'Grower portrait',
+      photo: 'assets/all/slide-07/grower.webp',
+      photoAltKey: 'success.testimonials.grower.photoAlt',
+      objectPosition: '50% 18%',
     },
     {
       quoteKey: 'success.testimonials.expert.quote',
       roleKey: 'success.testimonials.expert.role',
       originKey: 'success.testimonials.expert.origin',
-      photoLabel: 'Syngenta expert portrait',
+      photo: 'assets/all/slide-07/syngenta.jpg',
+      photoAltKey: 'success.testimonials.expert.photoAlt',
+      objectPosition: '50% 12%',
     },
-  ] as const;
-
-  protected readonly trialCount = computed(() => this.trialsService.kpis()?.trialCount ?? '—');
-  protected readonly seasonCount = computed(() => this.trialsService.kpis()?.seasonCount ?? '—');
-  protected readonly countryCount = computed(() => this.trialsService.kpis()?.countryCount ?? '—');
-
-  protected readonly positiveShare = computed(() => {
-    const kpis = this.trialsService.kpis();
-    return kpis ? `${kpis.positiveYieldTrials} / ${kpis.trialsWithYieldData}` : '—';
-  });
+  ];
 }

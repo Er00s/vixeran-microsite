@@ -128,7 +128,7 @@
   "nitrogenUptake": {
     "eyebrow": "How VIXERAN® enhances crop",
     "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® colonise the plant and complement fertilisation during establishment."
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated."
   },
   "foundations": {
     "eyebrow": "Lay the Foundations",
@@ -316,7 +316,8 @@
   "success": {
     "eyebrow": "Building Success Across Europe",
     "title": "Building success across Europe",
-    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger.",
+    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger. We saw the difference in spring.",
+    "visualLabel": "Oilseed rape flowers in bloom across a European field",
     "stats": {
       "trials": "Trial locations",
       "seasons": "Seasons of data",
@@ -326,14 +327,16 @@
     },
     "testimonials": {
       "grower": {
-        "quote": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger. We saw the difference in spring.",
+        "quote": "Supporting the crop during the establishment phase is one of the best ways to maximise its potential for the rest of the season.",
         "role": "Grower",
-        "origin": "Czech Republic"
+        "origin": "Czech Republic",
+        "photoAlt": "Grower from the Czech Republic"
       },
       "expert": {
         "quote": "Supporting the crop during the establishment phase is one of the best ways to maximise its potential for the rest of the season.",
-        "role": "Syngenta expert",
-        "origin": "Product Manager"
+        "role": "Syngenta",
+        "origin": "Expert",
+        "photoAlt": "Syngenta expert"
       }
     }
   },

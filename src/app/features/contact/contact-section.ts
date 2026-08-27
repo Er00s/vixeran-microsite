@@ -19,10 +19,11 @@ import { SectionShell } from '../../shared/components/section-shell';
       eyebrowKey="contact.eyebrow"
       titleKey="contact.title"
       leadKey="contact.lead"
-      tone="photo"
+      tone="brand"
       align="center"
       background="assets/img/bg8.png"
-      sectionClass="vx-slide-bg"
+      sectionClass="vx-slide-bg flex flex-col justify-center"
+      scrimClass="vx-contact-scrim"
     >
       <div class="flex justify-center">
         <button

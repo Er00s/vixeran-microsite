@@ -250,7 +250,9 @@
   },
   "success": {
     "eyebrow": "Des réussites partout en Europe",
-    "title": "Témoignages d'agriculteurs et d'experts",
+    "title": "Des réussites partout en Europe",
+    "lead": "VIXERAN® a aidé notre colza à s'implanter plus vite à l'automne et à aborder l'hiver plus vigoureux. Nous avons vu la différence au printemps.",
+    "visualLabel": "Colza en fleurs dans un champ européen",
     "stats": {
       "trials": "Sites d'essai",
       "seasons": "Campagnes de données",
@@ -260,17 +262,18 @@
     },
     "testimonials": {
       "grower": {
-        "quote": "VIXERAN® a aidé notre colza à s'implanter plus vite à l'automne et à aborder l'hiver plus vigoureux. Nous avons vu la différence au printemps.",
+        "quote": "Accompagner la culture pendant la phase d'implantation est l'un des meilleurs moyens de maximiser son potentiel pour le reste de la campagne.",
         "role": "Agriculteur",
-        "origin": "République tchèque"
+        "origin": "République tchèque",
+        "photoAlt": "Agriculteur en République tchèque"
       },
       "expert": {
         "quote": "Accompagner la culture pendant la phase d'implantation est l'un des meilleurs moyens de maximiser son potentiel pour le reste de la campagne.",
-        "role": "Expert Syngenta",
-        "origin": "Product Manager"
+        "role": "Syngenta",
+        "origin": "Expert",
+        "photoAlt": "Expert Syngenta"
       }
-    },
-    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger."
+    }
   },
   "contact": {
     "eyebrow": "Prêt à bâtir la vôtre ?",
@@ -384,6 +387,6 @@
   "nitrogenUptake": {
     "eyebrow": "How VIXERAN® enhances crop",
     "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® colonise the plant and complement fertilisation during establishment."
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated."
   }
 }

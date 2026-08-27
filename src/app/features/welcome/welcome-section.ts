@@ -38,7 +38,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 
       <div
         class="vx-hero-stage relative z-[2] mx-auto flex h-full min-h-svh w-full max-w-[1920px]
-               flex-col justify-between px-5 pb-10 pt-[var(--spacing-header)] md:px-10 md:pb-12"
+               flex-col justify-between px-5 pb-10 md:px-10 md:pb-12"
       >
         <div class="vx-hero-copy max-w-[32rem]">
           <h1
