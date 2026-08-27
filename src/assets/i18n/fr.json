@@ -14,7 +14,7 @@
     "foundations": {
       "title": "Poser les fondations",
       "subtitle": "Pourquoi l'implantation d'automne est décisive",
-      "short": "Pourquoi l'automne"
+      "short": "Poser les fondations"
     },
     "bioEngineers": {
       "title": "Les bio-ingénieurs",
@@ -23,18 +23,33 @@
     },
     "trials": {
       "title": "Explorer les chantiers",
-      "subtitle": "Carte des essais et tableau de bord météo",
-      "short": "Essais"
+      "subtitle": "Carte interactive des essais",
+      "short": "Explorer les chantiers"
     },
     "success": {
       "title": "Des réussites partout en Europe",
       "subtitle": "Témoignages d'agriculteurs et d'experts",
-      "short": "Témoignages"
+      "short": "Des réussites partout en Europe"
     },
     "contact": {
-      "title": "Prêt à bâtir la vôtre ?",
-      "subtitle": "Contactez votre interlocuteur Syngenta",
+      "title": "Prêt à bâtir avec VIXERAN® ?",
+      "subtitle": "Prêt à donner un meilleur départ à votre culture ?",
       "short": "Contact"
+    },
+    "howItWorks": {
+      "title": "Principaux bénéfices de VIXERAN®",
+      "subtitle": "Comment fonctionne VIXERAN®",
+      "short": "Principaux bénéfices de VIXERAN®"
+    },
+    "keyBenefits": {
+      "title": "Rencontrez les bio-ingénieurs",
+      "subtitle": "Principaux bénéfices de VIXERAN®",
+      "short": "Rencontrez les bio-ingénieurs"
+    },
+    "nitrogenUptake": {
+      "title": "VIXERAN® et l'absorption d'azote",
+      "subtitle": "Comment VIXERAN® améliore l'absorption d'azote par la culture",
+      "short": "VIXERAN® et l'absorption d'azote"
     }
   },
   "welcome": {
@@ -43,28 +58,38 @@
     "headlineBottom": "saison des fondations",
     "subheadline": "Bâtissez les fondations d'une culture plus solide avec l'azote de l'air.",
     "intro": "VIXERAN® permet au colza d'accéder à une source supplémentaire d'azote fixé biologiquement, au stade le plus critique de l'implantation.",
-    "cta": "Découvrir le fonctionnement"
+    "cta": "Découvrir le fonctionnement",
+    "visualLabel": "Key visual de campagne : les bio-ingénieurs sur le chantier d'automne",
+    "headlineMid": "is building",
+    "introEmphasis": "bacterium Azotobacter salinestris",
+    "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase."
   },
   "foundations": {
     "eyebrow": "Poser les fondations",
     "title": "Pourquoi l'implantation d'automne est décisive",
     "lead": "Les premières semaines après la levée déterminent les performances futures.",
+    "flip": "Retourner la carte",
+    "unflip": "Revenir à la carte",
     "pillars": {
       "roots": {
         "title": "Développement racinaire",
-        "body": "Un système racinaire vigoureux améliore l'absorption d'eau et d'éléments nutritifs."
+        "body": "Un système racinaire vigoureux améliore l'absorption d'eau et d'éléments nutritifs.",
+        "back": "Des racines fortes et une biomasse précoce posent les fondations de la culture."
       },
       "biomass": {
         "title": "Accumulation de biomasse",
-        "body": "Plus de biomasse à l'automne, c'est plus de potentiel au printemps."
+        "body": "Plus de biomasse à l'automne, c'est plus de potentiel au printemps.",
+        "back": "Une culture bien implantée dispose de plus de ressources pour soutenir la croissance."
       },
       "winter": {
         "title": "Meilleure résistance hivernale",
-        "body": "Une culture bien préparée traverse mieux les conditions hivernales."
+        "body": "Une culture bien préparée traverse mieux les conditions hivernales.",
+        "back": "Des cultures plus vigoureuses et bien implantées affrontent mieux l'hiver."
       },
       "spring": {
         "title": "Reprise plus vigoureuse",
-        "body": "Des fondations solides offrent un potentiel de rendement supérieur."
+        "body": "Des fondations solides offrent un potentiel de rendement supérieur.",
+        "back": "Ce que la culture construit à l'automne prépare la croissance de printemps."
       }
     }
   },
@@ -90,14 +115,14 @@
   },
   "trials": {
     "eyebrow": "Explorer les chantiers",
-    "title": "Carte des essais et tableau de bord météo",
+    "title": "Découvrez les performances de VIXERAN® au champ, dans des parcelles et des conditions de culture variées à travers l'Europe.",
     "lead": "Explorez les essais au champ dans toute l'Europe et découvrez le comportement de VIXERAN® selon les conditions de culture.",
     "tabsLabel": "Vues des données d'essais",
     "tab": {
       "map": "Carte des essais",
       "weather": "Tableau de bord météo"
     },
-    "source": "Source : 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza d'hiver 2022–2025. Produits : VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) et les codes expérimentaux A23780 / A19464. Données météo : export horaire MeteoBlue."
+    "source": "Source : 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza d'hiver 2022–2025. Produits : VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) et les codes expérimentaux A23780 / A19464."
   },
   "map": {
     "ariaLabel": "Carte interactive des essais européens VIXERAN",
@@ -244,7 +269,8 @@
         "role": "Expert Syngenta",
         "origin": "Product Manager"
       }
-    }
+    },
+    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger."
   },
   "contact": {
     "eyebrow": "Prêt à bâtir la vôtre ?",
@@ -256,7 +282,8 @@
       "submit": "Trouver mon interlocuteur",
       "result": "Nous vous mettrons en relation avec l'équipe Syngenta en {{country}}.",
       "disclaimer": "Ce formulaire est un espace réservé de la phase 1 et n'envoie encore aucune donnée."
-    }
+    },
+    "cta": "Talk to an expert"
   },
   "footer": {
     "legalLabel": "Liens légaux",
@@ -267,7 +294,9 @@
     "sitemap": "Plan du site",
     "contact": "Contact",
     "copyright": "© {{year}} Syngenta Group Company.",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "tagline": "Construisez la biomasse. Affrontez l'hiver.",
+    "taglineSecondary": "Protégez votre rendement."
   },
   "legal": {
     "back": "Retour au microsite",
@@ -290,5 +319,71 @@
     "contact": {
       "title": "Contact"
     }
+  },
+  "howItWorks": {
+    "eyebrow": "Key benefits of VIXERAN®",
+    "title": "How VIXERAN® works",
+    "kicker": "Nature's nitrogen. Put to work.",
+    "body": "VIXERAN® uses the proven nitrogen-fixing ",
+    "bodyEmphasis": "bacterium Azotobacter salinestris",
+    "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
+    "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
+    "callouts": {
+      "air": {
+        "title": "From air to crop",
+        "body": "Atmospheric nitrogen"
+      },
+      "fixation": {
+        "title": "Biological nitrogen fixation",
+        "body": "Fixed from the air, delivered to the plant"
+      },
+      "biomass": {
+        "title": "Robust biomass",
+        "body": "Early growth the crop can take into winter"
+      },
+      "plant": {
+        "title": "In the plant",
+        "body": "Leaves, stems & roots"
+      },
+      "establishment": {
+        "title": "Strong establishment",
+        "body": "A foundation built in the first weeks"
+      },
+      "winter": {
+        "title": "Reliable overwintering",
+        "body": "Better prepared for winter conditions"
+      }
+    }
+  },
+  "keyBenefits": {
+    "eyebrow": "Meet the Bio Engineers",
+    "title": "Key benefits of VIXERAN®",
+    "titleLine1": "Key benefits of",
+    "titleBrand": "VIXERAN®",
+    "lead": "By helping Oilseed Rape access an additional source of biologically fixed nitrogen, VIXERAN® supports the crop when it is establishing the foundations for the season ahead.",
+    "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
+    "cards": {
+      "nitrogen": {
+        "title": "Nitrogen efficiency",
+        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support development and increase yields."
+      },
+      "tested": {
+        "title": "Tried and tested",
+        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air."
+      },
+      "apply": {
+        "title": "Easy to apply",
+        "body": "VIXERAN® is applied as a foliar spray using standard equipment."
+      },
+      "robust": {
+        "title": "Robust",
+        "body": "VIXERAN® contains a particularly robust bacterium that can withstand external stress."
+      }
+    }
+  },
+  "nitrogenUptake": {
+    "eyebrow": "How VIXERAN® enhances crop",
+    "title": "How VIXERAN® enhances crop nitrogen uptake",
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® colonise the plant and complement fertilisation during establishment."
   }
 }

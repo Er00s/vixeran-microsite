@@ -15,7 +15,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [RouterLink, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <article class="vx-container vx-section max-w-3xl">
+    <article
+      class="vx-container vx-section max-w-3xl"
+      style="padding-top: calc(var(--spacing-header) + 2rem)"
+    >
       <a routerLink="/" class="text-xs uppercase tracking-widest text-brand-700 hover:underline">
         &larr; {{ 'legal.back' | translate }}
       </a>

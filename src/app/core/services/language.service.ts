@@ -1,5 +1,6 @@
 import { DOCUMENT, Injectable, inject, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 
 export interface AppLanguage {
   /** BCP-47 code used for the JSON file name and the <html lang> attribute. */
@@ -39,18 +40,20 @@ export class LanguageService {
   readonly current = this.currentState.asReadonly();
 
   /** Called once from an APP_INITIALIZER in app.config.ts. */
-  init(): void {
+  init(): Promise<void> {
     this.translate.addLangs(APP_LANGUAGES.map((l) => l.code));
     this.translate.setFallbackLang(DEFAULT_LANGUAGE);
-    this.use(this.detect());
+    return this.use(this.detect());
   }
 
-  use(code: string): void {
+  use(code: string): Promise<void> {
     const lang = APP_LANGUAGES.some((l) => l.code === code) ? code : DEFAULT_LANGUAGE;
-    this.translate.use(lang);
     this.currentState.set(lang);
     this.document.documentElement.lang = lang;
     this.persist(lang);
+    // Wait for the JSON to land. In zoneless CD, firing `use()` without
+    // awaiting it leaves TranslatePipe stuck on the fallback language.
+    return firstValueFrom(this.translate.use(lang)).then(() => undefined);
   }
 
   /** ?lang= query param wins, then localStorage, then the browser, then EN. */

@@ -8,14 +8,14 @@ import { TranslatePipe } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="vx-card flex flex-col gap-1">
-      <span class="font-display text-3xl font-bold leading-none text-brand-700">
+      <span class="font-display text-3xl font-bold leading-none text-brand-400">
         {{ value() }}
       </span>
-      <span class="text-xs font-semibold uppercase tracking-wider text-soil-700">
+      <span class="text-xs font-semibold uppercase tracking-wider text-mist-300">
         {{ labelKey() | translate }}
       </span>
       @if (noteKey()) {
-        <span class="text-[11px] leading-snug text-soil-700/80">{{ noteKey()! | translate }}</span>
+        <span class="text-[11px] leading-snug text-mist-500">{{ noteKey()! | translate }}</span>
       }
     </div>
   `,

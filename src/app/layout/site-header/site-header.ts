@@ -1,58 +1,131 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DOCUMENT,
+  OnDestroy,
+  afterNextRender,
+  inject,
+  signal,
+} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { JOURNEY_SECTIONS } from '../../core/models/section.model';
+import { NAV_SECTIONS } from '../../core/models/section.model';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
 
 /**
- * Sticky top bar: VIXERAN logo, the six journey anchors and the language
- * switcher. Collapses to a burger menu below `md`.
+ * Olive band across the top of the page: VIXERAN logo, the six journey pills,
+ * the language switcher and the Syngenta Biologicals lock-up. The bar is fixed
+ * so the first slide photo runs underneath the wave (no ink gap in the curve).
+ *
+ * The pill of the section currently in the viewport is filled in green. This
+ * replaces the numbered side rail of the previous design, so the highlight
+ * logic lives here now.
  */
 @Component({
   selector: 'app-site-header',
   imports: [TranslatePipe, LanguageSwitcher],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: `
+    :host {
+      display: contents;
+    }
+  `,
   template: `
-    <header class="sticky top-0 z-40 border-b border-sand-200 bg-sand-50/95 backdrop-blur">
-      <div class="vx-container flex h-16 items-center justify-between gap-4">
-        <a href="#welcome" class="flex flex-col leading-none">
-          <span class="font-display text-2xl font-bold tracking-tight text-brand-900">
-            Vixeran<sup class="text-[0.6em]">&reg;</sup>
-          </span>
-          <span class="text-[10px] uppercase tracking-[0.2em] text-brand-700">
-            {{ 'header.tagline' | translate }}
-          </span>
+    <header
+      class="vx-site-header pointer-events-none fixed inset-x-0 top-0 z-40 overflow-visible"
+      [class.vx-header-away]="away()"
+      [attr.inert]="away() ? true : null"
+      style="min-height: var(--spacing-header)"
+    >
+      <!--
+        Organic olive plate traced from slide-01/headerbg.png (1920×351, #6F7F29).
+        The PNG is the right shape, but stretching that raster would pixelate the
+        wave and it has a dark fringe on the alpha edge — so the curve lives in
+        an SVG that hangs below the nav bar and over the slide photo.
+      -->
+      <img
+        aria-hidden="true"
+        class="vx-header-plate pointer-events-none absolute inset-x-0 top-0 z-0
+               w-full select-none"
+        src="assets/all/slide-01/header-plate.svg"
+        alt=""
+      />
+
+      <img
+        aria-hidden="true"
+        class="vx-header-dots pointer-events-none absolute top-0 right-0 z-[1]
+               w-32 select-none md:w-48"
+        src="assets/vectores/topcircles.png"
+        alt=""
+      />
+
+      <div
+        class="vx-header-syngenta-wrap pointer-events-none absolute top-1/2 right-2 z-[2]
+               hidden -translate-y-1/2 sm:block md:right-3"
+      >
+        <img
+          class="vx-header-syngenta h-7 w-auto"
+          src="assets/vectores/syngentabiologicals.png"
+          alt="Syngenta Biologicals"
+        />
+      </div>
+
+      <div
+        class="vx-header-inner pointer-events-auto relative z-[2] mx-auto flex
+               min-h-[var(--spacing-header)] w-full max-w-[1920px] items-center gap-4 px-2 md:px-3"
+      >
+        <a href="#welcome" class="shrink-0" (click)="reveal()">
+          <img
+            class="vx-header-logo h-7 w-auto md:h-8"
+            src="assets/logos/vixeran-rgb-large.png"
+            alt="VIXERAN®"
+          />
         </a>
 
-        <nav class="hidden lg:block" [attr.aria-label]="'header.navLabel' | translate">
-          <ul class="flex items-center gap-6">
+        <nav
+          class="vx-header-nav vx-desk-block hidden flex-1 items-center gap-3"
+          [attr.aria-label]="'header.navLabel' | translate"
+        >
+          <ul class="flex items-center justify-start gap-1">
             @for (section of sections; track section.anchor) {
               <li>
                 <a
-                  class="font-display text-xs font-semibold uppercase tracking-widest
-                         text-soil-900 transition-colors hover:text-brand-700"
+                  class="flex h-[27px] items-center rounded-full px-3 text-[13px] font-medium
+                         leading-none transition-colors"
+                  [class]="
+                    active() === section.anchor
+                      ? 'bg-brand-500 text-white'
+                      : 'text-white/85 hover:bg-white/10 hover:text-white'
+                  "
                   [href]="'#' + section.anchor"
+                  [attr.aria-current]="active() === section.anchor ? 'true' : null"
+                  (click)="hideForSection()"
                 >
                   {{ section.shortKey | translate }}
                 </a>
               </li>
             }
           </ul>
+
+          <app-language-switcher class="shrink-0" />
         </nav>
 
-        <div class="flex items-center gap-3">
-          <app-language-switcher />
+        <div class="vx-header-tools ml-auto flex items-center gap-3 sm:mr-20">
+          <div class="vx-desk-hidden">
+            <app-language-switcher />
+          </div>
+
           <button
             type="button"
-            class="lg:hidden rounded-sm border border-sand-300 px-3 py-2"
+            class="vx-desk-hidden rounded-full border border-white/40 p-2 text-white"
             [attr.aria-expanded]="menuOpen()"
             aria-controls="mobile-nav"
             (click)="toggle()"
           >
             <span class="sr-only">{{ 'header.menu' | translate }}</span>
-            <span aria-hidden="true" class="block h-0.5 w-5 bg-brand-900"></span>
-            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-brand-900"></span>
-            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-brand-900"></span>
+            <span aria-hidden="true" class="block h-0.5 w-5 bg-current"></span>
+            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
+            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
           </button>
         </div>
       </div>
@@ -60,18 +133,18 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
       @if (menuOpen()) {
         <nav
           id="mobile-nav"
-          class="border-t border-sand-200 bg-sand-50 lg:hidden"
+          class="vx-desk-hidden pointer-events-auto relative z-[2] border-t border-white/20 bg-moss-500"
           [attr.aria-label]="'header.navLabel' | translate"
         >
           <ul class="vx-container flex flex-col py-2">
             @for (section of sections; track section.anchor) {
               <li>
                 <a
-                  class="flex items-baseline gap-3 py-2 font-display text-sm uppercase tracking-widest"
+                  class="flex items-baseline gap-3 py-2.5 text-sm text-white"
                   [href]="'#' + section.anchor"
-                  (click)="close()"
+                  (click)="hideForSection()"
                 >
-                  <span class="text-brand-500">{{ section.number }}</span>
+                  <span class="text-xs font-semibold text-brand-300">{{ section.number }}</span>
                   <span>{{ section.shortKey | translate }}</span>
                 </a>
               </li>
@@ -82,15 +155,112 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
     </header>
   `,
 })
-export class SiteHeader {
-  protected readonly sections = JOURNEY_SECTIONS;
+export class SiteHeader implements OnDestroy {
+  private readonly document = inject(DOCUMENT);
+  private readonly window = this.document.defaultView;
+  private observer?: IntersectionObserver;
+  private lastY = 0;
+  private directionLocked = false;
+  private directionLockTimer = 0;
+
+  protected readonly sections = NAV_SECTIONS;
   protected readonly menuOpen = signal(false);
+  protected readonly active = signal<string>('');
+  protected readonly away = signal(false);
+
+  constructor() {
+    afterNextRender(() => {
+      this.observe();
+      this.bindScroll();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+    this.window?.clearTimeout(this.directionLockTimer);
+    this.window?.removeEventListener('scroll', this.onScroll);
+  }
 
   protected toggle(): void {
     this.menuOpen.update((open) => !open);
+    if (this.menuOpen()) {
+      this.away.set(false);
+    }
   }
 
   protected close(): void {
     this.menuOpen.set(false);
+  }
+
+  protected reveal(): void {
+    this.away.set(false);
+    this.menuOpen.set(false);
+  }
+
+  protected hideForSection(): void {
+    this.menuOpen.set(false);
+    this.away.set(true);
+    this.lockDirection();
+  }
+
+  private observe(): void {
+    const targets = NAV_SECTIONS.map((s) => this.document.getElementById(s.anchor)).filter(
+      (el): el is HTMLElement => el !== null,
+    );
+    if (!targets.length || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) {
+          this.active.set(visible.target.id);
+        }
+      },
+      // Bias towards the upper third of the viewport so the highlight moves when
+      // a section's heading reaches the top, not when it fills the screen.
+      { rootMargin: '-20% 0px -60% 0px', threshold: [0, 0.25, 0.5] },
+    );
+
+    targets.forEach((target) => this.observer?.observe(target));
+  }
+
+  private bindScroll(): void {
+    if (!this.window) {
+      return;
+    }
+    this.lastY = this.window.scrollY;
+    this.window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+
+  private readonly onScroll = (): void => {
+    const y = this.window?.scrollY ?? 0;
+    if (this.directionLocked) {
+      this.lastY = y;
+      return;
+    }
+
+    if (y <= 16) {
+      this.away.set(false);
+    } else if (y > this.lastY + 6) {
+      this.away.set(true);
+      this.menuOpen.set(false);
+    } else if (y < this.lastY - 6) {
+      this.away.set(false);
+    }
+
+    this.lastY = y;
+  };
+
+  private lockDirection(): void {
+    this.directionLocked = true;
+    this.window?.clearTimeout(this.directionLockTimer);
+    this.directionLockTimer = this.window?.setTimeout(() => {
+      this.directionLocked = false;
+      this.lastY = this.window?.scrollY ?? this.lastY;
+    }, 900) ?? 0;
   }
 }

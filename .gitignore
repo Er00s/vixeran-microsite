@@ -39,6 +39,10 @@ testem.log
 /typings
 __screenshots__/
 
+# Local design references (Figma exports used while implementing)
+.design-figma/
+.design-crops/
+
 # System files
 .DS_Store
 Thumbs.db

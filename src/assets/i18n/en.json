@@ -14,7 +14,7 @@
     "foundations": {
       "title": "Lay the Foundations",
       "subtitle": "Why autumn establishment matters",
-      "short": "Why autumn matters"
+      "short": "Lay the foundations"
     },
     "bioEngineers": {
       "title": "Meet the Bio Engineers",
@@ -23,48 +23,139 @@
     },
     "trials": {
       "title": "Explore the Construction Sites",
-      "subtitle": "Interactive Trial Map & Weather Dashboard",
-      "short": "Field trials"
+      "subtitle": "Interactive trial map",
+      "short": "Explore the construction sites"
     },
     "success": {
       "title": "Building Success Across Europe",
       "subtitle": "Grower & Expert Experiences",
-      "short": "Success stories"
+      "short": "Building success across Europe"
     },
     "contact": {
-      "title": "Ready to Build Yours?",
-      "subtitle": "Contact your local Syngenta representative",
+      "title": "Ready to build with VIXERAN®?",
+      "subtitle": "Ready to give your crop a stronger start?",
       "short": "Contact"
+    },
+    "howItWorks": {
+      "title": "Key benefits of VIXERAN®",
+      "subtitle": "How VIXERAN® works",
+      "short": "Key benefits of VIXERAN®"
+    },
+    "keyBenefits": {
+      "title": "Meet the Bio Engineers",
+      "subtitle": "Key benefits of VIXERAN®",
+      "short": "Meet the bio engineers"
+    },
+    "nitrogenUptake": {
+      "title": "How VIXERAN® enhances crop",
+      "subtitle": "How VIXERAN® enhances crop nitrogen uptake",
+      "short": "How VIXERAN® enhances crop"
     }
   },
   "welcome": {
     "eyebrow": "Welcome to the Building Site",
     "headlineTop": "Autumn",
-    "headlineBottom": "is Building Season",
-    "subheadline": "Build the foundations of a stronger crop with nitrogen from the air.",
-    "intro": "VIXERAN® helps Oilseed Rape unlock an additional source of biologically fixed nitrogen during the most critical stage of establishment.",
-    "cta": "Discover how it works"
+    "headlineMid": "is building",
+    "headlineBottom": "season",
+    "subheadline": "Build biomass, beat winter, protect your yield",
+    "intro": "VIXERAN® uses the proven nitrogen-fixing ",
+    "introEmphasis": "bacterium Azotobacter salinestris",
+    "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase.",
+    "cta": "How VIXERAN works",
+    "visualLabel": "Campaign key visual: Bio Engineers on the autumn construction site"
+  },
+  "howItWorks": {
+    "eyebrow": "Key benefits of VIXERAN®",
+    "title": "How VIXERAN® works",
+    "kicker": "Nature's nitrogen. Put to work.",
+    "body": "VIXERAN® uses the proven nitrogen-fixing ",
+    "bodyEmphasis": "bacterium Azotobacter salinestris",
+    "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
+    "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
+    "callouts": {
+      "air": {
+        "title": "From air to crop",
+        "body": "Atmospheric nitrogen"
+      },
+      "fixation": {
+        "title": "Biological nitrogen fixation",
+        "body": "Fixed from the air, delivered to the plant"
+      },
+      "biomass": {
+        "title": "Robust biomass",
+        "body": "Early growth the crop can take into winter"
+      },
+      "plant": {
+        "title": "In the plant",
+        "body": "Leaves, stems & roots"
+      },
+      "establishment": {
+        "title": "Strong establishment",
+        "body": "A foundation built in the first weeks"
+      },
+      "winter": {
+        "title": "Reliable overwintering",
+        "body": "Better prepared for winter conditions"
+      }
+    }
+  },
+  "keyBenefits": {
+    "eyebrow": "Meet the Bio Engineers",
+    "title": "Key benefits of VIXERAN®",
+    "titleLine1": "Key benefits of",
+    "titleBrand": "VIXERAN®",
+    "lead": "By helping Oilseed Rape access an additional source of biologically fixed nitrogen, VIXERAN® supports the crop when it is establishing the foundations for the season ahead.",
+    "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
+    "cards": {
+      "nitrogen": {
+        "title": "Nitrogen efficiency",
+        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support development and increase yields."
+      },
+      "tested": {
+        "title": "Tried and tested",
+        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air."
+      },
+      "apply": {
+        "title": "Easy to apply",
+        "body": "VIXERAN® is applied as a foliar spray using standard equipment."
+      },
+      "robust": {
+        "title": "Robust",
+        "body": "VIXERAN® contains a particularly robust bacterium that can withstand external stress."
+      }
+    }
+  },
+  "nitrogenUptake": {
+    "eyebrow": "How VIXERAN® enhances crop",
+    "title": "How VIXERAN® enhances crop nitrogen uptake",
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® colonise the plant and complement fertilisation during establishment."
   },
   "foundations": {
     "eyebrow": "Lay the Foundations",
-    "title": "Why Autumn Establishment Matters",
+    "title": "Why autumn establishment matters",
     "lead": "The first weeks after emergence define future performance.",
+    "flip": "Flip card",
+    "unflip": "Return card",
     "pillars": {
       "roots": {
-        "title": "Strong root development",
-        "body": "A strong root system improves nutrient and water uptake."
+        "title": "Robust establishment",
+        "body": "Strong roots and early biomass build the foundation for the crop ahead.",
+        "back": "A vigorous root system improves water and nutrient uptake through the season."
       },
       "biomass": {
-        "title": "Biomass accumulation",
-        "body": "More biomass in autumn means more potential in spring."
+        "title": "Yield stability",
+        "body": "A well-established crop has more resources to sustain growth through the season.",
+        "back": "More autumn biomass means more resources to carry into spring."
       },
       "winter": {
-        "title": "Better winter resilience",
-        "body": "Better prepared crops are more resilient to winter conditions."
+        "title": "More resilience for winter",
+        "body": "Stronger, well-established crops are better prepared to face winter conditions.",
+        "back": "Better-prepared crops come through winter with greater resilience."
       },
       "spring": {
-        "title": "Stronger spring performance",
-        "body": "Strong foundations deliver higher yield potential."
+        "title": "More potential in spring",
+        "body": "What the crop builds in autumn sets the stage for spring growth.",
+        "back": "Solid autumn foundations set up stronger yield potential."
       }
     }
   },
@@ -90,14 +181,13 @@
   },
   "trials": {
     "eyebrow": "Explore the Construction Sites",
-    "title": "Interactive Trial Map & Weather Dashboard",
+    "title": "Discover field-proven VIXERAN® performance across diverse fields and growing conditions throughout Europe.",
     "lead": "Explore field trials across Europe and see how VIXERAN® performs in different growing conditions.",
     "tabsLabel": "Trial data views",
     "tab": {
       "map": "Trial map",
       "weather": "Weather dashboard"
-    },
-    "source": "Source: 51 ARM Single Trial Reports (AT, DE, DK, FR, GB, LT, PL, SE), winter oilseed rape 2022–2025. Products: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) and the experimental codes A23780 / A19464. Weather data: MeteoBlue hourly export."
+    }
   },
   "map": {
     "ariaLabel": "Interactive map of European VIXERAN field trials",
@@ -225,7 +315,8 @@
   },
   "success": {
     "eyebrow": "Building Success Across Europe",
-    "title": "Grower & Expert Experiences",
+    "title": "Building success across Europe",
+    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger.",
     "stats": {
       "trials": "Trial locations",
       "seasons": "Seasons of data",
@@ -247,9 +338,10 @@
     }
   },
   "contact": {
-    "eyebrow": "Ready to Build Yours?",
-    "title": "Contact Your Local Syngenta Representative",
-    "lead": "Contact your local Syngenta representative and build stronger crops this autumn.",
+    "eyebrow": "Ready to build with VIXERAN®?",
+    "title": "Ready to give your crop a stronger start?",
+    "lead": "Discover how VIXERAN® can support your Oilseed Rape strategy this autumn. Talk to your local Syngenta representative to find out more about VIXERAN®, its application and how it can complement your fertilisation strategy.",
+    "cta": "Talk to an expert",
     "form": {
       "country": "Country",
       "countryPlaceholder": "Select your country",
@@ -267,7 +359,9 @@
     "sitemap": "Sitemap",
     "contact": "Contact",
     "copyright": "© {{year}} Syngenta Group Company.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "tagline": "Build biomass. Beat winter.",
+    "taglineSecondary": "Protect your yield."
   },
   "legal": {
     "back": "Back to the microsite",

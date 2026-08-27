@@ -1,78 +1,95 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { MediaPlaceholder } from '../../shared/components/media-placeholder';
-import { SectionShell } from '../../shared/components/section-shell';
+import { EstablishmentCard } from './cards/establishment-card';
+import { SpringCard } from './cards/spring-card';
+import { StabilityCard } from './cards/stability-card';
+import { WinterCard } from './cards/winter-card';
 
-interface FoundationPillar {
-  icon: string;
-  titleKey: string;
-  bodyKey: string;
-}
-
-/** 02 - Lay the Foundations / Why Autumn Establishment Matters. */
+/**
+ * 04 - Lay the Foundations / Why autumn establishment matters.
+ *
+ * Full-bleed sunrise plate with copy on the sky (top left) and four
+ * independent flip cards along the soil band.
+ */
 @Component({
   selector: 'app-foundations-section',
-  imports: [TranslatePipe, SectionShell, MediaPlaceholder],
+  imports: [TranslatePipe, EstablishmentCard, StabilityCard, WinterCard, SpringCard],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <app-section-shell
-      anchor="foundations"
-      number="02"
-      eyebrowKey="foundations.eyebrow"
-      titleKey="foundations.title"
-      leadKey="foundations.lead"
-      sectionClass="bg-white"
+    <section
+      id="foundations"
+      class="vx-slide relative overflow-hidden"
     >
-      <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-        <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          @for (pillar of pillars; track pillar.titleKey) {
-            <li class="border-l border-sand-200 pl-4">
-              <app-media-placeholder [label]="pillar.icon" ratio="1 / 1" />
-              <h3 class="mt-4 text-base leading-tight text-brand-900">
-                {{ pillar.titleKey | translate }}
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-soil-700">
-                {{ pillar.bodyKey | translate }}
-              </p>
-            </li>
-          }
-        </ul>
+      <img
+        src="assets/all/slide-04/fondo.webp"
+        class="absolute inset-0 size-full object-cover object-[center_top]"
+        loading="lazy"
+        alt=""
+        aria-hidden="true"
+      />
 
-        <app-media-placeholder
-          label="Underground root illustration"
-          hint="Soil cross-section with roots + Bio Engineers"
-          ratio="3 / 4"
-        />
+      <img
+        aria-hidden="true"
+        class="vx-found-bubble vx-found-bubble--a pointer-events-none absolute
+               select-none rounded-full object-cover"
+        src="assets/all/slide-04/burbuja-N.webp"
+        alt=""
+      />
+      <img
+        aria-hidden="true"
+        class="vx-found-bubble vx-found-bubble--b pointer-events-none absolute
+               select-none rounded-full object-cover"
+        src="assets/all/slide-04/burbuja-N.webp"
+        alt=""
+      />
+      <img
+        aria-hidden="true"
+        class="vx-found-bubble vx-found-bubble--c pointer-events-none absolute
+               select-none rounded-full object-cover"
+        src="assets/all/slide-04/burbuja-N.webp"
+        alt=""
+      />
+
+      <div
+        class="vx-found-stage relative mx-auto flex h-full min-h-svh
+               w-full max-w-[1920px] flex-col justify-between gap-8 px-5 py-10
+               md:px-10 md:py-12"
+      >
+        <div class="vx-found-copy max-w-xl">
+          <p class="vx-eyebrow">04. {{ 'foundations.eyebrow' | translate }}</p>
+
+          <h2
+            class="vx-found-title mt-5 text-3xl font-semibold leading-[1.1] text-soil-900
+                   md:text-5xl md:leading-[1.1]"
+          >
+            {{ 'foundations.title' | translate }}
+          </h2>
+
+          <p
+            class="vx-found-lead mt-3 max-w-lg text-lg font-semibold leading-snug text-soil-900
+                   md:text-2xl"
+          >
+            {{ 'foundations.lead' | translate }}
+          </p>
+        </div>
+
+        <ul class="vx-found-grid grid w-full grid-cols-2 gap-3 sm:gap-4">
+          <li>
+            <app-establishment-card />
+          </li>
+          <li>
+            <app-stability-card />
+          </li>
+          <li>
+            <app-winter-card />
+          </li>
+          <li>
+            <app-spring-card />
+          </li>
+        </ul>
       </div>
-    </app-section-shell>
+    </section>
   `,
 })
-export class FoundationsSection {
-  /**
-   * The four establishment pillars from the approved structure. Copy lives in
-   * the i18n files; only the ordering and the icon slot are structural.
-   */
-  protected readonly pillars: readonly FoundationPillar[] = [
-    {
-      icon: 'Icon: root system',
-      titleKey: 'foundations.pillars.roots.title',
-      bodyKey: 'foundations.pillars.roots.body',
-    },
-    {
-      icon: 'Icon: biomass',
-      titleKey: 'foundations.pillars.biomass.title',
-      bodyKey: 'foundations.pillars.biomass.body',
-    },
-    {
-      icon: 'Icon: snowflake',
-      titleKey: 'foundations.pillars.winter.title',
-      bodyKey: 'foundations.pillars.winter.body',
-    },
-    {
-      icon: 'Icon: spring shoot',
-      titleKey: 'foundations.pillars.spring.title',
-      bodyKey: 'foundations.pillars.spring.body',
-    },
-  ];
-}
+export class FoundationsSection {}

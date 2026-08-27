@@ -15,65 +15,353 @@
    e.g. --color-brand-700 -> bg-brand-700 / text-brand-700
    ------------------------------------------------------------ */
 @theme {
-  /* Syngenta / campaign greens */
-  --color-brand-50: #eef5f0;
-  --color-brand-100: #d6e8dc;
-  --color-brand-300: #7bc47f;
-  --color-brand-500: #2e8b57;
-  --color-brand-700: #0f6d3e;
-  --color-brand-900: #0b3d24;
+  /* Campaign greens, sampled from the approved key visual.
+     brand-500 is the single accent used by every pill, button and highlight. */
+  --color-brand-300: #a0d88e;
+  --color-brand-400: #84cc6d;
+  --color-brand-500: #68c14c;
+  --color-brand-600: #527c34;
+  --color-brand-700: #2f731a;
+  --color-brand-800: #24571a;
+  --color-brand-900: #15300f;
 
-  /* Campaign neutrals - the paper / sand background of the key visual */
-  --color-sand-50: #fbf9f3;
-  --color-sand-100: #f4f0e4;
-  --color-sand-200: #e8e2d1;
-  --color-sand-300: #d8cfb8;
+  /* Olive family: the header band and headlines set over the sunrise photo */
+  --color-moss-500: #6f7f29;
+  --color-olive-600: #5d7b05;
 
-  /* Construction-site accents */
-  --color-helmet-400: #f7c948;
-  --color-helmet-500: #f5b200;
-  --color-soil-700: #5a4630;
-  --color-soil-900: #33281a;
+  /* Dark canvas the whole site now sits on */
+  --color-ink-950: #141414;
+  --color-ink-900: #1e1e1e;
+  --color-ink-800: #262626;
+  --color-ink-700: #333333;
 
-  /* Data-viz scale (shared by the trial map and the weather dashboard) */
-  --color-gain-strong: #0b6623;
-  --color-gain-mid: #2e8b57;
-  --color-gain-light: #7bc47f;
-  --color-gain-neutral: #bdbdbd;
+  /* Readable neutrals over the dark canvas */
+  --color-mist-100: #f4f6f2;
+  --color-mist-300: #c9d1c4;
+  --color-mist-500: #9aa396;
+
+  /* Data-viz scale (shared by the trial map and its legend) */
+  --color-gain-strong: #1f8a3c;
+  --color-gain-mid: #68c14c;
+  --color-gain-light: #a0d88e;
+  --color-gain-neutral: #8a8a8a;
   --color-loss-light: #e08a8a;
   --color-loss-mid: #dc3545;
   --color-loss-strong: #8b0000;
 
-  /* Typography */
-  --font-display: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
-  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* Typography - the design uses Poppins for both display and body copy */
+  --font-display: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 
-  /* Layout */
+  /* Layout - header bar is ~115px in the 1920 Figma crop.
+     `desk` is the 1920 artboard breakpoint: below it we keep a compact header. */
   --spacing-side-nav: 15rem;
+  --spacing-header: 4.5rem;
+}
+
+/* Tokens from the previous light theme. Sections still to be migrated depend on
+   them, so they stay until the last one is ported, then this block goes away. */
+@theme {
+  --color-sand-50: #fbf9f3;
+  --color-sand-100: #f4f0e4;
+  --color-sand-200: #e8e2d1;
+  --color-sand-300: #d8cfb8;
+  --color-helmet-400: #f7c948;
+  --color-helmet-500: #f5b200;
+  --color-soil-700: #5a4630;
+  --color-soil-900: #33281a;
 }
 
 /* ------------------------------------------------------------
    Base
    ------------------------------------------------------------ */
+@media (min-width: 768px) {
+  :root {
+    --hero-minion-clearance: 20rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --spacing-header: 7.1875rem;
+    --hero-minion-clearance: 28rem;
+  }
+}
+
+/* Intro + CTA stay flush right and never run into the mascot on the left. */
+.vx-hero-bottom {
+  max-width: calc(100% - var(--hero-minion-clearance, 12.5rem));
+}
+
+/*
+  Header olive plate: viewBox 1920×228 from the headerbg.png wave.
+  Absolute, so it can hang over the slide photo without growing the sticky bar.
+  Height tracks viewport width so the curve is not squashed into the nav bar.
+*/
+.vx-site-header {
+  container-type: inline-size;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.vx-site-header.vx-header-away {
+  /* More than the bar height so the overflowing wave plate leaves the viewport. */
+  transform: translate3d(0, calc(-1 * (var(--spacing-header) + 6rem)), 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-site-header {
+    transition: none;
+  }
+}
+
+.vx-header-plate {
+  display: block;
+  width: 100%;
+  height: max(var(--spacing-header), calc(100cqw * 144 / 1920));
+  object-fit: fill;
+}
+
+/* 1920 Figma layout. Kept as raw CSS so these rules always win over `md:` utilities. */
+@media (width >= 1800px) {
+  .vx-desk-block {
+    display: flex;
+  }
+
+  .vx-desk-hidden {
+    display: none;
+  }
+
+  .vx-header-inner {
+    padding-inline: 20px;
+  }
+
+  .vx-header-logo {
+    height: 64px;
+  }
+
+  .vx-header-syngenta-wrap {
+    right: 20px;
+  }
+
+  .vx-header-syngenta {
+    height: 44px;
+  }
+
+  .vx-header-dots {
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: auto;
+  }
+
+  .vx-header-nav {
+    padding-right: 6rem;
+  }
+
+  .vx-hero-stage,
+  .vx-how-stage,
+  .vx-benefits-stage,
+  .vx-found-stage {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .vx-hero-stage {
+    padding: 0;
+  }
+
+  .vx-hero-minion {
+    left: 72px;
+    bottom: -16px;
+    width: 336px;
+    height: auto;
+  }
+
+  .vx-hero-copy {
+    /* Header is fixed over the photo, so this offset starts below the olive bar. */
+    margin-top: calc(var(--spacing-header) + 108px);
+    margin-left: 185px;
+    max-width: 520px;
+  }
+
+  .vx-hero-title {
+    font-size: 91px;
+    font-weight: 500;
+    line-height: 91px;
+  }
+
+  .vx-hero-sub {
+    margin-top: 13px;
+    max-width: 520px;
+    font-size: 37px;
+    line-height: 45px;
+  }
+
+  .vx-hero-bottom {
+    position: absolute;
+    right: 40px;
+    bottom: 16px;
+    left: auto;
+    width: min(1320px, calc(100% - var(--hero-minion-clearance)));
+    max-width: calc(100% - var(--hero-minion-clearance));
+    padding-top: 0;
+    margin-left: auto;
+  }
+
+  .vx-hero-intro {
+    max-width: 1000px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .vx-hero-cta {
+    height: 52px;
+    width: 280px;
+    padding-inline: 0;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .vx-how-stage {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 72px 72px 40px 191px;
+  }
+
+  .vx-how-copy {
+    margin-top: 12px;
+    max-width: 520px;
+  }
+
+  .vx-how-title {
+    margin-top: 28px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 69px;
+  }
+
+  .vx-how-kicker {
+    margin-top: 12px;
+    max-width: 480px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .vx-how-body {
+    margin-top: 28px;
+    max-width: 500px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .vx-how-grid {
+    width: 1000px;
+    max-width: 1000px;
+    margin-top: 72px;
+    margin-right: 16px;
+    column-gap: 160px;
+    row-gap: 56px;
+  }
+
+  .vx-how-card-copy h3 {
+    font-size: 15px;
+  }
+
+  .vx-how-card-copy p {
+    font-size: 13px;
+  }
+
+  .vx-how-minion {
+    left: 18%;
+    bottom: -8px;
+    width: 300px;
+  }
+
+  .vx-benefits-stage {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 48px 64px 40px 191px;
+  }
+
+  .vx-benefits-copy {
+    max-width: 440px;
+    padding-top: 8px;
+  }
+
+  .vx-benefits-title {
+    margin-top: 28px;
+    max-width: 420px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 69px;
+  }
+
+  .vx-benefits-lead {
+    margin-top: 24px;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .vx-benefits-grid {
+    width: auto;
+    max-width: none;
+    grid-template-columns: repeat(4, 287px);
+    gap: 18px;
+    margin-top: 72px;
+  }
+
+  .vx-benefits-card {
+    width: 287px;
+  }
+
+  .vx-found-stage {
+    padding: 48px 64px 40px 191px;
+  }
+
+  .vx-found-title {
+    margin-top: 28px;
+    max-width: 640px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 69px;
+  }
+
+  .vx-found-lead {
+    margin-top: 16px;
+    max-width: 520px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* offset for the sticky top bar when jumping to #anchors */
-    scroll-padding-top: 5rem;
+    /* Header is a fixed overlay that tucks away on nav jumps, so anchors
+       land at the top of the viewport rather than under a reserved bar. */
+    scroll-padding-top: 0;
   }
 
   body {
-    @apply bg-sand-50 font-sans text-soil-900 antialiased;
+    @apply bg-ink-900 font-sans text-mist-100 antialiased;
   }
 
+  /* Headlines are sentence case in the new design, not the previous condensed caps */
   h1,
   h2,
   h3 {
-    @apply font-display uppercase tracking-tight;
+    @apply font-display font-semibold tracking-[-0.01em];
   }
 
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-700;
+    @apply outline-2 outline-offset-2 outline-brand-500;
   }
 }
 
@@ -85,36 +373,481 @@
    `.vx-btn`. Keep the three button rules in sync when editing.
    ------------------------------------------------------------ */
 @utility vx-container {
-  @apply mx-auto w-full max-w-[1440px] px-5 md:px-10;
+  /* Figma artboard is 1920; copy starts ~191px in from the left edge. */
+  @apply mx-auto w-full max-w-[1920px] px-5 md:px-10 xl:px-[191px];
 }
 
 @utility vx-section {
-  @apply scroll-mt-20 py-16 md:py-24;
+  @apply relative scroll-mt-[var(--spacing-header)] py-16 md:py-24;
 }
 
+/* Full-bleed slide. The header is fixed overlay, so slide height is the
+   viewport (and the 1080 Figma frame on desk) — do not subtract the bar. */
+@utility vx-slide-bg {
+  @apply relative overflow-hidden bg-ink-900;
+}
+
+.vx-slide,
+.vx-slide-bg {
+  min-height: 100svh;
+}
+
+@media (width >= 1800px) {
+  .vx-slide,
+  .vx-slide-bg {
+    min-height: 1080px;
+  }
+
+  /* Figma 1920×1080 frames. Shell sections (map, quotes) may grow past this. */
+  .vx-slide {
+    height: 1080px;
+    max-height: 1080px;
+  }
+}
+
+/* Section labels are solid green pills in the new design ("05. EXPLORE THE
+   CONSTRUCTION SITES"), no longer plain uppercase text. */
 @utility vx-eyebrow {
-  @apply font-display text-sm font-semibold uppercase tracking-[0.18em] text-brand-700;
+  /* Figma Rectangle 10: 53px tall pill, 20px Poppins text. */
+  @apply inline-flex h-auto items-center rounded-full bg-brand-500 px-6 py-3
+    text-[13px] font-semibold uppercase leading-none tracking-[0.04em] text-white
+    md:h-[53px] md:px-8 md:py-0 md:text-[20px];
 }
 
 @utility vx-btn {
-  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
-    uppercase tracking-widest transition-colors duration-200;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm
+    font-semibold uppercase tracking-[-0.02em] transition-colors duration-200;
 }
 
 @utility vx-btn-primary {
-  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
-    uppercase tracking-widest transition-colors duration-200;
-  @apply bg-brand-700 text-white hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-40;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm
+    font-semibold uppercase tracking-[-0.02em] transition-colors duration-200;
+  @apply bg-brand-500 text-white hover:bg-brand-400 disabled:cursor-not-allowed disabled:opacity-40;
 }
 
 @utility vx-btn-ghost {
-  @apply inline-flex items-center gap-2 rounded-sm px-6 py-3 font-display text-sm font-semibold
-    uppercase tracking-widest transition-colors duration-200;
-  @apply border border-brand-700 text-brand-700 hover:bg-brand-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm
+    font-semibold uppercase tracking-[-0.02em] transition-colors duration-200;
+  @apply border border-brand-500 text-brand-300 hover:bg-brand-500 hover:text-white;
+}
+
+/* Frosted panel used by every content card that sits over a photograph */
+@utility vx-glass-card {
+  @apply rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-md;
+}
+
+/* Slide 02 callout. Geometry matches filete recuadro.svg (784.6 × 345.9).
+   Left column: opening + orb on the inner (right) edge.
+   Right column (.vx-how-card--flip): mirrored so orbs form a centre spine. */
+.vx-how-grid {
+  overflow: visible;
+}
+
+.vx-how-card {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 784.6 / 345.9;
+  overflow: visible;
+}
+
+.vx-how-fill {
+  position: absolute;
+  inset: 5.8% 2.3% 5.3% 3%;
+  border-radius: 8.2% / 18.5%;
+  background: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.vx-how-frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.vx-how-card-copy {
+  position: absolute;
+  top: 18%;
+  right: 30%;
+  bottom: 16%;
+  left: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vx-how-card-copy h3 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.vx-how-card-copy p {
+  margin-top: 0.2em;
+  font-size: 12px;
+  line-height: 1.3;
+  color: rgb(255 255 255 / 0.8);
+}
+
+/* Orb sits on the open corner of the filete and hangs outside the card. */
+.vx-how-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  width: 32%;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: translate(45%, -30%);
+}
+
+.vx-how-icon-orb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vx-how-icon-glyph {
+  position: relative;
+  z-index: 1;
+  width: 46%;
+  height: 46%;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .vx-how-card--flip .vx-how-frame {
+    transform: scaleX(-1);
+  }
+
+  .vx-how-card--flip .vx-how-fill {
+    inset: 5.8% 3% 5.3% 2.3%;
+  }
+
+  .vx-how-card--flip .vx-how-icon {
+    right: auto;
+    left: 0;
+    transform: translate(-45%, -30%);
+  }
+
+  .vx-how-card--flip .vx-how-card-copy {
+    right: 8%;
+    left: 30%;
+  }
+}
+
+/* Slide 03: tall notched card. Geometry matches cuadro.svg (287.3 × 505.9). */
+.vx-benefits-card {
+  aspect-ratio: 287.3 / 505.9;
+  container-type: inline-size;
+}
+
+.vx-benefits-fill {
+  position: absolute;
+  inset: 11.35% 4.2% 2.2% 4%;
+  border-radius: 11cqi;
+  background: rgb(0 0 0 / 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.vx-benefits-icon {
+  position: absolute;
+  top: 2.69%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  width: 30.63%;
+  aspect-ratio: 1;
+  translate: -50% 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.vx-benefits-glyph {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+}
+
+.vx-benefits-glyph--n {
+  width: 168%;
+  height: 168%;
+  max-width: none;
+}
+
+.vx-benefits-copy-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 45cqi 11cqi 10cqi;
+  text-align: center;
+}
+
+.vx-benefits-copy-inner h3 {
+  font-size: clamp(0.8rem, 7.4cqi, 1.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.vx-benefits-rule {
+  width: 52%;
+  margin-top: 3cqi;
+  height: auto;
+}
+
+.vx-benefits-copy-inner p {
+  margin-top: 3.5cqi;
+  font-size: clamp(0.68rem, 4.7cqi, 0.9rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgb(255 255 255 / 0.92);
+}
+
+/* Slide 04: tall notched flip card. Geometry matches cuadros.svg (352 × 512).
+   Desktop: two pairs flanking the seedling — same Y alignment, wide centre gap. */
+.vx-found-grid {
+  overflow: visible;
+  align-items: end;
+}
+
+@media (min-width: 1024px) {
+  .vx-found-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(8rem, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0;
+  }
+
+  .vx-found-grid > li:nth-child(1) {
+    grid-column: 1;
+  }
+
+  .vx-found-grid > li:nth-child(2) {
+    grid-column: 2;
+  }
+
+  .vx-found-grid > li:nth-child(3) {
+    grid-column: 4;
+  }
+
+  .vx-found-grid > li:nth-child(4) {
+    grid-column: 5;
+  }
+}
+
+@media (width >= 1800px) {
+  .vx-found-grid {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    grid-template-columns: 280px 280px minmax(240px, 1fr) 280px 280px;
+    column-gap: 18px;
+    row-gap: 0;
+    align-items: end;
+  }
+}
+
+.vx-found-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 352 / 512;
+  container-type: inline-size;
+  perspective: 1200px;
+}
+
+.vx-found-card__rotator {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.vx-found-shell.is-flipped .vx-found-card__rotator {
+  transform: rotateY(180deg);
+}
+
+.vx-found-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.vx-found-card__face--back {
+  transform: rotateY(180deg);
+}
+
+.vx-found-card__fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgb(255 255 255 / 0);
+  backdrop-filter: blur(2px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  mask-image: url('./assets/all/slide-04/card-fill.svg');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('./assets/all/slide-04/card-fill.svg');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  transition: opacity 0.28s ease;
+}
+
+.vx-found-shell.is-flipped > .vx-found-card__fill {
+  opacity: 0;
+}
+
+.vx-found-card__fill--solid {
+  background: var(--color-brand-500);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.vx-found-card__frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Circle from cuadros.svg: cx 73.9, cy 114.6, r 41.6 on 352×512. */
+.vx-found-card__icon {
+  position: absolute;
+  top: 14.26%;
+  left: 9.18%;
+  z-index: 2;
+  display: flex;
+  width: 23.64%;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vx-found-card__glyph {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+}
+
+.vx-found-card__glyph--tree {
+  width: 70%;
+  height: 70%;
+}
+
+.vx-found-card__copy {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  bottom: 14%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vx-found-card__copy-inner {
+  display: flex;
+  width: 58%;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.vx-found-card__copy h3 {
+  width: 100%;
+  font-size: clamp(0.85rem, 7.2cqi, 1.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  color: #fff;
+}
+
+.vx-found-card__rule {
+  display: block;
+  width: 38%;
+  height: 2px;
+  margin-top: 3.5cqi;
+  background: var(--color-brand-500);
+}
+
+.vx-found-card__face--back .vx-found-card__rule {
+  background: #fff;
+}
+
+.vx-found-card__copy p {
+  width: 100%;
+  margin-top: 3.5cqi;
+  font-size: clamp(0.7rem, 5cqi, 0.9rem);
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  color: rgb(255 255 255 / 0.92);
+}
+
+.vx-found-card__flip {
+  position: absolute;
+  top: 87.89%;
+  left: 69.06%;
+  z-index: 3;
+  width: 19.6%;
+  height: 8.59%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vx-found-bubble {
+  mix-blend-mode: screen;
+}
+
+.vx-found-bubble--a {
+  top: 8%;
+  right: 18%;
+  width: 72px;
+  height: 72px;
+}
+
+.vx-found-bubble--b {
+  top: 22%;
+  right: 32%;
+  width: 44px;
+  height: 44px;
+}
+
+.vx-found-bubble--c {
+  top: 14%;
+  right: 8%;
+  width: 32px;
+  height: 32px;
 }
 
 @utility vx-card {
-  @apply rounded-md border border-sand-200 bg-white p-5 shadow-sm;
+  @apply rounded-2xl border border-white/10 bg-ink-800 p-6;
 }
 
 /* ------------------------------------------------------------

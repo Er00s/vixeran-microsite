@@ -6,7 +6,7 @@ import { MediaPlaceholder } from '../../shared/components/media-placeholder';
 import { SectionShell } from '../../shared/components/section-shell';
 import { StatTile } from '../../shared/components/stat-tile';
 
-/** 05 - Building Success Across Europe / Grower & Expert Experiences. */
+/** 07 - Building success across Europe / Grower & Expert Experiences. */
 @Component({
   selector: 'app-success-section',
   imports: [TranslatePipe, SectionShell, StatTile, MediaPlaceholder],
@@ -14,48 +14,39 @@ import { StatTile } from '../../shared/components/stat-tile';
   template: `
     <app-section-shell
       anchor="success"
-      number="05"
+      number="07"
       eyebrowKey="success.eyebrow"
       titleKey="success.title"
-      sectionClass="bg-white"
+      leadKey="success.lead"
+      tone="photo"
+      background="assets/img/bg7.png"
+      sectionClass="vx-slide-bg"
     >
-      <div class="grid gap-10 lg:grid-cols-[2fr_1fr] lg:items-start">
-        <ul class="grid gap-6 md:grid-cols-2">
-          @for (t of testimonials; track t.quoteKey) {
-            <li class="vx-card flex flex-col">
-              <span aria-hidden="true" class="font-display text-4xl leading-none text-brand-300">
-                &ldquo;
-              </span>
-              <blockquote class="mt-2 grow text-sm italic leading-relaxed text-soil-900">
-                {{ t.quoteKey | translate }}
-              </blockquote>
-              <footer class="mt-5 border-t border-sand-200 pt-3">
-                <p class="font-display text-xs font-semibold uppercase tracking-widest text-brand-900">
-                  {{ t.roleKey | translate }}
-                </p>
-                <p class="text-xs text-soil-700">{{ t.originKey | translate }}</p>
-              </footer>
-            </li>
-          }
-        </ul>
+      <ul class="grid gap-6 md:grid-cols-2">
+        @for (t of testimonials; track t.quoteKey) {
+          <li class="vx-glass-card flex min-h-80 flex-col bg-ink-900/60">
+            <div class="mb-5 h-40 overflow-hidden rounded-xl">
+              <app-media-placeholder [label]="t.photoLabel" hint="Portrait still, 4:5" ratio="16 / 9" />
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-white">
+              {{ t.roleKey | translate }}
+              <span class="text-mist-300"> {{ t.originKey | translate }}</span>
+            </p>
+            <blockquote class="mt-3 grow text-sm leading-relaxed text-mist-100">
+              {{ t.quoteKey | translate }}
+            </blockquote>
+          </li>
+        }
+      </ul>
 
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          <app-stat-tile [value]="trialCount()" labelKey="success.stats.trials" />
-          <app-stat-tile [value]="seasonCount()" labelKey="success.stats.seasons" />
-          <app-stat-tile [value]="countryCount()" labelKey="success.stats.countries" />
-          <app-stat-tile
-            [value]="positiveShare()"
-            labelKey="success.stats.positive"
-            noteKey="success.stats.positiveNote"
-          />
-        </div>
-      </div>
-
-      <div class="mt-10">
-        <app-media-placeholder
-          label="Field photography strip"
-          hint="Established OSR crop, harvest + grower portraits"
-          ratio="21 / 9"
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <app-stat-tile [value]="trialCount()" labelKey="success.stats.trials" />
+        <app-stat-tile [value]="seasonCount()" labelKey="success.stats.seasons" />
+        <app-stat-tile [value]="countryCount()" labelKey="success.stats.countries" />
+        <app-stat-tile
+          [value]="positiveShare()"
+          labelKey="success.stats.positive"
+          noteKey="success.stats.positiveNote"
         />
       </div>
     </app-section-shell>
@@ -64,20 +55,18 @@ import { StatTile } from '../../shared/components/stat-tile';
 export class SuccessSection {
   private readonly trialsService = inject(TrialsService);
 
-  /**
-   * Testimonials are placeholders until Marketing signs off the real quotes.
-   * They read from i18n so each market can swap in its own grower.
-   */
   protected readonly testimonials = [
     {
       quoteKey: 'success.testimonials.grower.quote',
       roleKey: 'success.testimonials.grower.role',
       originKey: 'success.testimonials.grower.origin',
+      photoLabel: 'Grower portrait',
     },
     {
       quoteKey: 'success.testimonials.expert.quote',
       roleKey: 'success.testimonials.expert.role',
       originKey: 'success.testimonials.expert.origin',
+      photoLabel: 'Syngenta expert portrait',
     },
   ] as const;
 
@@ -85,7 +74,6 @@ export class SuccessSection {
   protected readonly seasonCount = computed(() => this.trialsService.kpis()?.seasonCount ?? '—');
   protected readonly countryCount = computed(() => this.trialsService.kpis()?.countryCount ?? '—');
 
-  /** Share of trials with a positive yield response, e.g. "21 / 40". */
   protected readonly positiveShare = computed(() => {
     const kpis = this.trialsService.kpis();
     return kpis ? `${kpis.positiveYieldTrials} / ${kpis.trialsWithYieldData}` : '—';

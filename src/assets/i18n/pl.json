@@ -14,7 +14,7 @@
     "foundations": {
       "title": "Połóż fundamenty",
       "subtitle": "Dlaczego jesienne krzewienie ma znaczenie",
-      "short": "Dlaczego jesień"
+      "short": "Połóż fundamenty"
     },
     "bioEngineers": {
       "title": "Poznaj bioinżynierów",
@@ -23,18 +23,33 @@
     },
     "trials": {
       "title": "Zwiedź place budowy",
-      "subtitle": "Interaktywna mapa doświadczeń i panel pogodowy",
-      "short": "Doświadczenia"
+      "subtitle": "Interaktywna mapa doświadczeń",
+      "short": "Odkryj place budowy"
     },
     "success": {
       "title": "Sukces w całej Europie",
       "subtitle": "Doświadczenia rolników i ekspertów",
-      "short": "Historie sukcesu"
+      "short": "Sukcesy w całej Europie"
     },
     "contact": {
-      "title": "Gotowy, by zbudować swój?",
-      "subtitle": "Skontaktuj się z przedstawicielem Syngenta",
+      "title": "Gotowy budować z VIXERAN®?",
+      "subtitle": "Gotowy dać uprawie mocniejszy start?",
       "short": "Kontakt"
+    },
+    "howItWorks": {
+      "title": "Kluczowe korzyści VIXERAN®",
+      "subtitle": "Jak działa VIXERAN®",
+      "short": "Kluczowe korzyści VIXERAN®"
+    },
+    "keyBenefits": {
+      "title": "Poznaj bioinżynierów",
+      "subtitle": "Kluczowe korzyści VIXERAN®",
+      "short": "Poznaj bioinżynierów"
+    },
+    "nitrogenUptake": {
+      "title": "VIXERAN® a pobieranie azotu",
+      "subtitle": "Jak VIXERAN® zwiększa pobieranie azotu przez roślinę",
+      "short": "VIXERAN® a pobieranie azotu"
     }
   },
   "welcome": {
@@ -43,28 +58,38 @@
     "headlineBottom": "to sezon budowy",
     "subheadline": "Zbuduj fundamenty silniejszej plantacji, wykorzystując azot z powietrza.",
     "intro": "VIXERAN® zapewnia rzepakowi dodatkowe źródło azotu wiązanego biologicznie w najbardziej krytycznej fazie rozwoju jesiennego.",
-    "cta": "Zobacz, jak to działa"
+    "cta": "Zobacz, jak to działa",
+    "visualLabel": "Key visual kampanii: bioinżynierowie na jesiennej budowie",
+    "headlineMid": "is building",
+    "introEmphasis": "bacterium Azotobacter salinestris",
+    "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase."
   },
   "foundations": {
     "eyebrow": "Połóż fundamenty",
     "title": "Dlaczego jesienne krzewienie ma znaczenie",
     "lead": "Pierwsze tygodnie po wschodach decydują o późniejszych wynikach.",
+    "flip": "Odwróć kartę",
+    "unflip": "Przywróć kartę",
     "pillars": {
       "roots": {
         "title": "Silny rozwój korzeni",
-        "body": "Mocny system korzeniowy poprawia pobieranie wody i składników pokarmowych."
+        "body": "Mocny system korzeniowy poprawia pobieranie wody i składników pokarmowych.",
+        "back": "Silne korzenie i wczesna biomasa budują fundament pod dalszy rozwój uprawy."
       },
       "biomass": {
         "title": "Przyrost biomasy",
-        "body": "Więcej biomasy jesienią to większy potencjał wiosną."
+        "body": "Więcej biomasy jesienią to większy potencjał wiosną.",
+        "back": "Dobrze ukorzeniona uprawa ma więcej zasobów, by utrzymać wzrost przez sezon."
       },
       "winter": {
         "title": "Lepsza odporność zimowa",
-        "body": "Lepiej przygotowane rośliny łatwiej znoszą warunki zimowe."
+        "body": "Lepiej przygotowane rośliny łatwiej znoszą warunki zimowe.",
+        "back": "Silniejsze, dobrze ukorzenione rośliny lepiej znoszą warunki zimowe."
       },
       "spring": {
         "title": "Mocniejszy start wiosną",
-        "body": "Solidne fundamenty przekładają się na wyższy potencjał plonowania."
+        "body": "Solidne fundamenty przekładają się na wyższy potencjał plonowania.",
+        "back": "To, co uprawa zbuduje jesienią, przygotowuje wzrost wiosenny."
       }
     }
   },
@@ -90,14 +115,14 @@
   },
   "trials": {
     "eyebrow": "Zwiedź place budowy",
-    "title": "Interaktywna mapa doświadczeń i panel pogodowy",
+    "title": "Odkryj potwierdzone w polu działanie VIXERAN® w różnych stanowiskach i warunkach uprawy w całej Europie.",
     "lead": "Przeglądaj doświadczenia polowe w całej Europie i sprawdź, jak VIXERAN® działa w różnych warunkach uprawy.",
     "tabsLabel": "Widoki danych doświadczalnych",
     "tab": {
       "map": "Mapa doświadczeń",
       "weather": "Panel pogodowy"
     },
-    "source": "Źródło: 51 raportów ARM Single Trial Report (AT, DE, DK, FR, GB, LT, PL, SE), rzepak ozimy 2022–2025. Produkty: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) oraz kody doświadczalne A23780 / A19464. Dane pogodowe: eksport godzinowy MeteoBlue."
+    "source": "Źródło: 51 raportów ARM Single Trial Report (AT, DE, DK, FR, GB, LT, PL, SE), rzepak ozimy 2022–2025. Produkty: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) oraz kody doświadczalne A23780 / A19464."
   },
   "map": {
     "ariaLabel": "Interaktywna mapa europejskich doświadczeń z VIXERAN",
@@ -244,7 +269,8 @@
         "role": "Ekspert Syngenta",
         "origin": "Product Manager"
       }
-    }
+    },
+    "lead": "VIXERAN® helped our crop establish faster in autumn and enter winter stronger."
   },
   "contact": {
     "eyebrow": "Gotowy, by zbudować swój?",
@@ -256,7 +282,8 @@
       "submit": "Znajdź przedstawiciela",
       "result": "Skontaktujemy Cię z zespołem Syngenta w kraju: {{country}}.",
       "disclaimer": "Ten formularz jest elementem zastępczym Fazy 1 i nie wysyła jeszcze żadnych danych."
-    }
+    },
+    "cta": "Talk to an expert"
   },
   "footer": {
     "legalLabel": "Linki prawne",
@@ -267,7 +294,9 @@
     "sitemap": "Mapa strony",
     "contact": "Kontakt",
     "copyright": "© {{year}} Syngenta Group Company.",
-    "rights": "Wszelkie prawa zastrzeżone."
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "tagline": "Buduj biomasę. Pokonaj zimę.",
+    "taglineSecondary": "Chroń swój plon."
   },
   "legal": {
     "back": "Powrót do mikrostrony",
@@ -290,5 +319,71 @@
     "contact": {
       "title": "Kontakt"
     }
+  },
+  "howItWorks": {
+    "eyebrow": "Key benefits of VIXERAN®",
+    "title": "How VIXERAN® works",
+    "kicker": "Nature's nitrogen. Put to work.",
+    "body": "VIXERAN® uses the proven nitrogen-fixing ",
+    "bodyEmphasis": "bacterium Azotobacter salinestris",
+    "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
+    "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
+    "callouts": {
+      "air": {
+        "title": "From air to crop",
+        "body": "Atmospheric nitrogen"
+      },
+      "fixation": {
+        "title": "Biological nitrogen fixation",
+        "body": "Fixed from the air, delivered to the plant"
+      },
+      "biomass": {
+        "title": "Robust biomass",
+        "body": "Early growth the crop can take into winter"
+      },
+      "plant": {
+        "title": "In the plant",
+        "body": "Leaves, stems & roots"
+      },
+      "establishment": {
+        "title": "Strong establishment",
+        "body": "A foundation built in the first weeks"
+      },
+      "winter": {
+        "title": "Reliable overwintering",
+        "body": "Better prepared for winter conditions"
+      }
+    }
+  },
+  "keyBenefits": {
+    "eyebrow": "Meet the Bio Engineers",
+    "title": "Key benefits of VIXERAN®",
+    "titleLine1": "Key benefits of",
+    "titleBrand": "VIXERAN®",
+    "lead": "By helping Oilseed Rape access an additional source of biologically fixed nitrogen, VIXERAN® supports the crop when it is establishing the foundations for the season ahead.",
+    "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
+    "cards": {
+      "nitrogen": {
+        "title": "Nitrogen efficiency",
+        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support development and increase yields."
+      },
+      "tested": {
+        "title": "Tried and tested",
+        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air."
+      },
+      "apply": {
+        "title": "Easy to apply",
+        "body": "VIXERAN® is applied as a foliar spray using standard equipment."
+      },
+      "robust": {
+        "title": "Robust",
+        "body": "VIXERAN® contains a particularly robust bacterium that can withstand external stress."
+      }
+    }
+  },
+  "nitrogenUptake": {
+    "eyebrow": "How VIXERAN® enhances crop",
+    "title": "How VIXERAN® enhances crop nitrogen uptake",
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® colonise the plant and complement fertilisation during establishment."
   }
 }

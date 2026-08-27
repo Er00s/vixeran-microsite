@@ -10,7 +10,6 @@ import {
   TrialKpis,
   TrialMetric,
 } from '../models/trial.model';
-import { TrialWeather } from '../models/weather.model';
 
 /**
  * Single access point for trial data.
@@ -24,7 +23,6 @@ export class TrialsService {
   private readonly http = inject(HttpClient);
 
   private static readonly TRIALS_URL = 'assets/data/trials.json';
-  private static readonly WEATHER_URL = 'assets/data/trial-weather.json';
   private static readonly KPIS_URL = 'assets/data/trial-kpis.json';
 
   /** All 51 trials. Empty array until the JSON resolves. */
@@ -33,18 +31,12 @@ export class TrialsService {
     { initialValue: [] as Trial[] },
   );
 
-  /** Weather aggregates joined to the same trial ids. */
-  readonly weather = toSignal(
-    this.http.get<TrialWeather[]>(TrialsService.WEATHER_URL).pipe(shareReplay(1)),
-    { initialValue: [] as TrialWeather[] },
-  );
-
-  /** Pre-computed headline figures for the hero / KPI strip. */
+  /** Pre-computed headline figures for the KPI strip. */
   readonly kpis = toSignal(this.http.get<TrialKpis>(TrialsService.KPIS_URL).pipe(shareReplay(1)), {
     initialValue: null,
   });
 
-  /** Filter state shared by the map and (optionally) the dashboard. */
+  /** Filter state shared by the map. */
   private readonly filtersState = signal<TrialFilters>({ ...DEFAULT_TRIAL_FILTERS });
   readonly filters = this.filtersState.asReadonly();
 

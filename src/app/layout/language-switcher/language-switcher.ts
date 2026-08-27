@@ -9,13 +9,16 @@ import { LanguageService } from '../../core/services/language.service';
     <label class="flex items-center gap-2 text-xs">
       <span class="sr-only">Language</span>
       <select
-        class="cursor-pointer rounded-sm border border-sand-300 bg-white px-2 py-1 text-xs
-               font-semibold uppercase tracking-wider text-brand-900"
+        class="cursor-pointer rounded-full border border-white/40 bg-transparent px-3 py-1.5
+               text-[11px] font-semibold uppercase tracking-wider text-white
+               hover:bg-white/10"
         [value]="language.current()"
         (change)="onChange($event)"
       >
         @for (lang of language.languages; track lang.code) {
-          <option [value]="lang.code">{{ lang.code.toUpperCase() }} — {{ lang.label }}</option>
+          <option class="bg-white text-ink-900" [value]="lang.code">
+            {{ lang.code.toUpperCase() }}
+          </option>
         }
       </select>
     </label>

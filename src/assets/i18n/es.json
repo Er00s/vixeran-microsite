@@ -14,7 +14,7 @@
     "foundations": {
       "title": "Construye los cimientos",
       "subtitle": "Por qué importa la implantación de otoño",
-      "short": "Por qué el otoño"
+      "short": "Pon los cimientos"
     },
     "bioEngineers": {
       "title": "Conoce a los bioingenieros",
@@ -23,48 +23,139 @@
     },
     "trials": {
       "title": "Explora las obras",
-      "subtitle": "Mapa de ensayos y panel meteorológico",
-      "short": "Ensayos"
+      "subtitle": "Mapa de ensayos interactivo",
+      "short": "Explora las obras"
     },
     "success": {
       "title": "Construyendo éxito en Europa",
       "subtitle": "Experiencias de agricultores y expertos",
-      "short": "Casos de éxito"
+      "short": "Construyendo éxito en toda Europa"
     },
     "contact": {
-      "title": "¿Listo para construir la tuya?",
-      "subtitle": "Contacta con tu representante de Syngenta",
+      "title": "¿Listo para construir con VIXERAN®?",
+      "subtitle": "¿Listo para dar a tu cultivo un mejor comienzo?",
       "short": "Contacto"
+    },
+    "howItWorks": {
+      "title": "Principales beneficios de VIXERAN®",
+      "subtitle": "Cómo funciona VIXERAN®",
+      "short": "Principales beneficios de VIXERAN®"
+    },
+    "keyBenefits": {
+      "title": "Conoce a los bioingenieros",
+      "subtitle": "Principales beneficios de VIXERAN®",
+      "short": "Conoce a los bioingenieros"
+    },
+    "nitrogenUptake": {
+      "title": "VIXERAN® y la absorción de nitrógeno",
+      "subtitle": "Cómo VIXERAN® mejora la absorción de nitrógeno del cultivo",
+      "short": "VIXERAN® y la absorción de nitrógeno"
     }
   },
   "welcome": {
     "eyebrow": "Bienvenido a la obra",
     "headlineTop": "El otoño",
-    "headlineBottom": "es temporada de construcción",
-    "subheadline": "Construye los cimientos de un cultivo más fuerte con nitrógeno del aire.",
-    "intro": "VIXERAN® ayuda a la colza a acceder a una fuente adicional de nitrógeno fijado biológicamente durante la etapa más crítica de la implantación.",
-    "cta": "Descubre cómo funciona"
+    "headlineMid": "es temporada de",
+    "headlineBottom": "construcción",
+    "subheadline": "Construye biomasa, supera el invierno, protege tu rendimiento",
+    "intro": "VIXERAN® usa la probada ",
+    "introEmphasis": "bacteria Azotobacter salinestris",
+    "introRest": " fijadora de nitrógeno para complementar la fertilización, dando a la colza una fuente adicional de nitrógeno fijado biológicamente a partir del aire. Esto impulsa una biomasa robusta, una invernada fiable y rendimientos consistentes, aprovechando la fase crítica de implantación del cultivo.",
+    "cta": "Cómo funciona VIXERAN",
+    "visualLabel": "Key visual de campaña: Bioingenieros en la obra de otoño"
+  },
+  "howItWorks": {
+    "eyebrow": "Principales beneficios de VIXERAN®",
+    "title": "Cómo funciona VIXERAN®",
+    "kicker": "El nitrógeno de la naturaleza. Puesto a trabajar.",
+    "body": "VIXERAN® usa la ",
+    "bodyEmphasis": "bacteria Azotobacter salinestris",
+    "bodyRest": " fijadora de nitrógeno para complementar la fertilización. Las bacterias colonizan la planta y fijan el nitrógeno atmosférico, aportando una fuente adicional de nitrógeno fijado biológicamente para apoyar el desarrollo del cultivo durante la implantación.",
+    "visualLabel": "Bioingenieros canalizando nitrógeno a través de una hoja",
+    "callouts": {
+      "air": {
+        "title": "Del aire al cultivo",
+        "body": "Nitrógeno atmosférico"
+      },
+      "fixation": {
+        "title": "Fijación biológica de nitrógeno",
+        "body": "Fijado del aire, entregado a la planta"
+      },
+      "biomass": {
+        "title": "Biomasa robusta",
+        "body": "Crecimiento temprano que el cultivo lleva al invierno"
+      },
+      "plant": {
+        "title": "En la planta",
+        "body": "Hojas, tallos y raíces"
+      },
+      "establishment": {
+        "title": "Implantación fuerte",
+        "body": "Una base construida en las primeras semanas"
+      },
+      "winter": {
+        "title": "Invernada fiable",
+        "body": "Mejor preparado para las condiciones de invierno"
+      }
+    }
+  },
+  "keyBenefits": {
+    "eyebrow": "Conoce a los bioingenieros",
+    "title": "Principales beneficios de VIXERAN®",
+    "titleLine1": "Principales beneficios de",
+    "titleBrand": "VIXERAN®",
+    "lead": "Al ayudar a la colza a acceder a una fuente adicional de nitrógeno fijado biológicamente, VIXERAN® apoya al cultivo cuando está construyendo los cimientos de la campaña.",
+    "visualLabel": "Tierra oscura y una hoja de cultivo detrás de los beneficios clave de VIXERAN®",
+    "cards": {
+      "nitrogen": {
+        "title": "Eficiencia del nitrógeno",
+        "body": "Con VIXERAN® tu cultivo accede a una nueva fuente natural de nitrógeno para apoyar el desarrollo y aumentar los rendimientos."
+      },
+      "tested": {
+        "title": "Probado en campo",
+        "body": "Los ensayos muestran que, al aplicar VIXERAN®, se pueden fijar hasta 30 kg N por hectárea a partir del aire."
+      },
+      "apply": {
+        "title": "Fácil de aplicar",
+        "body": "VIXERAN® se aplica en pulverización foliar con el equipo habitual."
+      },
+      "robust": {
+        "title": "Robusto",
+        "body": "VIXERAN® contiene una bacteria especialmente robusta, capaz de soportar el estrés externo."
+      }
+    }
+  },
+  "nitrogenUptake": {
+    "eyebrow": "VIXERAN® y la absorción de nitrógeno",
+    "title": "Cómo VIXERAN® mejora la absorción de nitrógeno del cultivo",
+    "body": "El vídeo muestra cómo las bacterias fijadoras de nitrógeno de VIXERAN® colonizan la planta y complementan la fertilización durante la implantación."
   },
   "foundations": {
     "eyebrow": "Construye los cimientos",
     "title": "Por qué importa la implantación de otoño",
     "lead": "Las primeras semanas tras la emergencia definen el rendimiento futuro.",
+    "flip": "Voltear tarjeta",
+    "unflip": "Volver la tarjeta",
     "pillars": {
       "roots": {
-        "title": "Desarrollo radicular fuerte",
-        "body": "Un sistema radicular potente mejora la absorción de nutrientes y agua."
+        "title": "Implantación robusta",
+        "body": "Raíces fuertes y biomasa temprana construyen la base del cultivo.",
+        "back": "Un sistema radicular vigoroso mejora la absorción de agua y nutrientes durante toda la campaña."
       },
       "biomass": {
-        "title": "Acumulación de biomasa",
-        "body": "Más biomasa en otoño significa más potencial en primavera."
+        "title": "Estabilidad de rendimiento",
+        "body": "Un cultivo bien implantado tiene más recursos para sostener el crecimiento a lo largo de la campaña.",
+        "back": "Más biomasa en otoño significa más recursos para llevar a la primavera."
       },
       "winter": {
-        "title": "Mayor resistencia al invierno",
-        "body": "Los cultivos mejor preparados resisten mejor las condiciones invernales."
+        "title": "Más resiliencia para el invierno",
+        "body": "Los cultivos más fuertes y bien implantados están mejor preparados para el invierno.",
+        "back": "Los cultivos mejor preparados superan el invierno con mayor resiliencia."
       },
       "spring": {
-        "title": "Mejor arranque en primavera",
-        "body": "Unos cimientos sólidos generan mayor potencial de rendimiento."
+        "title": "Más potencial en primavera",
+        "body": "Lo que el cultivo construye en otoño marca el crecimiento de primavera.",
+        "back": "Unos cimientos sólidos en otoño preparan un mayor potencial de rendimiento."
       }
     }
   },
@@ -90,14 +181,14 @@
   },
   "trials": {
     "eyebrow": "Explora las obras",
-    "title": "Mapa de ensayos y panel meteorológico",
+    "title": "Descubre el rendimiento de VIXERAN® en campo, en distintas parcelas y condiciones de cultivo de toda Europa.",
     "lead": "Explora los ensayos de campo en toda Europa y comprueba cómo se comporta VIXERAN® en distintas condiciones de cultivo.",
     "tabsLabel": "Vistas de datos de ensayos",
     "tab": {
       "map": "Mapa de ensayos",
       "weather": "Panel meteorológico"
     },
-    "source": "Fuente: 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza de invierno 2022–2025. Productos: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) y los códigos experimentales A23780 / A19464. Datos meteorológicos: exportación horaria de MeteoBlue."
+    "source": "Fuente: 51 Single Trial Reports ARM (AT, DE, DK, FR, GB, LT, PL, SE), colza de invierno 2022–2025. Productos: VIXERAN® / NutribioN (Azotobacter salinestris CECT 9690) y los códigos experimentales A23780 / A19464."
   },
   "map": {
     "ariaLabel": "Mapa interactivo de los ensayos europeos de VIXERAN",
@@ -225,7 +316,8 @@
   },
   "success": {
     "eyebrow": "Construyendo éxito en Europa",
-    "title": "Experiencias de agricultores y expertos",
+    "title": "Construyendo éxito en Europa",
+    "lead": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte.",
     "stats": {
       "trials": "Localizaciones de ensayo",
       "seasons": "Campañas de datos",
@@ -244,19 +336,23 @@
         "role": "Experto de Syngenta",
         "origin": "Product Manager"
       }
-    }
+    },
+    "title": "Construyendo éxito en Europa",
+    "lead": "VIXERAN® ayudó a que nuestro cultivo se implantara más rápido en otoño y entrara al invierno más fuerte.",
   },
   "contact": {
-    "eyebrow": "¿Listo para construir la tuya?",
-    "title": "Contacta con tu representante local de Syngenta",
-    "lead": "Contacta con tu representante local de Syngenta y construye cultivos más fuertes este otoño.",
+    "eyebrow": "¿Listo para construir con VIXERAN®?",
+    "title": "¿Listo para dar a tu cultivo un mejor comienzo?",
+    "lead": "Descubre cómo VIXERAN® puede apoyar tu estrategia de colza este otoño. Habla con tu representante local de Syngenta para saber más sobre VIXERAN®, su aplicación y cómo puede complementar tu estrategia de fertilización.",
+    "cta": "Habla con un experto",
     "form": {
       "country": "País",
       "countryPlaceholder": "Selecciona tu país",
       "submit": "Encuentra tu representante",
       "result": "Te pondremos en contacto con el equipo de Syngenta en {{country}}.",
       "disclaimer": "Este formulario es un marcador de posición de la Fase 1 y todavía no envía datos."
-    }
+    },
+    "cta": "Talk to an expert"
   },
   "footer": {
     "legalLabel": "Enlaces legales",
@@ -267,7 +363,9 @@
     "sitemap": "Mapa del sitio",
     "contact": "Contacto",
     "copyright": "© {{year}} Syngenta Group Company.",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Construye biomasa. Vence al invierno.",
+    "taglineSecondary": "Protege tu rendimiento."
   },
   "legal": {
     "back": "Volver al micrositio",

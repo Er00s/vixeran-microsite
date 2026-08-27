@@ -1,43 +1,40 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { BioEngineersSection } from '../../features/bio-engineers/bio-engineers-section';
 import { ContactSection } from '../../features/contact/contact-section';
 import { FoundationsSection } from '../../features/foundations/foundations-section';
+import { HowItWorksSection } from '../../features/how-it-works/how-it-works-section';
+import { KeyBenefitsSection } from '../../features/key-benefits/key-benefits-section';
+import { NitrogenUptakeSection } from '../../features/nitrogen-uptake/nitrogen-uptake-section';
 import { SuccessSection } from '../../features/success/success-section';
 import { TrialsSection } from '../../features/trials/trials-section';
 import { WelcomeSection } from '../../features/welcome/welcome-section';
-import { JourneyNav } from '../../layout/journey-nav/journey-nav';
 
 /**
- * The microsite itself: the six journey steps in the order approved in the
- * structure proposal, with the numbered rail pinned to the left on wide screens.
+ * Single-page journey, in the order of Micrositio-vixeran-FINAL.
+ * Each section is full-bleed; section chrome lives inside SectionShell.
  */
 @Component({
   selector: 'app-home',
   imports: [
-    JourneyNav,
     WelcomeSection,
+    HowItWorksSection,
+    KeyBenefitsSection,
     FoundationsSection,
-    BioEngineersSection,
     TrialsSection,
+    NitrogenUptakeSection,
     SuccessSection,
     ContactSection,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-welcome-section />
-
-    <div class="vx-container flex gap-8">
-      <app-journey-nav />
-
-      <div class="min-w-0 grow">
-        <app-foundations-section />
-        <app-bio-engineers-section />
-        <app-trials-section />
-        <app-success-section />
-        <app-contact-section />
-      </div>
-    </div>
+    <app-how-it-works-section />
+    <app-key-benefits-section />
+    <app-foundations-section />
+    <app-trials-section />
+    <app-nitrogen-uptake-section />
+    <app-success-section />
+    <app-contact-section />
   `,
 })
 export class HomePage {}
