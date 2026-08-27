@@ -83,10 +83,10 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
         </a>
 
         <nav
-          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center gap-3"
+          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center"
           [attr.aria-label]="'header.navLabel' | translate"
         >
-          <ul class="flex min-w-0 flex-1 items-center justify-start gap-1">
+          <ul class="flex min-w-0 items-center justify-start gap-1">
             @for (section of sections; track section.anchor) {
               <li>
                 <a
@@ -105,9 +105,10 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
                 </a>
               </li>
             }
+            <li class="vx-header-lang shrink-0 self-center">
+              <app-language-switcher />
+            </li>
           </ul>
-
-          <app-language-switcher class="shrink-0" />
         </nav>
 
         <div class="vx-header-tools ml-auto flex items-center gap-3 sm:mr-20">

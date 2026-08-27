@@ -107,6 +107,16 @@
   padding-top: var(--hero-offset-top);
 }
 
+/* N-bubbles over the plant canopy / open sky, right of the headline. */
+.vx-hero-bubbles {
+  position: absolute;
+  top: 12%;
+  left: 52%;
+  z-index: 1;
+  width: 40%;
+  height: 50%;
+}
+
 /*
   Header olive plate: viewBox 1920×228 from the headerbg.png wave.
   Absolute, so it can hang over the slide photo without growing the sticky bar.
@@ -167,20 +177,25 @@
 
   .vx-header-nav {
     min-width: 0;
-    gap: 0.5rem;
-    padding-right: 7.5rem;
+    /* Clear the Syngenta lock-up without shoving the language chip
+       onto a second row away from the section pills. */
+    padding-right: 4.5rem;
   }
 
   .vx-header-nav ul {
-    flex: 1;
     min-width: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.15rem 0.2rem;
   }
 
   .vx-header-nav li {
     flex: 0 1 auto;
     min-width: 0;
+  }
+
+  .vx-header-nav .vx-header-lang {
+    flex: 0 0 auto;
+    margin-left: 0.25rem;
   }
 
   .vx-header-nav a {
@@ -214,13 +229,18 @@
   }
 
   .vx-header-nav {
-    padding-right: 6rem;
+    padding-right: 5rem;
+  }
+
+  .vx-header-nav .vx-header-lang {
+    margin-left: 0.5rem;
   }
 
   .vx-hero-stage,
   .vx-how-stage,
   .vx-benefits-stage,
   .vx-found-stage,
+  .vx-trials-stage,
   .vx-success-stage {
     height: 100%;
     min-height: 0;
@@ -242,6 +262,13 @@
     margin-top: 0;
     margin-left: 185px;
     max-width: 800px;
+  }
+
+  .vx-hero-bubbles {
+    top: 10%;
+    left: 54%;
+    width: 34%;
+    height: 52%;
   }
 
   .vx-hero-title {
@@ -369,7 +396,7 @@
     width: auto;
     max-width: none;
     grid-template-columns: repeat(4, 287px);
-    gap: 18px;
+    gap: 22px;
     margin-top: 72px;
   }
 
@@ -379,6 +406,13 @@
 
   .vx-found-stage {
     padding: 48px 64px 160px 191px;
+  }
+
+  .vx-found-bubbles {
+    top: 2%;
+    left: 54%;
+    width: 40%;
+    height: 36%;
   }
 
   .vx-found-title {
@@ -394,6 +428,20 @@
     max-width: 520px;
     font-size: 28px;
     line-height: 34px;
+  }
+
+  /* Same 191px left rail as slide 04; tighter bottom so the map fills the frame. */
+  .vx-trials-stage {
+    padding: 48px 64px 48px 191px;
+    gap: 24px;
+  }
+
+  .vx-trials-title {
+    margin-top: 28px;
+    max-width: 1280px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 69px;
   }
 
   .vx-success-stage {
@@ -683,30 +731,67 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  align-items: center;
-  padding: 45cqi 11cqi 10cqi;
-  text-align: center;
+  align-items: flex-start;
+  padding: 40cqi 13cqi 12cqi;
+  text-align: left;
 }
 
 .vx-benefits-copy-inner h3 {
-  font-size: clamp(0.8rem, 7.4cqi, 1.35rem);
+  width: 100%;
+  font-size: clamp(1rem, 8.4cqi, 1.5rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   color: #fff;
+  white-space: pre-line;
 }
 
 .vx-benefits-rule {
-  width: 52%;
-  margin-top: 3cqi;
-  height: auto;
+  display: block;
+  width: 62%;
+  height: 6px;
+  margin-top: 2.4cqi;
+  margin-bottom: 3.6cqi;
+  flex-shrink: 0;
+  background: #51a337;
 }
 
 .vx-benefits-copy-inner p {
-  margin-top: 3.5cqi;
-  font-size: clamp(0.68rem, 4.7cqi, 0.9rem);
+  margin: 0;
+  font-size: clamp(0.72rem, 5.2cqi, 0.95rem);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.4;
   color: rgb(255 255 255 / 0.92);
+}
+
+.vx-benefits-copy-inner p + p {
+  margin-top: 5.2cqi;
+}
+
+@media (width >= 1800px) {
+  .vx-benefits-copy-inner {
+    padding: 118px 36px 28px;
+  }
+
+  .vx-benefits-copy-inner h3 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .vx-benefits-rule {
+    width: 148px;
+    height: 6px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+
+  .vx-benefits-copy-inner p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .vx-benefits-copy-inner p + p {
+    margin-top: 16px;
+  }
 }
 
 /* Slide 04: tall notched flip card. Geometry matches cuadros.svg (352 × 512).
@@ -852,19 +937,25 @@
 
 .vx-found-card__copy {
   position: absolute;
-  top: 30%;
-  right: 0;
-  bottom: 14%;
-  left: 0;
+  /* Inner fill path sits ~10% in from the viewBox; keep extra gap from the
+     stroke and the flip pill so titles never paint outside the glass. */
+  top: 34%;
+  right: 17%;
+  bottom: 18%;
+  left: 15%;
   z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 .vx-found-card__copy-inner {
   display: flex;
-  width: 58%;
+  width: 100%;
+  min-width: 0;
+  max-height: 100%;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
@@ -872,18 +963,22 @@
 
 .vx-found-card__copy h3 {
   width: 100%;
-  font-size: clamp(0.85rem, 7.2cqi, 1.25rem);
+  min-width: 0;
+  font-size: clamp(0.85rem, 6.5cqi, 1.125rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   text-align: left;
   color: #fff;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .vx-found-card__rule {
   display: block;
   width: 38%;
   height: 2px;
-  margin-top: 3.5cqi;
+  flex-shrink: 0;
+  margin-top: 2.8cqi;
   background: var(--color-brand-500);
 }
 
@@ -893,12 +988,15 @@
 
 .vx-found-card__copy p {
   width: 100%;
-  margin-top: 3.5cqi;
-  font-size: clamp(0.7rem, 5cqi, 0.9rem);
+  min-width: 0;
+  margin-top: 2.8cqi;
+  font-size: clamp(0.7rem, 4.6cqi, 0.875rem);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.35;
   text-align: left;
   color: rgb(255 255 255 / 0.92);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .vx-found-card__flip {
@@ -914,29 +1012,38 @@
   cursor: pointer;
 }
 
-.vx-found-bubble {
-  mix-blend-mode: screen;
+@media (width >= 1800px) {
+  .vx-found-card__copy {
+    top: 138px;
+    right: 48px;
+    bottom: 72px;
+    left: 42px;
+  }
+
+  .vx-found-card__copy h3 {
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .vx-found-card__rule {
+    margin-top: 10px;
+  }
+
+  .vx-found-card__copy p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
 }
 
-.vx-found-bubble--a {
-  top: 8%;
-  right: 18%;
-  width: 72px;
-  height: 72px;
-}
-
-.vx-found-bubble--b {
-  top: 22%;
-  right: 32%;
-  width: 44px;
-  height: 44px;
-}
-
-.vx-found-bubble--c {
-  top: 14%;
-  right: 8%;
-  width: 32px;
-  height: 32px;
+/* N-bubbles over the sunrise sky, right of the foundations copy. */
+.vx-found-bubbles {
+  position: absolute;
+  top: 4%;
+  left: 58%;
+  z-index: 1;
+  width: 40%;
+  height: 32%;
 }
 
 /* Slide 07: glass portrait cards. White frame is the card border (rx 28 / 2px
@@ -1074,7 +1181,7 @@
    ------------------------------------------------------------ */
 .leaflet-container {
   font-family: var(--font-sans);
-  background: var(--color-sand-100);
+  background: #e8f5e9;
 }
 
 .leaflet-popup-content-wrapper {
@@ -1100,4 +1207,82 @@
   color: #fff;
   font-family: var(--font-sans);
   font-weight: 700;
+}
+
+.vx-trial-map .leaflet-bar {
+  overflow: hidden;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+}
+
+.vx-trial-map .leaflet-bar a {
+  width: 34px;
+  height: 34px;
+  border-bottom: 1px solid #ececec;
+  color: #222;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.vx-trial-map .leaflet-bar a:last-child {
+  border-bottom: none;
+}
+
+.vx-trial-map .leaflet-control-zoom {
+  margin: 16px;
+}
+
+.vx-trial-map .leaflet-container {
+  background: #e8f5e9;
+}
+
+.vx-map-label {
+  background: none !important;
+  border: none !important;
+}
+
+.vx-map-label__text {
+  display: block;
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.vx-map-label--r2 .vx-map-label__text {
+  font-size: 12px;
+}
+
+.vx-map-label--r3 .vx-map-label__text {
+  font-size: 11px;
+}
+
+.vx-map-select {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2368c14c' d='M1.1 1.2 6 6.1l4.9-4.9 1.1 1.1L6 8.3.01 2.3z'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  padding: 0.55rem 2.1rem 0.55rem 0.85rem;
+  color: #1a1a1a;
+  font-size: 13px;
+}
+
+.vx-map-select:focus {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 1px;
+}
+
+.vx-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
 }

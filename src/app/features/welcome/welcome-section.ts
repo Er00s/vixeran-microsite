@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
+import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
+
 /**
  * 01 - Autumn is Building Season.
  *
@@ -14,7 +16,7 @@ import { TranslatePipe } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-welcome-section',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, NitrogenBubbles],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
@@ -35,6 +37,8 @@ import { TranslatePipe } from '@ngx-translate/core';
         src="assets/img/minion1.png"
         alt=""
       />
+
+      <app-nitrogen-bubbles class="vx-hero-bubbles" />
 
       <div
         class="vx-hero-stage relative z-[2] mx-auto flex h-full min-h-svh w-full max-w-[1920px]

@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+
+import { LanguageService } from '../../core/services/language.service';
 
 type SectionTone = 'ink' | 'photo' | 'brand';
 type SectionAlign = 'start' | 'center';
@@ -48,9 +50,8 @@ type SectionAlign = 'start' | 'center';
           class="mt-5 max-w-4xl text-3xl leading-[1.1] md:text-[60px] md:leading-[69px]"
           [class]="titleClass()"
           [class.mx-auto]="align() === 'center'"
-        >
-          {{ titleKey() | translate }}
-        </h2>
+          [innerHTML]="titleHtml()"
+        ></h2>
 
         @if (leadKey()) {
           <p
@@ -62,7 +63,7 @@ type SectionAlign = 'start' | 'center';
           </p>
         }
 
-        <div class="has-[*]:mt-10">
+        <div class="has-[*]:mt-10" [class]="contentClass()">
           <ng-content />
         </div>
       </div>
@@ -70,6 +71,9 @@ type SectionAlign = 'start' | 'center';
   `,
 })
 export class SectionShell {
+  private readonly translate = inject(TranslateService);
+  private readonly language = inject(LanguageService);
+
   readonly anchor = input.required<string>();
   readonly number = input.required<string>();
   readonly eyebrowKey = input.required<string>();
@@ -84,10 +88,18 @@ export class SectionShell {
   readonly backgroundPosition = input<string>('center');
   /** Optional overlay so type stays readable on a bright photograph. */
   readonly scrimClass = input<string | null>(null);
+  /** Extra classes for the projected-content wrapper (e.g. tighter spacing). */
+  readonly contentClass = input<string>('');
 
   protected readonly titleClass = computed(() =>
     this.tone() === 'photo' ? 'text-soil-900' : 'text-white',
   );
+
+  protected readonly titleHtml = computed(() => {
+    this.language.current();
+    const text = String(this.translate.instant(this.titleKey()));
+    return text.replace(/VIXERAN®/g, '<span class="text-brand-500">VIXERAN®</span>');
+  });
 
   protected readonly leadClass = computed(() => {
     if (this.tone() === 'photo') return 'text-soil-900';

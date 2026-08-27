@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
+import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
 import { EstablishmentCard } from './cards/establishment-card';
 import { SpringCard } from './cards/spring-card';
 import { StabilityCard } from './cards/stability-card';
@@ -14,7 +15,7 @@ import { WinterCard } from './cards/winter-card';
  */
 @Component({
   selector: 'app-foundations-section',
-  imports: [TranslatePipe, EstablishmentCard, StabilityCard, WinterCard, SpringCard],
+  imports: [TranslatePipe, NitrogenBubbles, EstablishmentCard, StabilityCard, WinterCard, SpringCard],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
@@ -29,27 +30,7 @@ import { WinterCard } from './cards/winter-card';
         aria-hidden="true"
       />
 
-      <img
-        aria-hidden="true"
-        class="vx-found-bubble vx-found-bubble--a pointer-events-none absolute
-               select-none rounded-full object-cover"
-        src="assets/all/slide-04/burbuja-N.webp"
-        alt=""
-      />
-      <img
-        aria-hidden="true"
-        class="vx-found-bubble vx-found-bubble--b pointer-events-none absolute
-               select-none rounded-full object-cover"
-        src="assets/all/slide-04/burbuja-N.webp"
-        alt=""
-      />
-      <img
-        aria-hidden="true"
-        class="vx-found-bubble vx-found-bubble--c pointer-events-none absolute
-               select-none rounded-full object-cover"
-        src="assets/all/slide-04/burbuja-N.webp"
-        alt=""
-      />
+      <app-nitrogen-bubbles class="vx-found-bubbles" />
 
       <div
         class="vx-found-stage relative mx-auto flex h-full min-h-svh

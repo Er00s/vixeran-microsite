@@ -14,7 +14,7 @@
     "foundations": {
       "title": "Połóż fundamenty",
       "subtitle": "Dlaczego jesienne krzewienie ma znaczenie",
-      "short": "Połóż fundamenty"
+      "short": "Fundamenty"
     },
     "bioEngineers": {
       "title": "Poznaj bioinżynierów",
@@ -24,17 +24,17 @@
     "trials": {
       "title": "Zwiedź place budowy",
       "subtitle": "Interaktywna mapa doświadczeń",
-      "short": "Odkryj place budowy"
+      "short": "Dowód polowy"
     },
     "success": {
       "title": "Sukces w całej Europie",
       "subtitle": "Doświadczenia rolników i ekspertów",
-      "short": "Sukcesy w całej Europie"
+      "short": "Sukces"
     },
     "contact": {
       "title": "Gotowy budować z VIXERAN®?",
       "subtitle": "Gotowy dać uprawie mocniejszy start?",
-      "short": "Kontakt"
+      "short": "Zacznij"
     },
     "howItWorks": {
       "title": "Kluczowe korzyści VIXERAN®",
@@ -44,12 +44,12 @@
     "keyBenefits": {
       "title": "Poznaj bioinżynierów",
       "subtitle": "Kluczowe korzyści VIXERAN®",
-      "short": "Poznaj bioinżynierów"
+      "short": "Bioinżynierowie"
     },
     "nitrogenUptake": {
       "title": "VIXERAN® a pobieranie azotu",
       "subtitle": "Jak VIXERAN® zwiększa pobieranie azotu przez roślinę",
-      "short": "VIXERAN® a pobieranie azotu"
+      "short": "Mechanizm"
     }
   },
   "welcome": {
@@ -142,7 +142,14 @@
     "stats": {
       "shown": "Wyświetlone doświadczenia",
       "avgYield": "Śr. przyrost plonu",
-      "avgBiomass": "Śr. przyrost biomasy"
+      "avgBiomass": "Śr. przyrost biomasy",
+      "dynamicNote": "Liczby zmieniają się wraz z filtrami.",
+      "avgIncrease": "Średni przyrost {{metric}}",
+      "metricYield": "plonu",
+      "metricBiomass": "biomasy",
+      "ratioLine": "{{positive}} z {{total}}",
+      "ratioCaption": "doświadczeń z wyższą {{metric}}",
+      "conditions": "Każde pole ma swoje warunki"
     },
     "legend": {
       "title": "Legenda",
@@ -367,26 +374,30 @@
     "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
     "cards": {
       "nitrogen": {
-        "title": "Nitrogen efficiency",
-        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support development and increase yields."
+        "title": "Nitrogen\nefficiency",
+        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support crop development.",
+        "body2": "It strengthens plant growth and increases yields by enhancing nutrient uptake"
       },
       "tested": {
-        "title": "Tried and tested",
-        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air."
+        "title": "Tried\nand tested",
+        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air.",
+        "body2": "This helps the plant get the nitrogen it needs when it needs it"
       },
       "apply": {
-        "title": "Easy to apply",
-        "body": "VIXERAN® is applied as a foliar spray using standard equipment."
+        "title": "Easy\nto apply",
+        "body": "VIXERAN® is applied as a foliar spray using standard equipment.",
+        "body2": "Compatible with many products, it can often be integrated into regular crop spraying programmes."
       },
       "robust": {
         "title": "Robust",
-        "body": "VIXERAN® contains a particularly robust bacterium that can withstand external stress."
+        "body": "VIXERAN® contain a particularly robust bacterium in that it can withstand external stress conditions, making it particularly suitable for foliar applications"
       }
     }
   },
   "nitrogenUptake": {
     "eyebrow": "How VIXERAN® enhances crop",
     "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated."
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
+    "videoLabel": "Film o mechanizmie działania VIXERAN®"
   }
 }

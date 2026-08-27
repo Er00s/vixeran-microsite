@@ -23,7 +23,7 @@ export interface JourneySection {
   subtitleKey: string;
   /** i18n key for the short label used in the header nav. */
   shortKey: string;
-  /** Whether the section appears in the header nav - the hero and the closing CTA do not. */
+  /** Whether the section appears in the header nav - the hero does not. */
   inNav: boolean;
 }
 
@@ -42,7 +42,7 @@ export const JOURNEY_SECTIONS: readonly JourneySection[] = [
     titleKey: 'nav.howItWorks.title',
     subtitleKey: 'nav.howItWorks.subtitle',
     shortKey: 'nav.howItWorks.short',
-    inNav: true,
+    inNav: false,
   },
   {
     number: '03',
@@ -90,11 +90,11 @@ export const JOURNEY_SECTIONS: readonly JourneySection[] = [
     titleKey: 'nav.contact.title',
     subtitleKey: 'nav.contact.subtitle',
     shortKey: 'nav.contact.short',
-    inNav: false,
+    inNav: true,
   },
 ] as const;
 
-/** The six sections the header nav links to. */
+/** The header nav links (hero is excluded). */
 export const NAV_SECTIONS: readonly JourneySection[] = JOURNEY_SECTIONS.filter(
   (section) => section.inNav,
 );

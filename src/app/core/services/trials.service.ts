@@ -66,10 +66,18 @@ export class TrialsService {
     const rows = this.filteredTrials();
     const y = rows.map((t) => t.yieldGainPct).filter((v): v is number => v !== null);
     const b = rows.map((t) => t.biomassGainPct).filter((v): v is number => v !== null);
+    const mean = (values: number[]): number | null =>
+      values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+    const headlineMetric = this.filtersState().metric === 'yield' ? 'yield' : 'biomass';
+    const headlineSeries = headlineMetric === 'yield' ? y : b;
     return {
       count: rows.length,
-      avgYieldGainPct: y.length ? y.reduce((s, v) => s + v, 0) / y.length : null,
-      avgBiomassGainPct: b.length ? b.reduce((s, v) => s + v, 0) / b.length : null,
+      avgYieldGainPct: mean(y),
+      avgBiomassGainPct: mean(b),
+      headlineMetric,
+      headlineAvg: mean(headlineSeries),
+      headlinePositive: headlineSeries.filter((value) => value > 0).length,
+      headlineTotal: headlineSeries.length,
     };
   });
 

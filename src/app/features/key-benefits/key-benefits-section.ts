@@ -6,6 +6,7 @@ interface BenefitCard {
   iconClass: string;
   titleKey: string;
   bodyKey: string;
+  body2Key?: string;
 }
 
 /**
@@ -72,13 +73,11 @@ interface BenefitCard {
 
               <div class="vx-benefits-copy-inner">
                 <h3>{{ card.titleKey | translate }}</h3>
-                <img
-                  aria-hidden="true"
-                  class="vx-benefits-rule"
-                  src="assets/img/slide-03/filete.svg"
-                  alt=""
-                />
+                <span class="vx-benefits-rule" aria-hidden="true"></span>
                 <p>{{ card.bodyKey | translate }}</p>
+                @if (card.body2Key) {
+                  <p>{{ card.body2Key | translate }}</p>
+                }
               </div>
             </li>
           }
@@ -94,18 +93,21 @@ export class KeyBenefitsSection {
       iconClass: 'vx-benefits-glyph vx-benefits-glyph--n',
       titleKey: 'keyBenefits.cards.nitrogen.title',
       bodyKey: 'keyBenefits.cards.nitrogen.body',
+      body2Key: 'keyBenefits.cards.nitrogen.body2',
     },
     {
       icon: 'assets/img/slide-03/icon-02.svg',
       iconClass: 'vx-benefits-glyph',
       titleKey: 'keyBenefits.cards.tested.title',
       bodyKey: 'keyBenefits.cards.tested.body',
+      body2Key: 'keyBenefits.cards.tested.body2',
     },
     {
       icon: 'assets/img/slide-03/icon-03.svg',
       iconClass: 'vx-benefits-glyph',
       titleKey: 'keyBenefits.cards.apply.title',
       bodyKey: 'keyBenefits.cards.apply.body',
+      body2Key: 'keyBenefits.cards.apply.body2',
     },
     {
       icon: 'assets/img/slide-03/icon-04.svg',

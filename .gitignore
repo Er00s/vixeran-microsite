@@ -43,6 +43,9 @@ __screenshots__/
 .design-figma/
 .design-crops/
 
+# Local videos (too large for GitHub; keep on disk only)
+src/assets/video/*.mp4
+
 # System files
 .DS_Store
 Thumbs.db
