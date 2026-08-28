@@ -23,7 +23,7 @@ import { WinterCard } from './cards/winter-card';
       class="vx-slide relative"
     >
       <img
-        src="assets/all/slide-04/fondo.webp"
+        src="assets/all/slide-04/Micrositio-vixeran-FINAL-04.png"
         class="absolute inset-0 size-full object-cover object-[center_top]"
         loading="lazy"
         alt=""

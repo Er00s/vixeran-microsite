@@ -21,9 +21,8 @@ import { SectionShell } from '../../shared/components/section-shell';
       leadKey="contact.lead"
       tone="brand"
       align="center"
-      background="assets/img/bg8.png"
+      background="assets/all/slide-08/Micrositio-vixeran-FINAL-08.png"
       sectionClass="vx-slide-bg flex flex-col justify-center"
-      scrimClass="vx-contact-scrim"
     >
       <div class="flex justify-center">
         <button

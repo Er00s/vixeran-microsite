@@ -23,18 +23,10 @@ interface Callout {
       class="vx-slide relative"
     >
       <img
-        src="assets/img/bg2.png"
-        class="absolute inset-0 size-full object-cover object-[70%_center]"
+        src="assets/all/slide-02/Micrositio-vixeran-FINAL-02.png"
+        class="absolute inset-0 size-full object-cover object-bottom"
         loading="lazy"
         [attr.alt]="'howItWorks.visualLabel' | translate"
-      />
-
-      <img
-        aria-hidden="true"
-        class="vx-how-minion pointer-events-none absolute bottom-0 left-[18%] z-[1]
-               w-36 select-none sm:left-[20%] sm:w-48 md:w-64"
-        src="assets/img/minion2.webp"
-        alt=""
       />
 
       <div
@@ -83,7 +75,7 @@ interface Callout {
               <span class="vx-how-icon" aria-hidden="true">
                 <img
                   class="vx-how-icon-orb"
-                  src="assets/all/slide-02/burbuja.webp "
+                  src="assets/all/slide-02/burbuja.webp"
                   alt=""
                 />
                 <img [src]="callout.icon" alt="" class="vx-how-icon-glyph" />
@@ -105,32 +97,32 @@ interface Callout {
 export class HowItWorksSection {
   protected readonly callouts: readonly Callout[] = [
     {
-      icon: 'assets/img/slide-02/icon-01.svg',
+      icon: 'assets/all/slide-02/icon-01.svg',
       titleKey: 'howItWorks.callouts.air.title',
       bodyKey: 'howItWorks.callouts.air.body',
     },
     {
-      icon: 'assets/img/slide-02/icon-02.svg',
+      icon: 'assets/all/slide-02/icon-02.svg',
       titleKey: 'howItWorks.callouts.fixation.title',
       bodyKey: 'howItWorks.callouts.fixation.body',
     },
     {
-      icon: 'assets/img/slide-02/icon-03.svg',
+      icon: 'assets/all/slide-02/icon-03.svg',
       titleKey: 'howItWorks.callouts.biomass.title',
       bodyKey: 'howItWorks.callouts.biomass.body',
     },
     {
-      icon: 'assets/img/slide-02/icon-04.svg',
+      icon: 'assets/all/slide-02/icon-04.svg',
       titleKey: 'howItWorks.callouts.plant.title',
       bodyKey: 'howItWorks.callouts.plant.body',
     },
     {
-      icon: 'assets/img/slide-02/icon-05.svg',
+      icon: 'assets/all/slide-02/icon-05.svg',
       titleKey: 'howItWorks.callouts.establishment.title',
       bodyKey: 'howItWorks.callouts.establishment.body',
     },
     {
-      icon: 'assets/img/slide-02/icon-06.svg',
+      icon: 'assets/all/slide-02/icon-06.svg',
       titleKey: 'howItWorks.callouts.winter.title',
       bodyKey: 'howItWorks.callouts.winter.body',
     },

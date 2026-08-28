@@ -27,7 +27,7 @@ interface Testimonial {
       class="vx-slide relative"
     >
       <img
-        src="assets/all/slide-07/fondo.webp"
+        src="assets/all/slide-07/Micrositio-vixeran-FINAL-07.png"
         class="absolute inset-0 size-full object-cover object-center"
         loading="lazy"
         [attr.alt]="'success.visualLabel' | translate"

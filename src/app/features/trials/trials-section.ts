@@ -17,7 +17,7 @@ import { TrialMap } from './trial-map/trial-map';
   template: `
     <section id="trials" class="vx-slide relative">
       <img
-        src="assets/img/bg5.png"
+        src="assets/all/slide-05/Micrositio-vixeran-FINAL-05.png"
         alt=""
         class="pointer-events-none absolute inset-0 size-full object-cover"
         loading="lazy"

@@ -247,20 +247,19 @@ html.vx-artboard-transform .vx-canvas {
 /* Compact the six nav labels so they fit between laptop and the 1920 artboard. */
 @media (width >= 1024px) and (width < 1800px) {
   html:not(.vx-figma) .vx-header-inner {
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   html:not(.vx-figma) .vx-header-nav {
     min-width: 0;
-    /* Clear the Syngenta lock-up without shoving the language chip
-       onto a second row away from the section pills. */
-    padding-right: 4.5rem;
+    padding-right: 0;
   }
 
   html:not(.vx-figma) .vx-header-nav ul {
     min-width: 0;
     flex-wrap: nowrap;
-    gap: 0.15rem 0.2rem;
+    justify-content: center;
+    gap: 0.25rem 0.5rem;
   }
 
   html:not(.vx-figma) .vx-header-nav li {
@@ -270,18 +269,19 @@ html.vx-artboard-transform .vx-canvas {
 
   html:not(.vx-figma) .vx-header-nav .vx-header-lang {
     flex: 0 0 auto;
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
   }
 
   html:not(.vx-figma) .vx-header-nav a {
     justify-content: center;
     height: auto;
-    min-height: 1.5rem;
-    padding: 0.2rem 0.4rem;
-    font-size: clamp(0.625rem, 0.85vw, 0.8125rem);
+    min-height: 1.85rem;
+    padding: 0.35rem 0.75rem;
+    font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
+    font-weight: 500;
     line-height: 1.2;
     text-align: center;
-    text-wrap: balance;
+    white-space: nowrap;
   }
 }
 
@@ -293,15 +293,11 @@ html.vx-figma {
   }
 
   .vx-header-inner {
-    padding-inline: 20px;
+    padding-inline: 40px;
   }
 
   .vx-header-logo {
     height: 64px;
-  }
-
-  .vx-header-syngenta-wrap {
-    right: 20px;
   }
 
   .vx-header-syngenta {
@@ -309,11 +305,21 @@ html.vx-figma {
   }
 
   .vx-header-nav {
-    padding-right: 5rem;
+    padding-right: 0;
+  }
+
+  .vx-header-nav ul {
+    gap: 0.75rem;
+  }
+
+  .vx-header-nav a {
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    min-height: 2.25rem;
   }
 
   .vx-header-nav .vx-header-lang {
-    margin-left: 0.5rem;
+    margin-left: 0.75rem;
   }
 
   .vx-hero-stage,
@@ -449,43 +455,52 @@ html.vx-figma {
   }
 
   .vx-benefits-stage {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 40px;
-    padding: 48px 64px 40px 191px;
+    gap: 32px;
+    padding: 48px 64px 48px 191px;
   }
 
-  .vx-benefits-copy {
-    max-width: 440px;
-    padding-top: 8px;
+  .vx-benefits-header {
+    max-width: 640px;
   }
 
   .vx-benefits-title {
     margin-top: 28px;
-    max-width: 420px;
+    max-width: 640px;
     font-size: 60px;
     font-weight: 600;
     line-height: 69px;
   }
 
+  .vx-benefits-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
   .vx-benefits-lead {
-    margin-top: 24px;
-    max-width: 400px;
+    margin-top: 0;
+    max-width: 800px;
     font-size: 16px;
     line-height: 1.55;
+    text-align: center;
   }
 
   .vx-benefits-grid {
-    width: auto;
+    width: 100%;
     max-width: none;
-    grid-template-columns: repeat(4, 287px);
-    gap: 22px;
-    margin-top: 72px;
+    grid-template-columns: repeat(4, 276px);
+    justify-content: center;
+    gap: 20px;
+    margin-top: 0;
   }
 
   .vx-benefits-card {
-    width: 287px;
+    width: 276px;
   }
 
   .vx-found-stage {
@@ -630,38 +645,19 @@ html.vx-figma {
   }
 }
 
-/* Drive's /preview document is taller than 16:9 (title row + player). A
-   tight 16:9 iframe grows an inner scrollbar and clips the control bar.
-   html.vx-artboard { zoom } also desyncs that player's position:fixed chrome. */
-.vx-drive-embed {
+.vx-video-embed {
   position: relative;
   width: 100%;
+  padding-top: 56.25%; /* Relación 16:9 exacta para eliminar las barras superior e inferior */
   overflow: hidden;
 }
 
-.vx-drive-embed::before {
-  content: '';
-  display: block;
-  /* 16:9 plus Drive's title/control chrome, kept visually constant when
-     the page itself is zoomed for OS-DPI compensation. */
-  padding-top: calc(56.25% + (8rem / var(--vx-artboard-scale, 1)));
-}
-
-.vx-drive-embed iframe {
+.vx-video-embed iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-html.vx-artboard:not(.vx-artboard-transform) .vx-drive-embed iframe {
-  inset: auto;
-  top: 0;
-  left: 0;
-  zoom: calc(1 / var(--vx-artboard-scale, 1));
-  width: calc(100% * var(--vx-artboard-scale, 1));
-  height: calc(100% * var(--vx-artboard-scale, 1));
 }
 
 /* Section labels are solid green pills in the new design ("05. EXPLORE THE

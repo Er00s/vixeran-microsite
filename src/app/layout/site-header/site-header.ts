@@ -53,49 +53,38 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
 
       <img
         aria-hidden="true"
-        class="vx-header-dots pointer-events-none absolute top-0 right-0 z-[1]
+        class="vx-header-dots pointer-events-none absolute top-0 right-0 z-1
                select-none"
         src="assets/vectores/topcircles.png"
         alt=""
       />
 
       <div
-        class="vx-header-syngenta-wrap pointer-events-none absolute top-1/2 right-2 z-[2]
-               hidden -translate-y-1/2 sm:block md:right-3"
+        class="vx-header-inner pointer-events-auto relative z-2 mx-auto flex
+               min-h-header w-full max-w-[1920px] items-center justify-between gap-3 px-3 md:px-5 xl:px-8"
       >
-        <img
-          class="vx-header-syngenta h-7 w-auto"
-          src="assets/vectores/syngentabiologicals.png"
-          alt="Syngenta Biologicals"
-        />
-      </div>
-
-      <div
-        class="vx-header-inner pointer-events-auto relative z-[2] mx-auto flex
-               min-h-[var(--spacing-header)] w-full max-w-[1920px] items-center gap-4 px-2 md:px-3"
-      >
-        <a href="#welcome" class="shrink-0" (click)="reveal()">
+        <a href="#welcome" class="vx-header-logo-link flex shrink-0 items-center" (click)="reveal()">
           <img
-            class="vx-header-logo h-7 w-auto md:h-8"
+            class="vx-header-logo h-7 w-auto sm:h-8 md:h-9"
             src="assets/logos/vixeran-rgb-large.png"
             alt="VIXERAN®"
           />
         </a>
 
         <nav
-          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center"
+          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center justify-center"
           [attr.aria-label]="'header.navLabel' | translate"
         >
-          <ul class="flex min-w-0 items-center justify-start gap-1">
+          <ul class="flex min-w-0 items-center justify-center gap-1.5 lg:gap-2 xl:gap-2.5">
             @for (section of sections; track section.anchor) {
               <li>
                 <a
-                  class="flex h-[27px] items-center rounded-full px-3 text-[13px] font-medium
-                         leading-none transition-colors"
+                  class="flex items-center rounded-full px-3.5 py-1.5 text-[14px] lg:text-[15px] font-medium
+                         leading-none whitespace-nowrap transition-colors"
                   [class]="
                     active() === section.anchor
-                      ? 'bg-brand-500 text-white'
-                      : 'text-white/85 hover:bg-white/10 hover:text-white'
+                      ? 'bg-brand-500 text-white shadow-sm'
+                      : 'text-white/85 hover:bg-white/15 hover:text-white'
                   "
                   [href]="'#' + section.anchor"
                   [attr.aria-current]="active() === section.anchor ? 'true' : null"
@@ -105,36 +94,44 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
                 </a>
               </li>
             }
-            <li class="vx-header-lang shrink-0 self-center">
+            <li class="vx-header-lang shrink-0 self-center ml-1 lg:ml-2">
               <app-language-switcher />
             </li>
           </ul>
         </nav>
 
-        <div class="vx-header-tools ml-auto flex items-center gap-3 sm:mr-20">
-          <div class="vx-desk-hidden">
-            <app-language-switcher />
+        <div class="vx-header-right flex shrink-0 items-center gap-3">
+          <div class="vx-header-syngenta-wrap hidden items-center sm:flex">
+            <img
+              class="vx-header-syngenta h-7 w-auto sm:h-8 md:h-9"
+              src="assets/vectores/syngentabiologicals.png"
+              alt="Syngenta Biologicals"
+            />
           </div>
 
-          <button
-            type="button"
-            class="vx-desk-hidden rounded-full border border-white/40 p-2 text-white"
-            [attr.aria-expanded]="menuOpen()"
-            aria-controls="mobile-nav"
-            (click)="toggle()"
-          >
-            <span class="sr-only">{{ 'header.menu' | translate }}</span>
-            <span aria-hidden="true" class="block h-0.5 w-5 bg-current"></span>
-            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
-            <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
-          </button>
+          <div class="vx-desk-hidden flex items-center gap-2">
+            <app-language-switcher />
+
+            <button
+              type="button"
+              class="rounded-full border border-white/40 p-2 text-white"
+              [attr.aria-expanded]="menuOpen()"
+              aria-controls="mobile-nav"
+              (click)="toggle()"
+            >
+              <span class="sr-only">{{ 'header.menu' | translate }}</span>
+              <span aria-hidden="true" class="block h-0.5 w-5 bg-current"></span>
+              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
+              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
+            </button>
+          </div>
         </div>
       </div>
 
       @if (menuOpen()) {
         <nav
           id="mobile-nav"
-          class="vx-desk-hidden pointer-events-auto relative z-[2] border-t border-white/20 bg-moss-500"
+          class="vx-desk-hidden pointer-events-auto relative z-2 border-t border-white/20 bg-moss-500"
           [attr.aria-label]="'header.navLabel' | translate"
         >
           <ul class="vx-container flex flex-col py-2">
