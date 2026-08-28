@@ -58,7 +58,7 @@
      1800px, or on html.vx-figma when Windows DPI scaling squeezed the CSS
      viewport (see public/artboard-scale.js). */
   --spacing-side-nav: 15rem;
-  --spacing-header: 4.5rem;
+  --spacing-header: 4.75rem;
 }
 
 /* Tokens from the previous light theme. Sections still to be migrated depend on
@@ -81,7 +81,7 @@
   /* Minion sits on the left; reserve space only from tablet up. */
   --hero-minion-clearance: 0px;
   /* Same formula as .vx-header-plate so copy always clears the olive wave. */
-  --header-plate-height: max(var(--spacing-header), 100vw * 144 / 1920);
+  --header-plate-height: max(var(--spacing-header), 100vw * 165 / 1920);
   /* 223px = Figma hero offset (115px bar + 108px) on the 1920×1080 frame, at 70%. */
   --hero-offset-top: max(
     calc(var(--header-plate-height) + 0.75rem),
@@ -104,7 +104,7 @@ html.vx-figma {
    Figma tokens to the 1920×1080 frame. Scaling maps that frame back to the
    window — CSS zoom when it paints, otherwise transform on .vx-canvas. */
 html.vx-artboard {
-  --header-plate-height: max(var(--spacing-header), 144px);
+  --header-plate-height: max(var(--spacing-header), 165px);
   --hero-offset-top: max(
     calc(var(--header-plate-height) + 0.75rem),
     calc(13.9375rem * 0.7)
@@ -125,7 +125,7 @@ html.vx-artboard:not(.vx-artboard-transform) .vx-site-header {
 }
 
 html.vx-artboard .vx-header-plate {
-  height: max(var(--spacing-header), 144px);
+  height: max(var(--spacing-header), 165px);
 }
 
 html.vx-artboard .vx-header-dots,
@@ -218,7 +218,7 @@ html.vx-artboard-transform .vx-canvas {
 .vx-header-plate {
   display: block;
   width: 100%;
-  height: max(var(--spacing-header), calc(100cqw * 144 / 1920));
+  height: max(var(--spacing-header), calc(100cqw * 165 / 1920));
   object-fit: fill;
 }
 
@@ -235,7 +235,7 @@ html.vx-artboard-transform .vx-canvas {
   right: 0;
   width: min(230px, calc(100cqw * 230 / 1920));
   height: auto;
-  transform: scaleY(-1);
+  transform: scaleY(1);
 }
 
 /* Section pills stay visible from laptop width; hamburger only below 1024. */
@@ -448,11 +448,17 @@ html.vx-figma {
     row-gap: 56px;
   }
 
-  .vx-how-card-copy h3,
-  .vx-how-card-copy p {
-    font-size: 24px;
+  .vx-how-card-copy h3 {
+    font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
+    color: #fff;
+  }
+
+  .vx-how-card-copy p {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
     color: #fff;
   }
 
@@ -752,21 +758,20 @@ html.vx-figma {
   width: fit-content;
   max-width: 100%;
   text-align: left;
-  font-weight: 700;
 }
 
 .vx-how-card-copy h3 {
-  font-size: clamp(14px, 5.8cqi, 24px);
+  font-size: clamp(18px, 7.5cqi, 32px);
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
 }
 
 .vx-how-card-copy p {
-  margin-top: 0.15em;
-  font-size: clamp(14px, 5.8cqi, 24px);
-  font-weight: 700;
-  line-height: 1.2;
+  margin-top: 0.2em;
+  font-size: clamp(15px, 6.2cqi, 26px);
+  font-weight: 400;
+  line-height: 1.25;
   color: #fff;
 }
 
@@ -1122,9 +1127,9 @@ html.vx-figma {
   width: max-content;
   max-width: 100%;
   min-width: 0;
-  font-size: clamp(0.85rem, 6.5cqi, 1.125rem);
+  font-size: clamp(0.95rem, 7.2cqi, 1.25rem);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.2;
   text-align: left;
   color: #fff;
   overflow-wrap: break-word;
@@ -1148,13 +1153,17 @@ html.vx-figma {
   width: 0;
   min-width: 100%;
   margin-top: 2.8cqi;
-  font-size: clamp(0.7rem, 4.6cqi, 0.875rem);
+  font-size: clamp(0.85rem, 5.8cqi, 1.05rem);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
   text-align: left;
-  color: rgb(255 255 255 / 0.92);
+  color: rgb(255 255 255 / 0.95);
   overflow-wrap: break-word;
   hyphens: auto;
+}
+
+.vx-found-card__copy p:first-child {
+  margin-top: 0;
 }
 
 .vx-found-card__flip {
@@ -1179,8 +1188,8 @@ html.vx-figma {
   }
 
   .vx-found-card__copy h3 {
-    font-size: 18px;
-    line-height: 1.15;
+    font-size: 20px;
+    line-height: 1.2;
   }
 
   .vx-found-card__rule {
@@ -1189,8 +1198,12 @@ html.vx-figma {
 
   .vx-found-card__copy p {
     margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.35;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .vx-found-card__copy p:first-child {
+    margin-top: 0;
   }
 }
 

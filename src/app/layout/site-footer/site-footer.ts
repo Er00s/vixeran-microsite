@@ -11,7 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
       <img
         aria-hidden="true"
         class="vx-footer-dots pointer-events-none absolute bottom-0 right-0 z-0 select-none"
-        src="assets/vectores/topcircles.png"
+        src="assets/vectores/footer-vector.png"
         alt=""
       />
 

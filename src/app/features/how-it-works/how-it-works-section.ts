@@ -76,8 +76,8 @@ interface Callout {
 
               <div class="vx-how-card-copy">
                 <div class="vx-how-card-copy-inner">
-                  <h3>{{ callout.titleKey | translate }}</h3>
-                  <p>{{ callout.bodyKey | translate }}</p>
+                  <h3>{{ callout.titleKey | translate }}.</h3>
+                  <p>{{ callout.bodyKey | translate }}.</p>
                 </div>
               </div>
             </li>

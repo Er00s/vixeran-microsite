@@ -70,8 +70,10 @@ import { TranslatePipe } from '@ngx-translate/core';
           </span>
           <div class="vx-found-card__copy">
             <div class="vx-found-card__copy-inner">
-              <h3>{{ titleKey() | translate }}</h3>
-              <span class="vx-found-card__rule" aria-hidden="true"></span>
+              @if (!flipped()) {
+                <h3>{{ titleKey() | translate }}</h3>
+                <span class="vx-found-card__rule" aria-hidden="true"></span>
+              }
               <p>{{ backKey() | translate }}</p>
             </div>
           </div>

@@ -25,7 +25,7 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
     >
       <img
         src="assets/img/bg1.png"
-        class="absolute inset-0 size-full object-cover"
+        class="absolute inset-0 size-full object-cover max-md:object-[67%_center] md:object-center"
         fetchpriority="high"
         [attr.alt]="'welcome.visualLabel' | translate"
       />
