@@ -809,6 +809,13 @@ html.vx-figma {
   margin-left: 2px;
 }
 
+.vx-how-icon-glyph--full {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
 @media (min-width: 640px) {
   .vx-how-card--flip .vx-how-frame {
     transform: scaleX(-1);

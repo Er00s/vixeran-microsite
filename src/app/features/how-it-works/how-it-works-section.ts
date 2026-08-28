@@ -55,7 +55,7 @@ interface Callout {
         </div>
 
         <ul class="vx-how-grid grid w-full grid-cols-1 pt-10 sm:grid-cols-2">
-          @for (callout of callouts; track callout.titleKey; let flip = $odd) {
+          @for (callout of callouts; track callout.titleKey; let flip = $odd; let first = $first) {
             <li class="vx-how-card" [class.vx-how-card--flip]="flip">
               <div class="vx-how-fill" aria-hidden="true"></div>
               <img
@@ -71,7 +71,12 @@ interface Callout {
                   src="assets/all/slide-02/burbuja.webp"
                   alt=""
                 />
-                <img [src]="callout.icon" alt="" class="vx-how-icon-glyph" />
+                <img
+                  [src]="callout.icon"
+                  alt=""
+                  class="vx-how-icon-glyph"
+                  [class.vx-how-icon-glyph--full]="first"
+                />
               </span>
 
               <div class="vx-how-card-copy">
@@ -90,7 +95,7 @@ interface Callout {
 export class HowItWorksSection {
   protected readonly callouts: readonly Callout[] = [
     {
-      icon: 'assets/all/slide-02/icon-01.svg',
+      icon: 'assets/all/slide-03/icon-01.svg',
       titleKey: 'howItWorks.callouts.air.title',
       bodyKey: 'howItWorks.callouts.air.body',
     },

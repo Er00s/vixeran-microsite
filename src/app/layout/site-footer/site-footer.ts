@@ -7,7 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [RouterLink, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <footer class="relative bg-brand-600 text-white">
+    <footer class="relative bg-brand-600 text-white z-2">
       <img
         aria-hidden="true"
         class="vx-footer-dots pointer-events-none absolute bottom-0 right-0 z-0 select-none"
