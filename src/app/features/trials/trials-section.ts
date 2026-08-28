@@ -15,7 +15,7 @@ import { TrialMap } from './trial-map/trial-map';
   imports: [TranslatePipe, TrialMap],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section id="trials" class="vx-slide relative overflow-hidden">
+    <section id="trials" class="vx-slide relative">
       <img
         src="assets/img/bg5.png"
         alt=""

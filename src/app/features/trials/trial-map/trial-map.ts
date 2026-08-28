@@ -64,7 +64,7 @@ interface EuropeCollection {
     >    
       <div class="flex min-h-0 min-w-0 flex-col lg:h-full gap-8">
       <h2
-            class="FFvx-trials-title  text-3xl font-semibold leading-[1.1] text-white
+            class="vx-trials-title text-3xl font-semibold leading-[1.1] text-white
                    md:text-5xl md:leading-[1.1]"
             [innerHTML]="titleHtml()"
           ></h2>

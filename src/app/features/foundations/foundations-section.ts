@@ -20,7 +20,7 @@ import { WinterCard } from './cards/winter-card';
   template: `
     <section
       id="foundations"
-      class="vx-slide relative overflow-hidden"
+      class="vx-slide relative"
     >
       <img
         src="assets/all/slide-04/fondo.webp"

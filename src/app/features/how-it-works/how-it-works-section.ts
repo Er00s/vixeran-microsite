@@ -20,7 +20,7 @@ interface Callout {
   template: `
     <section
       id="how-it-works"
-      class="vx-slide relative overflow-hidden"
+      class="vx-slide relative"
     >
       <img
         src="assets/img/bg2.png"
@@ -40,7 +40,7 @@ interface Callout {
       <div
         class="vx-how-stage relative z-[2] mx-auto flex h-full min-h-svh
                w-full max-w-[1920px] flex-col justify-between gap-8 px-5 py-10
-               md:px-10 md:py-12 lg:flex-row lg:items-start lg:justify-between lg:gap-12"
+               md:px-10 md:py-12"
       >
         <div class="vx-how-copy max-w-xl">
           <p class="vx-eyebrow">02. {{ 'howItWorks.eyebrow' | translate }}</p>
@@ -69,7 +69,7 @@ interface Callout {
           </p>
         </div>
 
-        <ul class="vx-how-grid grid w-full gap-x-36 gap-y-12 pt-16 pr-8 sm:grid-cols-2 sm:pr-0 lg:max-w-[56rem] lg:pt-16">
+        <ul class="vx-how-grid grid w-full grid-cols-1 pt-10 sm:grid-cols-2">
           @for (callout of callouts; track callout.titleKey; let flip = $odd) {
             <li class="vx-how-card" [class.vx-how-card--flip]="flip">
               <div class="vx-how-fill" aria-hidden="true"></div>

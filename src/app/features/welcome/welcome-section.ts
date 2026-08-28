@@ -21,7 +21,7 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
   template: `
     <section
       id="welcome"
-      class="vx-slide relative overflow-hidden"
+      class="vx-slide relative"
     >
       <img
         src="assets/img/bg1.png"
@@ -42,7 +42,7 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
 
       <div
         class="vx-hero-stage relative z-[2] mx-auto flex h-full min-h-svh w-full max-w-[1920px]
-               flex-col justify-between px-5 pb-10 md:px-10 md:pb-12"
+               flex-col px-5 pb-5 md:justify-between md:px-10 md:pb-6"
       >
         <div class="vx-hero-copy max-w-[32rem]">
           <h1
@@ -63,8 +63,8 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
         </div>
 
         <div
-          class="vx-hero-bottom ml-auto flex w-full flex-col items-end gap-6 pt-10
-                 lg:flex-row lg:items-center lg:justify-end lg:gap-6"
+          class="vx-hero-bottom ml-auto flex w-full flex-col items-stretch gap-6 pt-8
+                 sm:items-end md:pt-10 lg:flex-row lg:items-center lg:justify-end lg:gap-6"
         >
           <p
             class="vx-hero-intro max-w-xl text-[14px] font-semibold leading-[1.6] text-white

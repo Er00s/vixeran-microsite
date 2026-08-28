@@ -54,7 +54,9 @@
   --font-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 
   /* Layout - header bar is ~115px in the 1920 Figma crop.
-     Nav pills stay visible from 1024px; the 1920 artboard layout starts at 1800px. */
+     Nav pills stay visible from 1024px; the 1920 artboard layout starts at
+     1800px, or on html.vx-figma when Windows DPI scaling squeezed the CSS
+     viewport (see public/artboard-scale.js). */
   --spacing-side-nav: 15rem;
   --spacing-header: 4.5rem;
 }
@@ -75,32 +77,105 @@
 /* ------------------------------------------------------------
    Base
    ------------------------------------------------------------ */
-@media (min-width: 768px) {
-  :root {
-    --hero-minion-clearance: 20rem;
-  }
-}
-
-@media (min-width: 1800px) {
-  :root {
-    --spacing-header: 7.1875rem;
-    --hero-minion-clearance: 28rem;
-  }
-}
-
 :root {
+  /* Minion sits on the left; reserve space only from tablet up. */
+  --hero-minion-clearance: 0px;
   /* Same formula as .vx-header-plate so copy always clears the olive wave. */
   --header-plate-height: max(var(--spacing-header), 100vw * 144 / 1920);
-  /* 223px = Figma hero offset (115px bar + 108px) on the 1920×1080 frame. */
+  /* 223px = Figma hero offset (115px bar + 108px) on the 1920×1080 frame, at 70%. */
   --hero-offset-top: max(
     calc(var(--header-plate-height) + 0.75rem),
-    min(13.9375rem, 100vw * 223 / 1920, 100svh * 223 / 1080)
+    calc(min(13.9375rem, 100vw * 223 / 1920, 100svh * 223 / 1080) * 0.7)
   );
+}
+
+@media (min-width: 768px) {
+  :root {
+    --hero-minion-clearance: 16rem;
+  }
+}
+
+html.vx-figma {
+  --spacing-header: 7.1875rem;
+  --hero-minion-clearance: 28rem;
+}
+
+/* OS DPI compensation: 100vw/svh stay at the squeezed CSS viewport, so lock
+   Figma tokens to the 1920×1080 frame. Scaling maps that frame back to the
+   window — CSS zoom when it paints, otherwise transform on .vx-canvas. */
+html.vx-artboard {
+  --header-plate-height: max(var(--spacing-header), 144px);
+  --hero-offset-top: max(
+    calc(var(--header-plate-height) + 0.75rem),
+    calc(13.9375rem * 0.7)
+  );
+  overflow-x: clip;
+}
+
+html.vx-artboard:not(.vx-artboard-transform),
+html.vx-artboard:not(.vx-artboard-transform) body {
+  width: 1920px;
+  max-width: 1920px;
+}
+
+html.vx-artboard:not(.vx-artboard-transform) .vx-site-header {
+  width: 1920px;
+  max-width: 1920px;
+  right: auto;
+}
+
+html.vx-artboard .vx-header-plate {
+  height: max(var(--spacing-header), 144px);
+}
+
+html.vx-artboard .vx-header-dots {
+  width: 200px;
+}
+
+html:not(.vx-artboard-transform) .vx-chrome,
+html:not(.vx-artboard-transform) .vx-scaler,
+html:not(.vx-artboard-transform) .vx-canvas {
+  display: contents;
+}
+
+html.vx-artboard-transform {
+  overflow-x: hidden;
+}
+
+html.vx-artboard-transform .vx-chrome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 1920px;
+  transform: scale(var(--vx-artboard-scale, 1));
+  transform-origin: top left;
+}
+
+html.vx-artboard-transform .vx-site-header {
+  position: relative;
+  inset: auto;
+  width: 1920px;
+}
+
+html.vx-artboard-transform .vx-scaler {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+html.vx-artboard-transform .vx-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  transform: scale(var(--vx-artboard-scale, 1));
+  transform-origin: top left;
 }
 
 /* Intro + CTA stay flush right and never run into the mascot on the left. */
 .vx-hero-bottom {
-  max-width: calc(100% - var(--hero-minion-clearance, 12.5rem));
+  max-width: calc(100% - var(--hero-minion-clearance));
 }
 
 .vx-hero-stage {
@@ -171,34 +246,34 @@
 
 /* Compact the six nav labels so they fit between laptop and the 1920 artboard. */
 @media (width >= 1024px) and (width < 1800px) {
-  .vx-header-inner {
+  html:not(.vx-figma) .vx-header-inner {
     gap: 0.5rem;
   }
 
-  .vx-header-nav {
+  html:not(.vx-figma) .vx-header-nav {
     min-width: 0;
     /* Clear the Syngenta lock-up without shoving the language chip
        onto a second row away from the section pills. */
     padding-right: 4.5rem;
   }
 
-  .vx-header-nav ul {
+  html:not(.vx-figma) .vx-header-nav ul {
     min-width: 0;
     flex-wrap: nowrap;
     gap: 0.15rem 0.2rem;
   }
 
-  .vx-header-nav li {
+  html:not(.vx-figma) .vx-header-nav li {
     flex: 0 1 auto;
     min-width: 0;
   }
 
-  .vx-header-nav .vx-header-lang {
+  html:not(.vx-figma) .vx-header-nav .vx-header-lang {
     flex: 0 0 auto;
     margin-left: 0.25rem;
   }
 
-  .vx-header-nav a {
+  html:not(.vx-figma) .vx-header-nav a {
     justify-content: center;
     height: auto;
     min-height: 1.5rem;
@@ -210,8 +285,13 @@
   }
 }
 
-/* 1920 Figma layout. Kept as raw CSS so these rules always win over `md:` utilities. */
-@media (width >= 1800px) {
+/* 1920 Figma layout. Driven by html.vx-figma (viewport ≥ 1800px, or Windows
+   DPI compensation in artboard-scale.js). Raw CSS so these always win over `md:`. */
+html.vx-figma {
+  .vx-container {
+    padding-inline: 191px;
+  }
+
   .vx-header-inner {
     padding-inline: 20px;
   }
@@ -287,7 +367,7 @@
   .vx-hero-bottom {
     position: absolute;
     right: 40px;
-    bottom: 16px;
+    bottom: 8px;
     left: auto;
     width: min(1320px, calc(100% - var(--hero-minion-clearance)));
     max-width: calc(100% - var(--hero-minion-clearance));
@@ -359,6 +439,7 @@
   }
 
   .vx-how-minion {
+    display: block;
     left: 18%;
     bottom: -8px;
     width: 300px;
@@ -445,8 +526,7 @@
   }
 
   .vx-success-stage {
-    padding: calc(max(var(--spacing-header), 100vw * 144 / 1920) + 16px)
-      72px 72px 191px;
+    padding: calc(var(--header-plate-height) + 16px) 72px 72px 191px;
   }
 
   .vx-success-copy {
@@ -505,8 +585,8 @@
    `.vx-btn`. Keep the three button rules in sync when editing.
    ------------------------------------------------------------ */
 @utility vx-container {
-  /* Figma artboard is 1920; copy starts ~191px in from the left edge. */
-  @apply mx-auto w-full max-w-[1920px] px-5 md:px-10 xl:px-[191px];
+  /* Figma 191px inset is applied at 1800px; tighter padding below that. */
+  @apply mx-auto w-full max-w-[1920px] px-5 md:px-10 lg:px-16;
 }
 
 @utility vx-section {
@@ -528,11 +608,15 @@
 .vx-slide,
 .vx-slide-bg {
   min-height: 100svh;
+  /* Visible (not clip/hidden) so stacked slides can grow instead of
+     cropping cards. Horizontal page scroll is clipped on html/body. */
+  overflow: visible;
 }
 
-@media (width >= 1800px) {
+html.vx-figma {
   .vx-slide,
   .vx-slide-bg {
+    overflow: hidden;
     min-height: 1080px;
   }
 
@@ -584,6 +668,8 @@
 .vx-how-card {
   position: relative;
   z-index: 1;
+  min-width: 0;
+  width: 100%;
   aspect-ratio: 784.6 / 345.9;
   overflow: visible;
 }
@@ -621,8 +707,8 @@
 }
 
 .vx-how-card-copy h3 {
-  /* 13px on small screens → 20px from the 1920×1080 frame. */
-  font-size: clamp(13px, calc(8px + 0.625vw), 20px);
+  /* 14px on small screens → 20px from the 1920×1080 frame. */
+  font-size: clamp(14px, calc(10px + 0.625vw), 20px);
   font-weight: 600;
   line-height: 1.25;
   color: #fff;
@@ -630,7 +716,7 @@
 
 .vx-how-card-copy p {
   margin-top: 0.2em;
-  font-size: clamp(12px, calc(8px + 0.625vw), 20px);
+  font-size: clamp(13px, calc(9px + 0.625vw), 20px);
   line-height: 1.3;
   color: rgb(255 255 255 / 0.8);
 }
@@ -700,8 +786,8 @@
 
 .vx-benefits-icon {
   position: absolute;
-  top: 2.69%;
-  left: 50%;
+  top: 3%;
+  left: 49%;
   z-index: 2;
   display: flex;
   width: 30.63%;
@@ -711,6 +797,11 @@
   justify-content: center;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.vx-benefits-card:nth-child(n + 2) .vx-benefits-icon {
+  top: 3%;
+  left: 50%;
 }
 
 .vx-benefits-glyph {
@@ -757,7 +848,7 @@
 
 .vx-benefits-copy-inner p {
   margin: 0;
-  font-size: clamp(0.72rem, 5.2cqi, 0.95rem);
+  font-size: clamp(0.8125rem, 5.2cqi, 0.95rem);
   font-weight: 400;
   line-height: 1.4;
   color: rgb(255 255 255 / 0.92);
@@ -767,7 +858,7 @@
   margin-top: 5.2cqi;
 }
 
-@media (width >= 1800px) {
+html.vx-figma {
   .vx-benefits-copy-inner {
     padding: 118px 36px 28px;
   }
@@ -802,11 +893,38 @@
   margin-bottom: 2.5rem;
 }
 
-@media (min-width: 1024px) {
-  .vx-found-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(8rem, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+@media (min-width: 1024px) and (width < 1800px) {
+  html:not(.vx-figma) .vx-found-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 1rem;
     row-gap: 0;
+  }
+
+  /* Same laptop band as slide 04: four fluid columns from 1024, not Tailwind xl (1280). */
+  html:not(.vx-figma) .vx-benefits-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 1rem;
+    row-gap: 0;
+    overflow: visible;
+  }
+
+  html:not(.vx-figma) .vx-benefits-card {
+    width: 100%;
+    max-width: 287px;
+    justify-self: center;
+  }
+}
+
+html.vx-figma {
+  .vx-found-grid {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    grid-template-columns: 280px 280px minmax(240px, 1fr) 280px 280px;
+    column-gap: 18px;
+    row-gap: 0;
+    align-items: end;
   }
 
   .vx-found-grid > li:nth-child(1) {
@@ -823,19 +941,6 @@
 
   .vx-found-grid > li:nth-child(4) {
     grid-column: 5;
-  }
-}
-
-@media (width >= 1800px) {
-  .vx-found-grid {
-    width: 100%;
-    max-width: none;
-    margin-left: 0;
-    margin-bottom: 0;
-    grid-template-columns: 280px 280px minmax(240px, 1fr) 280px 280px;
-    column-gap: 18px;
-    row-gap: 0;
-    align-items: end;
   }
 }
 
@@ -1012,7 +1117,7 @@
   cursor: pointer;
 }
 
-@media (width >= 1800px) {
+html.vx-figma {
   .vx-found-card__copy {
     top: 138px;
     right: 48px;
@@ -1049,7 +1154,7 @@
 /* Slide 07: glass portrait cards. White frame is the card border (rx 28 / 2px
    #F2F3FA, same as the old filete) so corners stay circular at any ratio. */
 .vx-success-stage {
-  padding-top: calc(max(var(--spacing-header), 100vw * 144 / 1920) + 12px);
+  padding-top: calc(var(--header-plate-height) + 12px);
 }
 
 .vx-success-card {
@@ -1138,7 +1243,7 @@
   }
 }
 
-@media (width >= 1800px) {
+html.vx-figma {
   .vx-success-photo {
     width: 38%;
     margin: 12px 0 12px 12px;
@@ -1169,6 +1274,185 @@
     width: auto;
     aspect-ratio: 16 / 10;
     margin: 10px 10px 0;
+  }
+}
+
+/* ------------------------------------------------------------
+   Below the 1920 artboard: phone, tablet and 14" laptops.
+   Stack the campaign slides, keep type readable, never clip cards.
+   html.vx-figma skips this band (true 1800px+ or OS-DPI artboard scale).
+   ------------------------------------------------------------ */
+@media (width < 1800px) {
+  html:not(.vx-figma),
+  html:not(.vx-figma) body {
+    overflow-x: clip;
+  }
+
+  html:not(.vx-figma) {
+  .vx-hero-stage,
+  .vx-how-stage,
+  .vx-benefits-stage,
+  .vx-found-stage,
+  .vx-trials-stage,
+  .vx-success-stage {
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  /* Keep the hero a full viewport so intro + CTA sit on the soil band. */
+  .vx-hero-stage {
+    min-height: 100svh;
+    justify-content: space-between;
+  }
+
+    .vx-how-stage,
+    .vx-benefits-stage,
+    .vx-found-stage,
+    .vx-trials-stage {
+      padding-top: calc(var(--header-plate-height) + 0.75rem);
+    }
+
+    /* Valve mascot only belongs in the 1920 left-rail composition. */
+    .vx-how-minion {
+      display: none;
+    }
+
+    .vx-how-grid {
+      width: 100%;
+      max-width: none;
+      margin-top: 0;
+      margin-right: 0;
+      padding-top: 2.5rem;
+      padding-right: 1.75rem;
+      grid-template-columns: minmax(0, 1fr);
+      column-gap: 0;
+      row-gap: 2.25rem;
+    }
+
+    .vx-benefits-grid {
+      width: 100%;
+      max-width: none;
+    }
+
+    .vx-benefits-card {
+      width: 100%;
+    }
+
+    .vx-section.vx-slide-bg {
+      padding-top: calc(var(--header-plate-height) + 1.25rem);
+    }
+  }
+}
+
+/* Laptop 1024–1799: pin slide 03 cards to the soil band (must follow the
+   <1800 min-height: 0 reset). Grid columns are set with .vx-found-grid. */
+@media (min-width: 1024px) and (width < 1800px) {
+  html:not(.vx-figma) .vx-benefits-stage {
+    min-height: 100svh;
+    justify-content: space-between;
+  }
+}
+
+@media (width < 768px) {
+  :root {
+    --hero-offset-top: calc(var(--header-plate-height) + 0.5rem);
+  }
+
+  .vx-hero-stage {
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .vx-hero-copy {
+    max-width: 100%;
+  }
+
+  .vx-hero-title {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 0.95;
+  }
+
+  .vx-hero-sub {
+    max-width: 100%;
+    font-size: clamp(1.05rem, 4.6vw, 1.35rem);
+  }
+
+  .vx-hero-bottom {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding-top: 0.5rem;
+    align-items: stretch;
+  }
+
+  .vx-hero-intro {
+    max-width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+    background: rgb(0 0 0 / 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .vx-hero-cta {
+    align-self: flex-start;
+  }
+
+  .vx-hero-minion {
+    width: 7.25rem;
+    left: 0.75rem;
+    bottom: 0;
+  }
+
+  .vx-hero-bubbles,
+  .vx-found-bubbles {
+    display: none;
+  }
+
+  .vx-how-title,
+  .vx-benefits-title,
+  .vx-found-title,
+  .vx-trials-title,
+  .vx-success-title {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .vx-found-grid {
+    grid-template-columns: minmax(0, 20rem);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .vx-how-icon {
+    width: 28%;
+    transform: translate(36%, -26%);
+  }
+}
+
+@media (min-width: 640px) and (width < 1800px) {
+  html:not(.vx-figma) .vx-how-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-top: 4.5rem;
+    padding-right: 0;
+    /* Orbs hang into the centre; keep a spine so the filetes never collide. */
+    column-gap: max(4.5rem, 14%);
+    row-gap: 3.25rem;
+  }
+
+  html:not(.vx-figma) .vx-how-icon {
+    width: 26%;
+    transform: translate(32%, -28%);
+  }
+
+  html:not(.vx-figma) .vx-how-card--flip .vx-how-icon {
+    transform: translate(-32%, -28%);
   }
 }
 

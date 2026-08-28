@@ -24,7 +24,7 @@ interface Testimonial {
   template: `
     <section
       id="success"
-      class="vx-slide relative overflow-hidden"
+      class="vx-slide relative"
     >
       <img
         src="assets/all/slide-07/fondo.webp"

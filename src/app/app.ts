@@ -17,13 +17,19 @@ import { SiteHeader } from './layout/site-header/site-header';
       Skip to content
     </a>
 
-    <app-site-header />
+    <div class="vx-chrome">
+      <app-site-header />
+    </div>
 
-    <main id="main">
-      <router-outlet />
-    </main>
+    <div class="vx-scaler">
+      <div class="vx-canvas">
+        <main id="main">
+          <router-outlet />
+        </main>
 
-    <app-site-footer />
+        <app-site-footer />
+      </div>
+    </div>
   `,
 })
 export class App {}

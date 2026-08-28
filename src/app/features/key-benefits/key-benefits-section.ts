@@ -22,7 +22,7 @@ interface BenefitCard {
   template: `
     <section
       id="key-benefits"
-      class="vx-slide relative overflow-hidden"
+      class="vx-slide relative"
     >
       <img
         src="assets/all/slide-03/fondo.webp"
@@ -34,7 +34,7 @@ interface BenefitCard {
       <div
         class="vx-benefits-stage relative z-[2] mx-auto flex h-full min-h-svh
                w-full max-w-[1920px] flex-col justify-between gap-10 px-5 py-10
-               md:px-10 md:py-12 lg:flex-row lg:items-start lg:justify-between lg:gap-8"
+               md:px-10 md:py-12"
       >
         <div class="vx-benefits-copy max-w-xl shrink-0 lg:max-w-[26rem]">
           <p class="vx-eyebrow">03. {{ 'keyBenefits.eyebrow' | translate }}</p>
@@ -55,7 +55,7 @@ interface BenefitCard {
           </p>
         </div>
 
-        <ul class="vx-benefits-grid grid w-full grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4 xl:gap-5">
+        <ul class="vx-benefits-grid grid w-full grid-cols-2 gap-3 sm:gap-4">
           @for (card of cards; track card.titleKey) {
             <li class="vx-benefits-card relative w-full">
               <span class="vx-benefits-fill" aria-hidden="true"></span>
