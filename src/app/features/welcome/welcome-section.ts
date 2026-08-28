@@ -77,7 +77,7 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
 
           <a
             href="#how-it-works"
-            class="vx-hero-cta vx-btn-primary h-10 w-fit shrink-0 px-6 text-xs leading-none
+            class="vx-hero-cta vx-btn-primary self-end h-10 w-fit shrink-0 px-6 text-xs leading-none
                    md:h-11 md:px-7 md:text-sm"
           >
             {{ 'welcome.cta' | translate }}

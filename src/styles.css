@@ -1455,7 +1455,7 @@ html.vx-figma {
   }
 
   .vx-hero-cta {
-    align-self: flex-start;
+    align-self: flex-end;
   }
 
   .vx-hero-minion {

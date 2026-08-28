@@ -38,7 +38,7 @@ export const JOURNEY_SECTIONS: readonly JourneySection[] = [
     titleKey: 'nav.howItWorks.title',
     subtitleKey: 'nav.howItWorks.subtitle',
     shortKey: 'nav.howItWorks.short',
-    inNav: false,
+    inNav: true,
   },
   {
     number: '03',

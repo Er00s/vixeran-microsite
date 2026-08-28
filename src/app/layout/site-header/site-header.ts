@@ -61,7 +61,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
 
       <div
         class="vx-header-inner pointer-events-auto relative z-2 mx-auto flex
-               min-h-header w-full max-w-[1920px] items-center justify-between gap-3 px-3 md:px-5 xl:px-8"
+               min-h-header w-full max-w-[1920px] items-center justify-between gap-3 px-3 pb-2 md:pb-0 md:px-5 xl:px-8"
       >
         <a href="#welcome" class="vx-header-logo-link flex shrink-0 items-center" (click)="reveal()">
           <img
@@ -72,7 +72,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
         </a>
 
         <nav
-          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center justify-center"
+          class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center "
           [attr.aria-label]="'header.navLabel' | translate"
         >
           <ul class="flex min-w-0 items-center justify-center gap-1.5 lg:gap-2 xl:gap-2.5">
@@ -131,7 +131,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
       @if (menuOpen()) {
         <nav
           id="mobile-nav"
-          class="vx-desk-hidden pointer-events-auto relative z-2 border-t border-white/20 bg-moss-500"
+          class="vx-desk-hidden pointer-events-auto relative -top-6 z-5 border-t border-white/20 bg-moss-500 pt-2.5"
           [attr.aria-label]="'header.navLabel' | translate"
         >
           <ul class="vx-container flex flex-col py-2">
