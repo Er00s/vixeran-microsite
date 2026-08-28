@@ -128,8 +128,9 @@ html.vx-artboard .vx-header-plate {
   height: max(var(--spacing-header), 144px);
 }
 
-html.vx-artboard .vx-header-dots {
-  width: 200px;
+html.vx-artboard .vx-header-dots,
+html.vx-artboard .vx-footer-dots {
+  width: 250px;
 }
 
 html:not(.vx-artboard-transform) .vx-chrome,
@@ -204,8 +205,8 @@ html.vx-artboard-transform .vx-canvas {
 }
 
 .vx-site-header.vx-header-away {
-  /* More than the bar height so the overflowing wave plate leaves the viewport. */
-  transform: translate3d(0, calc(-1 * (var(--spacing-header) + 6rem)), 0);
+  /* More than the bar height so the overflowing wave plate and decorative dots leave the viewport. */
+  transform: translate3d(0, calc(-1 * (var(--spacing-header) + 18rem)), 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -223,10 +224,18 @@ html.vx-artboard-transform .vx-canvas {
 
 /* 200px on the 1920 artboard; shrinks with the header so it does not dominate laptops. */
 .vx-header-dots {
-  top: 0;
+  top: -20px;
   right: 0;
-  width: min(200px, calc(100cqw * 200 / 1920));
+  width: min(250px, calc(100cqw * 250 / 1920));
   height: auto;
+}
+
+.vx-footer-dots {
+  bottom: 0px;
+  right: 0;
+  width: min(230px, calc(100cqw * 230 / 1920));
+  height: auto;
+  transform: scaleY(-1);
 }
 
 /* Section pills stay visible from laptop width; hamburger only below 1024. */

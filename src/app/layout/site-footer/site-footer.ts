@@ -7,20 +7,21 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [RouterLink, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <footer class="relative overflow-hidden bg-brand-600 text-white">
+    <footer class="relative bg-brand-600 text-white">
       <img
         aria-hidden="true"
-        class="pointer-events-none absolute -bottom-20 right-0 h-56 w-56 opacity-90 select-none"
-        src="assets/brand/dot-pattern.png"
+        class="vx-footer-dots pointer-events-none absolute bottom-0 right-0 z-0 select-none"
+        src="assets/vectores/topcircles.png"
         alt=""
       />
 
       <div
-        class="vx-container relative flex flex-wrap items-center gap-x-8 gap-y-4 py-6
+        class="vx-container relative z-1 flex flex-wrap items-center gap-x-8 gap-y-4 py-6
                pr-0 sm:pr-40"
       >
         <img class="h-7 w-auto" src="assets/brand/vixeran-logo.png" alt="VIXERAN®" />
 
+        <div class="flex gap-6">
         <p class="text-sm">
           <span class="font-semibold">{{ 'footer.tagline' | translate }}</span>
           <span class="ml-2">{{ 'footer.taglineSecondary' | translate }}</span>
@@ -40,6 +41,8 @@ import { TranslatePipe } from '@ngx-translate/core';
             </li>
           </ul>
         </nav>
+        </div>
+       
 
         <img
           class="hidden h-10 w-auto sm:absolute sm:right-10 sm:top-1/2 sm:block sm:-translate-y-1/2"
