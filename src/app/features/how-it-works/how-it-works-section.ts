@@ -83,7 +83,7 @@ interface Callout {
               <span class="vx-how-icon" aria-hidden="true">
                 <img
                   class="vx-how-icon-orb"
-                  src="assets/img/slide-02/icon-orb.webp"
+                  src="assets/all/slide-02/burbuja.webp "
                   alt=""
                 />
                 <img [src]="callout.icon" alt="" class="vx-how-icon-glyph" />

@@ -32,11 +32,10 @@ import { SectionShell } from '../../shared/components/section-shell';
         </p>
 
         <div
-          class="relative aspect-video w-full min-w-0 overflow-hidden rounded-[20px] bg-ink-950
+          class="vx-drive-embed w-full min-w-0 rounded-[20px] bg-ink-950
                  shadow-[0_24px_60px_rgba(0,0,0,0.45)] ring-1 ring-white/15"
         >
           <iframe
-            class="absolute inset-0 h-full w-full border-0"
             src="https://drive.google.com/file/d/1kpS-FD0ew360IecqTOwPVWyB77nIrJS8/preview"
             allow="autoplay; fullscreen"
             allowfullscreen

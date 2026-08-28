@@ -37,14 +37,14 @@
       "short": "Commencer"
     },
     "howItWorks": {
-      "title": "Principaux bénéfices de VIXERAN®",
+      "title": "Rencontrez les bio-ingénieurs",
       "subtitle": "Comment fonctionne VIXERAN®",
-      "short": "Principaux bénéfices de VIXERAN®"
+      "short": "Bio-ingénieurs"
     },
     "keyBenefits": {
-      "title": "Rencontrez les bio-ingénieurs",
+      "title": "Principaux bénéfices de VIXERAN®",
       "subtitle": "Principaux bénéfices de VIXERAN®",
-      "short": "Bio-ingénieurs"
+      "short": "Bénéfices"
     },
     "nitrogenUptake": {
       "title": "VIXERAN® et l'absorption d'azote",
@@ -331,7 +331,7 @@
     }
   },
   "howItWorks": {
-    "eyebrow": "Key benefits of VIXERAN®",
+    "eyebrow": "Rencontrez les bio-ingénieurs",
     "title": "How VIXERAN® works",
     "kicker": "Nature's nitrogen. Put to work.",
     "body": "VIXERAN® uses the proven nitrogen-fixing ",
@@ -366,7 +366,7 @@
     }
   },
   "keyBenefits": {
-    "eyebrow": "Meet the Bio Engineers",
+    "eyebrow": "Principaux bénéfices de VIXERAN®",
     "title": "Key benefits of VIXERAN®",
     "titleLine1": "Key benefits of",
     "titleBrand": "VIXERAN®",

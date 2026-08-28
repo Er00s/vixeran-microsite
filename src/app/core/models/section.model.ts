@@ -5,12 +5,8 @@
  * This array drives BOTH the header navigation and the order in which the
  * section components are rendered on the page, so the two can never drift.
  *
- * Heads-up on 02 and 03: in the design the green pill of a section does not
- * repeat its own headline. "02. KEY BENEFITS OF VIXERAN®" sits above the
- * "How VIXERAN® works" headline, and "03. MEET THE BIO ENGINEERS" sits above
- * "Key benefits of VIXERAN®". The header nav follows the pills. This is
- * reproduced verbatim from the comp and is pending confirmation with design —
- * it may well be a layer mix-up in the source PSD.
+ * Section 02 pill: "02. MEET THE BIO ENGINEERS"
+ * Section 03 pill: "03. KEY BENEFITS OF VIXERAN®"
  */
 export interface JourneySection {
   /** "01" ... "08" - printed inside the green section pill. */

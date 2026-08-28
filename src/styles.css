@@ -435,7 +435,10 @@ html.vx-figma {
 
   .vx-how-card-copy h3,
   .vx-how-card-copy p {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
   }
 
   .vx-how-minion {
@@ -627,6 +630,40 @@ html.vx-figma {
   }
 }
 
+/* Drive's /preview document is taller than 16:9 (title row + player). A
+   tight 16:9 iframe grows an inner scrollbar and clips the control bar.
+   html.vx-artboard { zoom } also desyncs that player's position:fixed chrome. */
+.vx-drive-embed {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.vx-drive-embed::before {
+  content: '';
+  display: block;
+  /* 16:9 plus Drive's title/control chrome, kept visually constant when
+     the page itself is zoomed for OS-DPI compensation. */
+  padding-top: calc(56.25% + (8rem / var(--vx-artboard-scale, 1)));
+}
+
+.vx-drive-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+html.vx-artboard:not(.vx-artboard-transform) .vx-drive-embed iframe {
+  inset: auto;
+  top: 0;
+  left: 0;
+  zoom: calc(1 / var(--vx-artboard-scale, 1));
+  width: calc(100% * var(--vx-artboard-scale, 1));
+  height: calc(100% * var(--vx-artboard-scale, 1));
+}
+
 /* Section labels are solid green pills in the new design ("05. EXPLORE THE
    CONSTRUCTION SITES"), no longer plain uppercase text. */
 @utility vx-eyebrow {
@@ -671,6 +708,7 @@ html.vx-figma {
   min-width: 0;
   width: 100%;
   aspect-ratio: 784.6 / 345.9;
+  container-type: inline-size;
   overflow: visible;
 }
 
@@ -704,21 +742,22 @@ html.vx-figma {
   width: fit-content;
   max-width: 100%;
   text-align: left;
+  font-weight: 700;
 }
 
 .vx-how-card-copy h3 {
-  /* 14px on small screens → 20px from the 1920×1080 frame. */
-  font-size: clamp(14px, calc(10px + 0.625vw), 20px);
-  font-weight: 600;
-  line-height: 1.25;
+  font-size: clamp(14px, 5.8cqi, 24px);
+  font-weight: 700;
+  line-height: 1.2;
   color: #fff;
 }
 
 .vx-how-card-copy p {
-  margin-top: 0.2em;
-  font-size: clamp(13px, calc(9px + 0.625vw), 20px);
-  line-height: 1.3;
-  color: rgb(255 255 255 / 0.8);
+  margin-top: 0.15em;
+  font-size: clamp(14px, 5.8cqi, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
 }
 
 /* Orb sits on the open corner of the filete and hangs outside the card. */
@@ -751,6 +790,8 @@ html.vx-figma {
   width: 46%;
   height: 46%;
   object-fit: contain;
+  margin-top: 5px;
+  margin-left: 2px;
 }
 
 @media (min-width: 640px) {
@@ -1052,14 +1093,15 @@ html.vx-figma {
   display: flex;
   min-width: 0;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
 }
 
 .vx-found-card__copy-inner {
   display: flex;
-  width: 100%;
-  min-width: 0;
+  width: fit-content;
+  min-width: 76%;
+  max-width: 100%;
   max-height: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -1067,7 +1109,8 @@ html.vx-figma {
 }
 
 .vx-found-card__copy h3 {
-  width: 100%;
+  width: max-content;
+  max-width: 100%;
   min-width: 0;
   font-size: clamp(0.85rem, 6.5cqi, 1.125rem);
   font-weight: 600;
@@ -1092,8 +1135,8 @@ html.vx-figma {
 }
 
 .vx-found-card__copy p {
-  width: 100%;
-  min-width: 0;
+  width: 0;
+  min-width: 100%;
   margin-top: 2.8cqi;
   font-size: clamp(0.7rem, 4.6cqi, 0.875rem);
   font-weight: 400;
@@ -1346,11 +1389,13 @@ html.vx-figma {
 }
 
 /* Laptop 1024–1799: pin slide 03 cards to the soil band (must follow the
-   <1800 min-height: 0 reset). Grid columns are set with .vx-found-grid. */
+   <1800 min-height: 0 reset). Four-column grid lives with .vx-found-grid. */
 @media (min-width: 1024px) and (width < 1800px) {
   html:not(.vx-figma) .vx-benefits-stage {
     min-height: 100svh;
     justify-content: space-between;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
   }
 }
 
