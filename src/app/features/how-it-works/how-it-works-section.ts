@@ -22,13 +22,6 @@ interface Callout {
       id="how-it-works"
       class="vx-slide relative"
     >
-      <img
-        src="assets/all/slide-02/Micrositio-vixeran-FINAL-02.png"
-        class="absolute inset-0 size-full object-cover object-bottom"
-        loading="lazy"
-        [attr.alt]="'howItWorks.visualLabel' | translate"
-      />
-
       <div
         class="vx-how-stage relative z-[2] mx-auto flex h-full min-h-svh
                w-full max-w-[1920px] flex-col justify-between gap-8 px-5 py-10

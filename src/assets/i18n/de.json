@@ -33,7 +33,7 @@
     },
     "contact": {
       "title": "Bereit, mit VIXERAN® zu bauen?",
-      "subtitle": "Bereit für einen stärkeren Start Ihrer Kultur?",
+      "subtitle": "GEBEN SIE IHREM BESTAND EINEN STÄRKEREN START",
       "short": "Jetzt starten"
     },
     "howItWorks": {
@@ -283,17 +283,18 @@
     }
   },
   "contact": {
-    "eyebrow": "Bereit für Ihr Fundament?",
-    "title": "Kontaktieren Sie Ihre Syngenta-Ansprechperson",
-    "lead": "Sprechen Sie mit Ihrer lokalen Syngenta-Ansprechperson und bauen Sie in diesem Herbst stärkere Bestände auf.",
+    "eyebrow": "Bereit, mit VIXERAN® zu bauen?",
+    "title": "GEBEN SIE IHREM BESTAND EINEN STÄRKEREN START",
+    "lead": "Entdecken Sie, wie VIXERAN® Ihre Rapsstrategie in diesem Herbst unterstützen kann.",
+    "lead2": "Sprechen Sie mit Ihrer lokalen Syngenta-Ansprechperson, um mehr über VIXERAN®, die Anwendung und die Ergänzung Ihrer Strategie zur Düngung und Nährstoffeffizienz zu erfahren.",
+    "cta": "Mit Experten sprechen",
     "form": {
       "country": "Land",
       "countryPlaceholder": "Land auswählen",
       "submit": "Ansprechperson finden",
       "result": "Wir bringen Sie mit dem Syngenta-Team in {{country}} zusammen.",
       "disclaimer": "Dieses Formular ist ein Platzhalter der Phase 1 und versendet noch keine Daten."
-    },
-    "cta": "Talk to an expert"
+    }
   },
   "footer": {
     "legalLabel": "Rechtliche Hinweise",

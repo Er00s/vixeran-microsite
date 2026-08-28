@@ -33,7 +33,7 @@
     },
     "contact": {
       "title": "¿Listo para construir con VIXERAN®?",
-      "subtitle": "¿Listo para dar a tu cultivo un mejor comienzo?",
+      "subtitle": "DALE A TU CULTIVO UN MEJOR COMIENZO",
       "short": "Empezar"
     },
     "howItWorks": {
@@ -354,8 +354,9 @@
   },
   "contact": {
     "eyebrow": "¿Listo para construir con VIXERAN®?",
-    "title": "¿Listo para dar a tu cultivo un mejor comienzo?",
-    "lead": "Descubre cómo VIXERAN® puede apoyar tu estrategia de colza este otoño. Habla con tu representante local de Syngenta para saber más sobre VIXERAN®, su aplicación y cómo puede complementar tu estrategia de fertilización.",
+    "title": "DALE A TU CULTIVO UN MEJOR COMIENZO",
+    "lead": "Descubre cómo VIXERAN® puede apoyar tu estrategia de colza este otoño.",
+    "lead2": "Habla con tu representante local de Syngenta para saber más sobre VIXERAN®, su aplicación y cómo puede complementar tu estrategia de fertilización y eficiencia en el uso de nutrientes.",
     "cta": "Habla con un experto",
     "form": {
       "country": "País",
@@ -363,8 +364,7 @@
       "submit": "Encuentra tu representante",
       "result": "Te pondremos en contacto con el equipo de Syngenta en {{country}}.",
       "disclaimer": "Este formulario es un marcador de posición de la Fase 1 y todavía no envía datos."
-    },
-    "cta": "Talk to an expert"
+    }
   },
   "footer": {
     "legalLabel": "Enlaces legales",

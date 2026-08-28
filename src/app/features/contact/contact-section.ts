@@ -19,6 +19,7 @@ import { SectionShell } from '../../shared/components/section-shell';
       eyebrowKey="contact.eyebrow"
       titleKey="contact.title"
       leadKey="contact.lead"
+      lead2Key="contact.lead2"
       tone="brand"
       align="center"
       background="assets/all/slide-08/Micrositio-vixeran-FINAL-08.png"

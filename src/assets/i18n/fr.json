@@ -33,7 +33,7 @@
     },
     "contact": {
       "title": "Prêt à bâtir avec VIXERAN® ?",
-      "subtitle": "Prêt à donner un meilleur départ à votre culture ?",
+      "subtitle": "DONNEZ À VOTRE CULTURE UN DÉMARRAGE PLUS FORT",
       "short": "Commencer"
     },
     "howItWorks": {
@@ -283,17 +283,18 @@
     }
   },
   "contact": {
-    "eyebrow": "Prêt à bâtir la vôtre ?",
-    "title": "Contactez votre interlocuteur Syngenta",
-    "lead": "Contactez votre interlocuteur Syngenta local et bâtissez des cultures plus solides cet automne.",
+    "eyebrow": "Prêt à bâtir avec VIXERAN® ?",
+    "title": "DONNEZ À VOTRE CULTURE UN DÉMARRAGE PLUS FORT",
+    "lead": "Découvrez comment VIXERAN® peut soutenir votre stratégie Colza cet automne.",
+    "lead2": "Contactez votre représentant local Syngenta pour en savoir plus sur VIXERAN®, son application et comment il peut compléter votre stratégie de fertilisation et d'efficacité d'utilisation des nutriments.",
+    "cta": "Parler à un expert",
     "form": {
       "country": "Pays",
       "countryPlaceholder": "Sélectionnez votre pays",
       "submit": "Trouver mon interlocuteur",
       "result": "Nous vous mettrons en relation avec l'équipe Syngenta en {{country}}.",
       "disclaimer": "Ce formulaire est un espace réservé de la phase 1 et n'envoie encore aucune donnée."
-    },
-    "cta": "Talk to an expert"
+    }
   },
   "footer": {
     "legalLabel": "Liens légaux",

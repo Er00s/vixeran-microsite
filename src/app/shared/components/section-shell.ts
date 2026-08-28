@@ -63,6 +63,16 @@ type SectionAlign = 'start' | 'center';
           </p>
         }
 
+        @if (lead2Key()) {
+          <p
+            class="mt-4 max-w-2xl text-base leading-relaxed md:text-[17px] md:leading-[1.75]"
+            [class]="leadClass()"
+            [class.mx-auto]="align() === 'center'"
+          >
+            {{ lead2Key()! | translate }}
+          </p>
+        }
+
         <div class="has-[*]:mt-10" [class]="contentClass()">
           <ng-content />
         </div>
@@ -80,6 +90,7 @@ export class SectionShell {
   readonly titleKey = input.required<string>();
   readonly kickerKey = input<string | null>(null);
   readonly leadKey = input<string | null>(null);
+  readonly lead2Key = input<string | null>(null);
   readonly sectionClass = input<string>('bg-ink-900');
   readonly tone = input<SectionTone>('ink');
   readonly align = input<SectionAlign>('start');

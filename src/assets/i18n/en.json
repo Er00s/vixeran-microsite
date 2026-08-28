@@ -33,7 +33,7 @@
     },
     "contact": {
       "title": "Ready to build with VIXERAN®?",
-      "subtitle": "Ready to give your crop a stronger start?",
+      "subtitle": "GIVE YOUR CROP A STRONGER START",
       "short": "Get started"
     },
     "howItWorks": {
@@ -353,8 +353,9 @@
   },
   "contact": {
     "eyebrow": "Ready to build with VIXERAN®?",
-    "title": "Ready to give your crop a stronger start?",
-    "lead": "Discover how VIXERAN® can support your Oilseed Rape strategy this autumn. Talk to your local Syngenta representative to find out more about VIXERAN®, its application and how it can complement your fertilisation strategy.",
+    "title": "GIVE YOUR CROP A STRONGER START",
+    "lead": "Discover how VIXERAN® can support your Oilseed Rape strategy this autumn.",
+    "lead2": "Talk to your local Syngenta representative to find out more about VIXERAN®, its application and how it can complement your fertilisation and nutrient use efficiency strategy.",
     "cta": "Talk to an expert",
     "form": {
       "country": "Country",

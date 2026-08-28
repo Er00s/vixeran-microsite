@@ -28,8 +28,17 @@ import { WelcomeSection } from '../../features/welcome/welcome-section';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-welcome-section />
-    <app-how-it-works-section />
-    <app-key-benefits-section />
+    <div class="vx-flow-02-03 relative">
+      <img
+        src="assets/all/slide-02/bg-flow-02-03.png"
+        class="pointer-events-none absolute inset-0 size-full object-cover object-top"
+        loading="lazy"
+        alt=""
+        aria-hidden="true"
+      />
+      <app-how-it-works-section />
+      <app-key-benefits-section />
+    </div>
     <app-foundations-section />
     <app-trials-section />
     <app-nitrogen-uptake-section />

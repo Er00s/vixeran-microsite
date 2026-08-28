@@ -32,9 +32,9 @@
       "short": "Sukces"
     },
     "contact": {
-      "title": "Gotowy budować z VIXERAN®?",
-      "subtitle": "Gotowy dać uprawie mocniejszy start?",
-      "short": "Zacznij"
+      "title": "Gotowy na budowanie z VIXERAN®?",
+      "subtitle": "ZAPEWNIJ SWOJEJ UPRAWIE LEPSZY START",
+      "short": "Kontakt"
     },
     "howItWorks": {
       "title": "Poznaj bioinżynierów",
@@ -283,17 +283,18 @@
     }
   },
   "contact": {
-    "eyebrow": "Gotowy, by zbudować swój?",
-    "title": "Skontaktuj się z lokalnym przedstawicielem Syngenta",
-    "lead": "Skontaktuj się z lokalnym przedstawicielem Syngenta i zbuduj silniejsze plantacje tej jesieni.",
+    "eyebrow": "Gotowy na budowanie z VIXERAN®?",
+    "title": "ZAPEWNIJ SWOJEJ UPRAWIE LEPSZY START",
+    "lead": "Dowiedz się, jak VIXERAN® może wesprzeć Twoją strategię w rzepaku tej jesieni.",
+    "lead2": "Porozmawiaj z lokalnym przedstawicielem Syngenta, aby dowiedzieć się więcej o VIXERAN®, jego stosowaniu oraz o tym, jak może uzupełnić Twoją strategię nawożenia i efektywności wykorzystania składników odżywczych.",
+    "cta": "Porozmawiaj z ekspertem",
     "form": {
       "country": "Kraj",
       "countryPlaceholder": "Wybierz swój kraj",
       "submit": "Znajdź przedstawiciela",
       "result": "Skontaktujemy Cię z zespołem Syngenta w kraju: {{country}}.",
       "disclaimer": "Ten formularz jest elementem zastępczym Fazy 1 i nie wysyła jeszcze żadnych danych."
-    },
-    "cta": "Talk to an expert"
+    }
   },
   "footer": {
     "legalLabel": "Linki prawne",

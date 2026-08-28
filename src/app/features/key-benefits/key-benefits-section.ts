@@ -24,16 +24,9 @@ interface BenefitCard {
       id="key-benefits"
       class="vx-slide relative"
     >
-      <img
-        src="assets/all/slide-03/Micrositio-vixeran-FINAL-03.png"
-        class="absolute inset-0 size-full object-cover object-top"
-        loading="lazy"
-        [attr.alt]="'keyBenefits.visualLabel' | translate"
-      />
-
       <div
         class="vx-benefits-stage relative z-2 mx-auto flex h-full min-h-svh
-               w-full max-w-[1920px] flex-col justify-between gap-8 px-5 py-10
+               w-full max-w-[1920px] gap-8 px-5 py-10
                md:px-10 md:py-12"
       >
         <div class="vx-benefits-header max-w-xl">
@@ -48,7 +41,7 @@ interface BenefitCard {
           </h2>
         </div>
 
-        <div class="vx-benefits-content flex w-full flex-col items-center gap-6">
+        <div class="vx-benefits-content flex flex-wrap w-full items-center gap-6">
           <p
             class="vx-benefits-lead max-w-2xl text-center text-[14px] font-medium leading-[1.6] text-white
                    md:text-[16px]"
