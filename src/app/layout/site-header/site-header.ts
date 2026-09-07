@@ -63,13 +63,33 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
         class="vx-header-inner pointer-events-auto relative z-2 mx-auto flex
                min-h-header w-full max-w-[1920px] items-center justify-between gap-3 px-3 pb-2 md:pb-0 md:px-5 xl:px-8"
       >
-        <a href="#welcome" class="vx-header-logo-link flex shrink-0 items-center" (click)="reveal()">
-          <img
-            class="vx-header-logo h-7 w-auto sm:h-8 md:h-9"
-            src="assets/logos/vixeran-rgb-large.png"
-            alt="VIXERAN®"
-          />
-        </a>
+        <div class="vx-header-left flex shrink-0 items-center gap-2 sm:gap-3">
+          <a href="#welcome" class="vx-header-logo-link flex shrink-0 items-center" (click)="reveal()">
+            <img
+              class="vx-header-logo h-7 w-auto sm:h-8 md:h-9"
+              src="assets/logos/vixeran-rgb-large.png"
+              alt="VIXERAN®"
+            />
+          </a>
+
+          <!-- Below 1024: hamburger + lang sit flush against the logo. -->
+          <div class="vx-desk-hidden flex items-center gap-2">
+            <button
+              type="button"
+              class="rounded-full border border-white/40 p-2 text-white"
+              [attr.aria-expanded]="menuOpen()"
+              aria-controls="mobile-nav"
+              (click)="toggle()"
+            >
+              <span class="sr-only">{{ 'header.menu' | translate }}</span>
+              <span aria-hidden="true" class="block h-0.5 w-5 bg-current"></span>
+              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
+              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
+            </button>
+
+            <app-language-switcher />
+          </div>
+        </div>
 
         <nav
           class="vx-header-nav vx-desk-block hidden min-w-0 flex-1 items-center "
@@ -101,29 +121,12 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
         </nav>
 
         <div class="vx-header-right flex shrink-0 items-center gap-3">
-          <div class="vx-header-syngenta-wrap hidden items-center sm:flex">
+          <div class="vx-header-syngenta-wrap flex items-center">
             <img
               class="vx-header-syngenta h-7 w-auto sm:h-8 md:h-9"
               src="assets/vectores/syngentabiologicals.png"
               alt="Syngenta Biologicals"
             />
-          </div>
-
-          <div class="vx-desk-hidden flex items-center gap-2">
-            <app-language-switcher />
-
-            <button
-              type="button"
-              class="rounded-full border border-white/40 p-2 text-white"
-              [attr.aria-expanded]="menuOpen()"
-              aria-controls="mobile-nav"
-              (click)="toggle()"
-            >
-              <span class="sr-only">{{ 'header.menu' | translate }}</span>
-              <span aria-hidden="true" class="block h-0.5 w-5 bg-current"></span>
-              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
-              <span aria-hidden="true" class="mt-1 block h-0.5 w-5 bg-current"></span>
-            </button>
           </div>
         </div>
       </div>

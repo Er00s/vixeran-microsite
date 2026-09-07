@@ -86,7 +86,7 @@ interface RegionCollection {
             [innerHTML]="titleHtml()"
           ></h2>
         <div
-          class="relative min-h-[240px] w-full flex-1 overflow-hidden rounded-[28px] aspect-video lg:aspect-auto lg:min-h-0"
+          class="relative h-[58svh] min-h-[360px] w-full overflow-hidden rounded-[28px] sm:h-[62svh] sm:min-h-[420px] lg:h-auto lg:min-h-0 lg:flex-1"
           [style.background]="water"
         >
           <div #mapHost class="absolute inset-0" role="application" [attr.aria-label]="'map.ariaLabel' | translate"></div>
@@ -100,142 +100,171 @@ interface RegionCollection {
       </div>
 
       <aside
-        class="flex h-full min-h-0 flex-col gap-5 rounded-[28px] border border-white/35 bg-white/10 p-5 text-white backdrop-blur-md"
+        class="flex h-full min-h-0 flex-col rounded-[28px] border border-white/35 bg-white/10 p-4 text-white backdrop-blur-md lg:gap-5 lg:p-5"
+        [class.gap-5]="filtersOpen()"
       >
-        <div class="flex flex-col gap-3">
+        <button
+          type="button"
+          class="flex w-full items-center justify-between gap-3 text-left lg:pointer-events-none"
+          [attr.aria-expanded]="filtersOpen()"
+          aria-controls="map-filters-panel"
+          (click)="toggleFilters()"
+        >
           <h3 class="text-[11px] font-semibold uppercase tracking-[0.18em]">
             {{ 'map.filters.title' | translate }}
           </h3>
+          <svg
+            class="h-4 w-4 shrink-0 text-white/80 transition-transform duration-200 lg:hidden"
+            [class.rotate-180]="filtersOpen()"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
 
-          <label class="flex flex-col gap-1.5">
-            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
-              {{ 'map.filters.country' | translate }}
-            </span>
-            <select
-              class="vx-map-select"
-              [value]="trials.filters().country"
-              (change)="trials.setCountry(value($event))"
-            >
-              <option value="all">{{ 'map.filters.allCountries' | translate }}</option>
-              @for (country of trials.countries(); track country) {
-                <option [value]="country">{{ country }}</option>
-              }
-            </select>
-          </label>
+        <div
+          id="map-filters-panel"
+          class="min-h-0 flex-col gap-5 lg:flex"
+          [class.flex]="filtersOpen()"
+          [class.hidden]="!filtersOpen()"
+        >
+          <div class="flex flex-col gap-3">
+            <label class="flex flex-col gap-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
+                {{ 'map.filters.country' | translate }}
+              </span>
+              <select
+                class="vx-map-select"
+                [value]="trials.filters().country"
+                (change)="trials.setCountry(value($event))"
+              >
+                <option value="all">{{ 'map.filters.allCountries' | translate }}</option>
+                @for (country of trials.countries(); track country) {
+                  <option [value]="country">{{ country }}</option>
+                }
+              </select>
+            </label>
 
-          <label class="flex flex-col gap-1.5">
-            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
-              {{ 'map.filters.season' | translate }}
-            </span>
-            <select
-              class="vx-map-select"
-              [value]="trials.filters().season"
-              (change)="trials.setSeason(value($event))"
-            >
-              <option value="all">{{ 'map.filters.allSeasons' | translate }}</option>
-              @for (season of trials.seasons(); track season) {
-                <option [value]="season">{{ season }}</option>
-              }
-            </select>
-          </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
+                {{ 'map.filters.season' | translate }}
+              </span>
+              <select
+                class="vx-map-select"
+                [value]="trials.filters().season"
+                (change)="trials.setSeason(value($event))"
+              >
+                <option value="all">{{ 'map.filters.allSeasons' | translate }}</option>
+                @for (season of trials.seasons(); track season) {
+                  <option [value]="season">{{ season }}</option>
+                }
+              </select>
+            </label>
 
-          <label class="flex flex-col gap-1.5">
-            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
-              {{ 'map.filters.metric' | translate }}
-            </span>
-            <select
-              class="vx-map-select"
-              [value]="trials.filters().metric"
-              (change)="trials.setMetric(metricValue($event))"
-            >
-              <option value="all">{{ 'map.filters.metricAll' | translate }}</option>
-              <option value="yield">{{ 'map.filters.metricYield' | translate }}</option>
-              <option value="biomass">{{ 'map.filters.metricBiomass' | translate }}</option>
-            </select>
-          </label>
+            <label class="flex flex-col gap-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
+                {{ 'map.filters.metric' | translate }}
+              </span>
+              <select
+                class="vx-map-select"
+                [value]="trials.filters().metric"
+                (change)="trials.setMetric(metricValue($event))"
+              >
+                <option value="all">{{ 'map.filters.metricAll' | translate }}</option>
+                <option value="yield">{{ 'map.filters.metricYield' | translate }}</option>
+                <option value="biomass">{{ 'map.filters.metricBiomass' | translate }}</option>
+              </select>
+            </label>
 
-          <button type="button" class="self-start text-xs text-white/90 underline" (click)="trials.resetFilters()">
-            {{ 'map.filters.reset' | translate }}
-          </button>
-        </div>
-
-        <p class="text-[10px] leading-snug text-white/70">{{ 'map.stats.dynamicNote' | translate }}</p>
-
-        <div class="grid grid-cols-3 gap-1.5">
-          <div class="rounded-xl bg-white px-2 py-2.5 text-center">
-            <p class="font-display text-lg font-bold leading-none text-brand-600">
-              {{ gain(summary().headlineAvg) }}
-            </p>
-            <p class="mt-1 text-[9px] font-semibold uppercase leading-tight tracking-wide text-ink-900">
-              {{ 'map.stats.avgIncrease' | translate: { metric: (metricKey() | translate) } }}
-            </p>
+            <button type="button" class="self-start text-xs text-white/90 underline" (click)="trials.resetFilters()">
+              {{ 'map.filters.reset' | translate }}
+            </button>
           </div>
 
-          <div class="rounded-xl bg-white px-2 py-2.5 text-center">
-            <p class="font-display text-[13px] font-bold leading-none text-brand-600">
-              @if (summary().headlineTotal) {
-                {{
-                  'map.stats.ratioLine'
-                    | translate: { positive: summary().headlinePositive, total: summary().headlineTotal }
-                }}
-              } @else {
-                —
-              }
-            </p>
-            <p class="mt-1 text-[9px] font-semibold uppercase leading-tight tracking-wide text-ink-900">
-              {{ 'map.stats.ratioCaption' | translate: { metric: (metricKey() | translate) } }}
-            </p>
+          <p class="text-[10px] leading-snug text-white/70">{{ 'map.stats.dynamicNote' | translate }}</p>
+
+          <div class="grid grid-cols-3 gap-1.5">
+            <div class="rounded-xl bg-white px-2 py-2.5 text-center">
+              <p class="font-display text-lg font-bold leading-none text-brand-600">
+                {{ gain(summary().headlineAvg) }}
+              </p>
+              <p class="mt-1 text-[9px] font-semibold uppercase leading-tight tracking-wide text-ink-900">
+                {{ 'map.stats.avgIncrease' | translate: { metric: (metricKey() | translate) } }}
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-white px-2 py-2.5 text-center">
+              <p class="font-display text-[13px] font-bold leading-none text-brand-600">
+                @if (summary().headlineTotal) {
+                  {{
+                    'map.stats.ratioLine'
+                      | translate: { positive: summary().headlinePositive, total: summary().headlineTotal }
+                  }}
+                } @else {
+                  —
+                }
+              </p>
+              <p class="mt-1 text-[9px] font-semibold uppercase leading-tight tracking-wide text-ink-900">
+                {{ 'map.stats.ratioCaption' | translate: { metric: (metricKey() | translate) } }}
+              </p>
+            </div>
+
+            <div class="grid place-items-center rounded-xl bg-brand-500 px-2 py-2.5 text-center">
+              <p class="text-[9px] font-semibold uppercase leading-tight tracking-wide text-white">
+                {{ 'map.stats.conditions' | translate }}
+              </p>
+            </div>
           </div>
 
-          <div class="grid place-items-center rounded-xl bg-brand-500 px-2 py-2.5 text-center">
-            <p class="text-[9px] font-semibold uppercase leading-tight tracking-wide text-white">
-              {{ 'map.stats.conditions' | translate }}
-            </p>
-          </div>
-        </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-[11px] font-semibold uppercase tracking-[0.18em]">
+              {{ 'map.legend.title' | translate }}
+            </h3>
 
-        <div class="flex flex-col gap-2">
-          <h3 class="text-[11px] font-semibold uppercase tracking-[0.18em]">
-            {{ 'map.legend.title' | translate }}
-          </h3>
-
-          <div class="rounded-2xl bg-white p-4 text-ink-900">
-            <p class="text-[11px] font-semibold uppercase tracking-wider text-ink-700">
-              {{ 'map.legend.shape' | translate }}
-            </p>
-            <ul class="mt-2 flex flex-col gap-1.5 text-xs">
-              <li class="flex items-center gap-2">
-                <span class="h-4 w-4 shrink-0 rounded-full border-2 border-white ring-1 ring-black/25" style="background:#2e8b57"></span>
-                {{ 'map.legend.shapeYield' | translate }}
-              </li>
-              <li class="flex items-center gap-2">
-                <span
-                  class="h-3.5 w-3.5 shrink-0 rotate-45 rounded-[3px] border-2 border-white ring-1 ring-black/25"
-                  style="background:#2e8b57"
-                ></span>
-                {{ 'map.legend.shapeBiomass' | translate }}
-              </li>
-              <li class="flex items-center gap-2">
-                <span
-                  class="h-4 w-4 shrink-0 rounded-full border-2 border-dashed border-neutral-400"
-                  [style.background]="noDataColor"
-                ></span>
-                {{ 'map.legend.shapeNone' | translate }}
-              </li>
-            </ul>
-
-            <p class="mt-3 text-[11px] font-semibold uppercase tracking-wider text-ink-700">
-              {{ 'map.legend.color' | translate }}
-            </p>
-            <ul class="mt-2 flex flex-col gap-1.5 text-xs">
-              @for (band of bands; track band.labelKey) {
+            <div class="rounded-2xl bg-white p-4 text-ink-900">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-ink-700">
+                {{ 'map.legend.shape' | translate }}
+              </p>
+              <ul class="mt-2 flex flex-col gap-1.5 text-xs">
                 <li class="flex items-center gap-2">
-                  <span class="h-4 w-4 shrink-0 rounded-full" [style.background]="band.color"></span>
-                  {{ band.labelKey | translate }}
+                  <span class="h-4 w-4 shrink-0 rounded-full border-2 border-white ring-1 ring-black/25" style="background:#2e8b57"></span>
+                  {{ 'map.legend.shapeYield' | translate }}
                 </li>
-              }
-            </ul>
-            <p class="mt-2 text-[11px] text-ink-700/70">{{ 'map.legend.size' | translate }}</p>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="h-3.5 w-3.5 shrink-0 rotate-45 rounded-[3px] border-2 border-white ring-1 ring-black/25"
+                    style="background:#2e8b57"
+                  ></span>
+                  {{ 'map.legend.shapeBiomass' | translate }}
+                </li>
+                <li class="flex items-center gap-2">
+                  <span
+                    class="h-4 w-4 shrink-0 rounded-full border-2 border-dashed border-neutral-400"
+                    [style.background]="noDataColor"
+                  ></span>
+                  {{ 'map.legend.shapeNone' | translate }}
+                </li>
+              </ul>
+
+              <p class="mt-3 text-[11px] font-semibold uppercase tracking-wider text-ink-700">
+                {{ 'map.legend.color' | translate }}
+              </p>
+              <ul class="mt-2 flex flex-col gap-1.5 text-xs">
+                @for (band of bands; track band.labelKey) {
+                  <li class="flex items-center gap-2">
+                    <span class="h-4 w-4 shrink-0 rounded-full" [style.background]="band.color"></span>
+                    {{ band.labelKey | translate }}
+                  </li>
+                }
+              </ul>
+              <p class="mt-2 text-[11px] text-ink-700/70">{{ 'map.legend.size' | translate }}</p>
+            </div>
           </div>
         </div>
       </aside>
@@ -250,6 +279,8 @@ export class TrialMap implements OnDestroy {
   private readonly mapHost = viewChild.required<ElementRef<HTMLElement>>('mapHost');
 
   protected readonly ready = signal(false);
+  /** Filters panel starts collapsed on mobile; always visible from lg up via CSS. */
+  protected readonly filtersOpen = signal(false);
   protected readonly bands = GAIN_BANDS;
   protected readonly noDataColor = NO_DATA_COLOR;
   protected readonly water = MAP_WATER;
@@ -287,6 +318,10 @@ export class TrialMap implements OnDestroy {
   ngOnDestroy(): void {
     this.resizeObserver?.disconnect();
     this.map?.remove();
+  }
+
+  protected toggleFilters(): void {
+    this.filtersOpen.update((open) => !open);
   }
 
   protected value(event: Event): string {

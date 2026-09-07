@@ -71,11 +71,12 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
       <div class="vx-hero-band relative z-[2] bg-moss-500">
         <div
           class="vx-hero-bottom mx-auto flex w-full max-w-[1920px] flex-col
-                 items-stretch gap-4 px-5 py-3 sm:flex-row sm:items-center
-                 sm:gap-6 md:px-10 md:py-3.5 lg:gap-8"
+                 items-stretch gap-2.5 px-5 py-2.5 sm:flex-row sm:items-center
+                 sm:gap-6 sm:py-3 md:px-10 md:py-3.5 lg:gap-8"
         >
           <p
-            class="vx-hero-intro min-w-0 flex-1 font-sans text-[19px] font-semibold leading-[1.55] text-white"
+            class="vx-hero-intro min-w-0 flex-1 font-sans text-[13px] font-semibold leading-[1.45]
+                   text-white sm:text-[16px] sm:leading-[1.5] md:text-[19px] md:leading-[1.55]"
           >
             {{ 'welcome.intro' | translate }}
             <em class="italic">{{ 'welcome.introEmphasis' | translate }}</em>
