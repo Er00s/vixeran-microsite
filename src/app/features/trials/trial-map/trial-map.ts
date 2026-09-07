@@ -25,12 +25,18 @@ import { LanguageService } from '../../../core/services/language.service';
 import { TrialsService } from '../../../core/services/trials.service';
 import {
   WORLD_GEOJSON_URL,
+  REGIONS_GEOJSON_URL,
+  REGIONS_MIN_ZOOM,
+  REGION_LABEL_MIN_ZOOM,
   MAP_WATER,
   escapeHtml,
   labelFor,
   labelVisible,
   landStyle,
+  regionStyle,
+  setRegionIsos,
   type EuropeProps,
+  type RegionProps,
 } from './europe-map';
 
 interface EuropeFeature {
@@ -42,6 +48,17 @@ interface EuropeFeature {
 interface EuropeCollection {
   type: 'FeatureCollection';
   features: EuropeFeature[];
+}
+
+interface RegionFeature {
+  type: 'Feature';
+  properties: RegionProps;
+  geometry: object;
+}
+
+interface RegionCollection {
+  type: 'FeatureCollection';
+  features: RegionFeature[];
 }
 
 /**
@@ -246,8 +263,11 @@ export class TrialMap implements OnDestroy {
   private leaflet?: typeof L;
   private map?: L.Map;
   private cluster?: L.MarkerClusterGroup;
+  private landLayer?: L.GeoJSON;
+  private regionsLayer?: L.GeoJSON;
   private resizeObserver?: ResizeObserver;
   private readonly labelMarkers: { marker: L.Marker; rank: number }[] = [];
+  private readonly regionLabelMarkers: L.Marker[] = [];
 
   constructor() {
     afterNextRender(() => void this.initMap());
@@ -295,17 +315,34 @@ export class TrialMap implements OnDestroy {
         scrollWheelZoom: false,
         attributionControl: false,
         minZoom: 2,
-        maxZoom: 8,
+        maxZoom: 9,
         worldCopyJump: true,
       })
       .setView([54, 15], 4);
 
     map.getContainer().style.background = MAP_WATER;
+    map.createPane('regions');
+    const regionsPane = map.getPane('regions');
+    if (regionsPane) {
+      regionsPane.style.zIndex = '350';
+    }
+    map.createPane('countries');
+    const countriesPane = map.getPane('countries');
+    if (countriesPane) {
+      // Above regions so country borders stay crisp over regional fills.
+      countriesPane.style.zIndex = '360';
+    }
     map.createPane('countryLabels');
     const labelPane = map.getPane('countryLabels');
     if (labelPane) {
       labelPane.style.zIndex = '450';
       labelPane.style.pointerEvents = 'none';
+    }
+    map.createPane('regionLabels');
+    const regionLabelPane = map.getPane('regionLabels');
+    if (regionLabelPane) {
+      regionLabelPane.style.zIndex = '440';
+      regionLabelPane.style.pointerEvents = 'none';
     }
 
     this.cluster = leaflet.markerClusterGroup({
@@ -313,12 +350,15 @@ export class TrialMap implements OnDestroy {
       showCoverageOnHover: false,
     });
     map.addLayer(this.cluster);
-    map.on('zoomend', () => this.refreshLabels());
+    map.on('zoomend', () => this.onZoomEnd());
+    map.on('moveend', () => this.refreshRegionLabels());
 
     this.map = map;
     this.resizeObserver = new ResizeObserver(() => map.invalidateSize());
     this.resizeObserver.observe(this.mapHost().nativeElement);
     await this.loadLand();
+    await this.loadRegions();
+    this.onZoomEnd();
     map.invalidateSize();
     map.setView([54, 15], 4);
 
@@ -340,10 +380,14 @@ export class TrialMap implements OnDestroy {
     try {
       const response = await fetch(WORLD_GEOJSON_URL);
       const collection = (await response.json()) as EuropeCollection;
+      const zoom = map.getZoom();
       const land = leaflet.geoJSON(collection, {
-        style: (feature) => landStyle((feature as EuropeFeature | undefined)?.properties.iso ?? ''),
+        pane: 'countries',
+        style: (feature) =>
+          landStyle((feature as EuropeFeature | undefined)?.properties.iso ?? '', zoom),
       });
       land.addTo(map);
+      this.landLayer = land;
       map.setMaxBounds(leaflet.latLngBounds([-55, -180], [85, 180]));
 
       for (const feature of collection.features) {
@@ -368,6 +412,120 @@ export class TrialMap implements OnDestroy {
     } catch {
       map.setMaxBounds(leaflet.latLngBounds([-55, -180], [85, 180]));
     }
+  }
+
+  /** Worldwide admin-1 regions — revealed past REGIONS_MIN_ZOOM. */
+  private async loadRegions(): Promise<void> {
+    const leaflet = this.leaflet;
+    const map = this.map;
+    if (!leaflet || !map) {
+      return;
+    }
+
+    try {
+      const response = await fetch(REGIONS_GEOJSON_URL);
+      const collection = (await response.json()) as RegionCollection;
+      setRegionIsos(collection.features.map((f) => f.properties.iso));
+      this.regionsLayer = leaflet.geoJSON(collection, {
+        pane: 'regions',
+        interactive: false,
+        style: (feature) =>
+          regionStyle((feature as RegionFeature | undefined)?.properties.id ?? ''),
+      });
+    } catch {
+      setRegionIsos([]);
+      this.regionsLayer = undefined;
+    }
+  }
+
+  private onZoomEnd(): void {
+    this.refreshLabels();
+    this.refreshRegionDetail();
+    this.refreshRegionLabels();
+  }
+
+  private refreshRegionDetail(): void {
+    const map = this.map;
+    const land = this.landLayer;
+    const regions = this.regionsLayer;
+    if (!map || !land) {
+      return;
+    }
+
+    const zoom = map.getZoom();
+    land.setStyle((feature) =>
+      landStyle((feature as EuropeFeature | undefined)?.properties.iso ?? '', zoom),
+    );
+
+    if (!regions) {
+      return;
+    }
+
+    const shouldShow = zoom >= REGIONS_MIN_ZOOM;
+    const onMap = map.hasLayer(regions);
+    if (shouldShow && !onMap) {
+      regions.addTo(map);
+    } else if (!shouldShow && onMap) {
+      map.removeLayer(regions);
+    }
+  }
+
+  /** Labels only for regions in the current viewport, at high zoom. */
+  private refreshRegionLabels(): void {
+    const map = this.map;
+    const leaflet = this.leaflet;
+    const regions = this.regionsLayer;
+
+    for (const marker of this.regionLabelMarkers) {
+      marker.remove();
+    }
+    this.regionLabelMarkers.length = 0;
+
+    if (!map || !leaflet || !regions || !map.hasLayer(regions)) {
+      return;
+    }
+
+    const zoom = map.getZoom();
+    if (zoom < REGION_LABEL_MIN_ZOOM) {
+      return;
+    }
+
+    const view = map.getBounds().pad(0.05);
+    // Hide tiny fragments until the user is quite zoomed in.
+    const minSpan = zoom >= 8 ? 0.15 : zoom >= 7 ? 0.35 : 0.7;
+
+    regions.eachLayer((layer) => {
+      const path = layer as L.Polygon;
+      if (typeof path.getBounds !== 'function') {
+        return;
+      }
+      const bounds = path.getBounds();
+      if (!bounds.isValid() || !view.intersects(bounds)) {
+        return;
+      }
+      if (bounds.getNorth() - bounds.getSouth() < minSpan && bounds.getEast() - bounds.getWest() < minSpan) {
+        return;
+      }
+
+      const feature = (layer as L.Layer & { feature?: RegionFeature }).feature;
+      const name = feature?.properties?.name?.trim();
+      if (!name) {
+        return;
+      }
+
+      const marker = leaflet.marker(bounds.getCenter(), {
+        pane: 'regionLabels',
+        interactive: false,
+        keyboard: false,
+        icon: leaflet.divIcon({
+          className: 'vx-map-label vx-map-label--region',
+          html: `<span class="vx-map-label__text">${escapeHtml(name)}</span>`,
+          iconSize: [0, 0],
+        }),
+      });
+      marker.addTo(map);
+      this.regionLabelMarkers.push(marker);
+    });
   }
 
   private refreshLabels(): void {

@@ -26,7 +26,7 @@ import { SectionShell } from '../../shared/components/section-shell';
     >
       <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
         <div
-          class="space-y-4 text-base leading-relaxed text-mist-300 md:text-[17px] md:leading-[1.75]"
+          class="space-y-12 text-base leading-relaxed text-mist-300 md:text-[20px] md:leading-[1.75]"
         >
           <p>{{ 'nitrogenUptake.body' | translate }}</p>
           <p>{{ 'nitrogenUptake.body2' | translate }}</p>

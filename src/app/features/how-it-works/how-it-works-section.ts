@@ -1,5 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  inject,
+  viewChildren,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 interface Callout {
   icon: string;
@@ -80,7 +89,7 @@ interface Callout {
               </span>
 
               <div class="vx-how-card-copy">
-                <div class="vx-how-card-copy-inner">
+                <div class="vx-how-card-copy-inner" #copyInner>
                   <h3>{{ callout.titleKey | translate }}.</h3>
                   <p>{{ callout.bodyKey | translate }}.</p>
                 </div>
@@ -93,6 +102,13 @@ interface Callout {
   `,
 })
 export class HowItWorksSection {
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly translate = inject(TranslateService);
+  private readonly copyInners = viewChildren<ElementRef<HTMLElement>>('copyInner');
+
+  private fitRaf = 0;
+  private resizeObserver: ResizeObserver | null = null;
+
   protected readonly callouts: readonly Callout[] = [
     {
       icon: 'assets/all/slide-03/icon-01.svg',
@@ -125,4 +141,79 @@ export class HowItWorksSection {
       bodyKey: 'howItWorks.callouts.winter.body',
     },
   ];
+
+  constructor() {
+    afterNextRender(() => {
+      this.observeAndFit();
+      this.translate.onLangChange
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => this.scheduleFit());
+    });
+
+    this.destroyRef.onDestroy(() => {
+      cancelAnimationFrame(this.fitRaf);
+      this.resizeObserver?.disconnect();
+    });
+  }
+
+  private observeAndFit(): void {
+    this.resizeObserver?.disconnect();
+    this.resizeObserver = new ResizeObserver(() => this.scheduleFit());
+
+    for (const ref of this.copyInners()) {
+      const box = ref.nativeElement.parentElement;
+      if (box) {
+        this.resizeObserver.observe(box);
+      }
+    }
+
+    this.scheduleFit();
+  }
+
+  private scheduleFit(): void {
+    cancelAnimationFrame(this.fitRaf);
+    this.fitRaf = requestAnimationFrame(() => {
+      // Second frame: wait for translated DOM text to settle after lang change.
+      this.fitRaf = requestAnimationFrame(() => this.fitAll());
+    });
+  }
+
+  private fitAll(): void {
+    for (const ref of this.copyInners()) {
+      this.fitCopy(ref.nativeElement);
+    }
+  }
+
+  /** Binary-search the largest --vx-how-fit ≤ 1 that keeps copy inside the frame. */
+  private fitCopy(inner: HTMLElement): void {
+    const box = inner.parentElement;
+    if (!box) {
+      return;
+    }
+
+    const fits = (scale: number): boolean => {
+      inner.style.setProperty('--vx-how-fit', String(scale));
+      return (
+        inner.scrollHeight <= box.clientHeight + 0.5 &&
+        inner.scrollWidth <= box.clientWidth + 0.5
+      );
+    };
+
+    if (fits(1)) {
+      return;
+    }
+
+    let lo = 0.45;
+    let hi = 1;
+    for (let i = 0; i < 14; i++) {
+      const mid = (lo + hi) / 2;
+      if (fits(mid)) {
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+
+    inner.style.setProperty('--vx-how-fit', String(lo));
+  }
 }
