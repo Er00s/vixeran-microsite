@@ -58,8 +58,8 @@
     "headlineMid": "es temporada de",
     "headlineBottom": "construcción",
     "subheadline": "Construye biomasa, supera el invierno, protege tu rendimiento",
-    "intro": "VIXERAN® usa la probada ",
-    "introEmphasis": "bacteria Azotobacter salinestris",
+    "intro": "VIXERAN® usa la probada bacteria ",
+    "introEmphasis": "Azotobacter salinestris CECT 9690",
     "introRest": " fijadora de nitrógeno para complementar la fertilización, dando a la colza una fuente adicional de nitrógeno fijado biológicamente a partir del aire. Esto impulsa una biomasa robusta, una invernada fiable y rendimientos consistentes, aprovechando la fase crítica de implantación del cultivo.",
     "cta": "Cómo funciona VIXERAN",
     "visualLabel": "Key visual de campaña: Bioingenieros en la obra de otoño"
@@ -68,8 +68,8 @@
     "eyebrow": "Conoce a los bioingenieros",
     "title": "Cómo funciona VIXERAN®",
     "kicker": "El nitrógeno de la naturaleza. Puesto a trabajar.",
-    "body": "VIXERAN® usa la ",
-    "bodyEmphasis": "bacteria Azotobacter salinestris",
+    "body": "VIXERAN® usa la bacteria ",
+    "bodyEmphasis": "Azotobacter salinestris CECT 9690",
     "bodyRest": " fijadora de nitrógeno para complementar la fertilización. Las bacterias colonizan la planta y fijan el nitrógeno atmosférico, aportando una fuente adicional de nitrógeno fijado biológicamente para apoyar el desarrollo del cultivo durante la implantación.",
     "visualLabel": "Bioingenieros canalizando nitrógeno a través de una hoja",
     "callouts": {
@@ -131,7 +131,8 @@
   "nitrogenUptake": {
     "eyebrow": "VIXERAN® y la absorción de nitrógeno",
     "title": "Cómo VIXERAN® mejora la absorción de nitrógeno del cultivo",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
+    "body": "El vídeo muestra cómo las bacterias fijadoras de nitrógeno de VIXERAN® penetran en las hojas, las raíces y la zona radicular de la planta, fijando el nitrógeno disponible en el aire y convirtiéndolo en nitrógeno amoniacal que el cultivo puede absorber.",
+    "body2": "En estado latente, las bacterias forman quistes que las protegen frente a factores desfavorables como el frío. Sin embargo, al entrar en contacto con humedad y calor, se activan. El nitrógeno que VIXERAN® fija para la planta no se lixivia ni se volatiliza.",
     "videoLabel": "Vídeo del mecanismo de acción de VIXERAN®"
   },
   "foundations": {

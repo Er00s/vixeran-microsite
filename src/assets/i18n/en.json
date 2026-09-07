@@ -55,11 +55,11 @@
   "welcome": {
     "eyebrow": "Welcome to the Building Site",
     "headlineTop": "Autumn",
-    "headlineMid": "is building",
+    "headlineMid": "is Building",
     "headlineBottom": "season",
     "subheadline": "Build biomass, beat winter, protect your yield",
     "intro": "VIXERAN® uses the proven nitrogen-fixing ",
-    "introEmphasis": "bacterium Azotobacter salinestris",
+    "introEmphasis": "Azotobacter salinestris CECT 9690",
     "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase.",
     "cta": "How VIXERAN works",
     "visualLabel": "Campaign key visual: Bio Engineers on the autumn construction site"
@@ -68,8 +68,8 @@
     "eyebrow": "Meet the Bio Engineers",
     "title": "How VIXERAN® works",
     "kicker": "Nature's nitrogen. Put to work.",
-    "body": "VIXERAN® uses the proven nitrogen-fixing ",
-    "bodyEmphasis": "bacterium Azotobacter salinestris",
+    "body": "VIXERAN® uses the proven nitrogen-fixing bacterium ",
+    "bodyEmphasis": "Azotobacter salinestris CECT 9690",
     "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
     "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
     "callouts": {
@@ -131,7 +131,8 @@
   "nitrogenUptake": {
     "eyebrow": "How VIXERAN® enhances crop",
     "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
+    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop.",
+    "body2": "In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
     "videoLabel": "VIXERAN® mechanism of action video"
   },
   "foundations": {

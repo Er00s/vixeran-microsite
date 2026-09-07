@@ -55,14 +55,14 @@
   "welcome": {
     "eyebrow": "Willkommen auf der Baustelle",
     "headlineTop": "Der Herbst",
-    "headlineBottom": "ist Bausaison",
-    "subheadline": "Legen Sie mit Stickstoff aus der Luft das Fundament für einen stärkeren Bestand.",
-    "intro": "VIXERAN® erschließt für Winterraps eine zusätzliche Quelle biologisch fixierten Stickstoffs – genau in der kritischsten Phase der Bestandesetablierung.",
+    "headlineMid": "ist",
+    "headlineBottom": "Bausaison",
+    "subheadline": "Biomasse aufbauen, den Winter meistern, den Ertrag schützen",
+    "intro": "VIXERAN® nutzt das bewährte stickstofffixierende Bakterium ",
+    "introEmphasis": "Azotobacter salinestris CECT 9690",
+    "introRest": ", um die Düngung zu ergänzen und dem Winterraps eine zusätzliche Quelle biologisch fixierten Stickstoffs aus der Luft zu erschließen. Das fördert eine robuste Biomasse, eine zuverlässige Überwinterung und verlässliche Erträge – und nutzt die kritische Etablierungsphase der Kultur optimal.",
     "cta": "So funktioniert es",
-    "visualLabel": "Kampagnen-Key-Visual: Bio-Ingenieure auf der Herbstbaustelle",
-    "headlineMid": "is building",
-    "introEmphasis": "bacterium Azotobacter salinestris",
-    "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase."
+    "visualLabel": "Kampagnen-Key-Visual: Bio-Ingenieure auf der Herbstbaustelle"
   },
   "foundations": {
     "eyebrow": "Das Fundament legen",
@@ -333,72 +333,73 @@
   },
   "howItWorks": {
     "eyebrow": "Die Bio-Ingenieure",
-    "title": "How VIXERAN® works",
-    "kicker": "Nature's nitrogen. Put to work.",
-    "body": "VIXERAN® uses the proven nitrogen-fixing ",
-    "bodyEmphasis": "bacterium Azotobacter salinestris",
-    "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
-    "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
+    "title": "So funktioniert VIXERAN®",
+    "kicker": "Stickstoff aus der Natur. Effektiv genutzt.",
+    "body": "VIXERAN® nutzt das bewährte stickstofffixierende Bakterium ",
+    "bodyEmphasis": "Azotobacter salinestris CECT 9690",
+    "bodyRest": ", um die Düngung zu ergänzen. Die Bakterien besiedeln die Pflanze und binden Luftstickstoff – eine zusätzliche Quelle biologisch fixierten Stickstoffs zur Unterstützung der Bestandsentwicklung in der Etablierungsphase.",
+    "visualLabel": "Bio-Ingenieure leiten Stickstoff durch ein Kulturblatt",
     "callouts": {
       "air": {
-        "title": "From air to crop",
-        "body": "Atmospheric nitrogen"
+        "title": "Von der Luft zur Kultur",
+        "body": "Atmosphärischer Stickstoff"
       },
       "fixation": {
-        "title": "Biological nitrogen fixation",
-        "body": "Fixed from the air, delivered to the plant"
+        "title": "Biologische Stickstofffixierung",
+        "body": "Aus der Luft gebunden, an die Pflanze abgegeben"
       },
       "biomass": {
-        "title": "Robust biomass",
-        "body": "Early growth the crop can take into winter"
+        "title": "Robuste Biomasse",
+        "body": "Frühes Wachstum, das die Kultur in den Winter mitnimmt"
       },
       "plant": {
-        "title": "In the plant",
-        "body": "Leaves, stems & roots"
+        "title": "In der Pflanze",
+        "body": "Blätter, Stängel und Wurzeln"
       },
       "establishment": {
-        "title": "Strong establishment",
-        "body": "A foundation built in the first weeks"
+        "title": "Starke Etablierung",
+        "body": "Ein Fundament, das in den ersten Wochen entsteht"
       },
       "winter": {
-        "title": "Reliable overwintering",
-        "body": "Better prepared for winter conditions"
+        "title": "Zuverlässige Überwinterung",
+        "body": "Besser vorbereitet auf Winterbedingungen"
       }
     }
   },
   "keyBenefits": {
     "eyebrow": "Wichtigste Vorteile von VIXERAN®",
-    "title": "Key benefits of VIXERAN®",
-    "titleLine1": "Key benefits of",
+    "title": "Wichtigste Vorteile von VIXERAN®",
+    "titleLine1": "Wichtigste Vorteile von",
     "titleBrand": "VIXERAN®",
-    "lead": "By helping Oilseed Rape access an additional source of biologically fixed nitrogen, VIXERAN® supports the crop when it is establishing the foundations for the season ahead.",
-    "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
+    "lead": "Indem VIXERAN® dem Winterraps eine zusätzliche Quelle biologisch fixierten Stickstoffs erschließt, unterstützt es den Bestand genau dann, wenn er die Fundamente für die kommende Saison legt.",
+    "visualLabel": "Dunkler Boden und ein Kulturblatt hinter den wichtigsten Vorteilen von VIXERAN®",
     "cards": {
       "nitrogen": {
-        "title": "Nitrogen\nefficiency",
-        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support crop development.",
-        "body2": "It strengthens plant growth and increases yields by enhancing nutrient uptake"
+        "title": "Stickstoff-\neffizienz",
+        "body": "Mit VIXERAN® erhält Ihre Kultur Zugang zu einer neuen natürlichen Stickstoffquelle zur Unterstützung der Bestandsentwicklung.",
+        "body2": "Es stärkt das Pflanzenwachstum und steigert die Erträge durch eine verbesserte Nährstoffaufnahme"
       },
       "tested": {
-        "title": "Tried\nand tested",
-        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air.",
-        "body2": "This helps the plant get the nitrogen it needs when it needs it"
+        "title": "Erprobt\nund bewährt",
+        "body": "Versuche zeigen, dass durch die Anwendung von VIXERAN® bis zu 30 kg N pro Hektar aus der Luft gebunden werden können.",
+        "body2": "So erhält die Pflanze den Stickstoff, den sie braucht – genau dann, wenn sie ihn braucht"
       },
       "apply": {
-        "title": "Easy\nto apply",
-        "body": "VIXERAN® is applied as a foliar spray using standard equipment.",
-        "body2": "Compatible with many products, it can often be integrated into regular crop spraying programmes."
+        "title": "Einfach\nanzuwenden",
+        "body": "VIXERAN® wird als Blattapplikation mit Standardtechnik ausgebracht.",
+        "body2": "Kompatibel mit vielen Produkten, lässt es sich oft in die üblichen Spritzfolgen integrieren."
       },
       "robust": {
         "title": "Robust",
-        "body": "VIXERAN® contain a particularly robust bacterium in that it can withstand external stress conditions, making it particularly suitable for foliar applications"
+        "body": "VIXERAN® enthält ein besonders robustes Bakterium, das äußere Stressbedingungen aushält und sich daher besonders für Blattapplikationen eignet"
       }
     }
   },
   "nitrogenUptake": {
-    "eyebrow": "How VIXERAN® enhances crop",
-    "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
+    "eyebrow": "VIXERAN® und die Stickstoffaufnahme",
+    "title": "Wie VIXERAN® die Stickstoffaufnahme der Kultur verbessert",
+    "body": "Das Video zeigt, wie die stickstofffixierenden Bakterien in VIXERAN® in Blätter, Wurzeln und Wurzelraum der Pflanze eindringen, frei verfügbaren Luftstickstoff binden und in Ammoniumstickstoff umwandeln, den die Kultur aufnehmen kann.",
+    "body2": "Im Ruhezustand bilden die Bakterien Zysten, die sie vor ungünstigen Faktoren wie Kälte schützen. Bei Kontakt mit Feuchtigkeit und Wärme werden sie aktiviert. Der Stickstoff, den VIXERAN® für die Pflanze bindet, wird weder ausgewaschen noch verflüchtigt.",
     "videoLabel": "Video zum Wirkmechanismus von VIXERAN®"
   }
 }

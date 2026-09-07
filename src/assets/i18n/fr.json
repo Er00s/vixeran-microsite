@@ -54,15 +54,15 @@
   },
   "welcome": {
     "eyebrow": "Bienvenue sur le chantier",
-    "headlineTop": "L'automne,",
-    "headlineBottom": "saison des fondations",
-    "subheadline": "Bâtissez les fondations d'une culture plus solide avec l'azote de l'air.",
-    "intro": "VIXERAN® permet au colza d'accéder à une source supplémentaire d'azote fixé biologiquement, au stade le plus critique de l'implantation.",
+    "headlineTop": "L'automne",
+    "headlineMid": "est la saison",
+    "headlineBottom": "des fondations",
+    "subheadline": "Construisez la biomasse, affrontez l'hiver, protégez votre rendement",
+    "intro": "VIXERAN® utilise la bactérie ",
+    "introEmphasis": "Azotobacter salinestris CECT 9690",
+    "introRest": " fixatrice d'azote pour compléter la fertilisation, en donnant au colza une source supplémentaire d'azote fixé biologiquement à partir de l'air. Cela favorise une biomasse robuste, un bon passage de l'hiver et des rendements fiables, en tirant le meilleur de la phase critique d'implantation.",
     "cta": "Découvrir le fonctionnement",
-    "visualLabel": "Key visual de campagne : les bio-ingénieurs sur le chantier d'automne",
-    "headlineMid": "is building",
-    "introEmphasis": "bacterium Azotobacter salinestris",
-    "introRest": " to complement fertilisation by giving Oilseed Rape an additional source of biologically fixed nitrogen from the air. This drives robust biomass, reliable overwintering and dependable yields, making the most of the crop’s critical establishment phase."
+    "visualLabel": "Key visual de campagne : les bio-ingénieurs sur le chantier d'automne"
   },
   "foundations": {
     "eyebrow": "Poser les fondations",
@@ -333,72 +333,73 @@
   },
   "howItWorks": {
     "eyebrow": "Rencontrez les bio-ingénieurs",
-    "title": "How VIXERAN® works",
-    "kicker": "Nature's nitrogen. Put to work.",
-    "body": "VIXERAN® uses the proven nitrogen-fixing ",
-    "bodyEmphasis": "bacterium Azotobacter salinestris",
-    "bodyRest": " to complement fertilisation. The bacteria colonise the plant and fix atmospheric nitrogen, providing an additional source of biologically fixed nitrogen to support crop development during establishment.",
-    "visualLabel": "Bio Engineers piping nitrogen through a crop leaf",
+    "title": "Comment fonctionne VIXERAN®",
+    "kicker": "L'azote de la nature. Mis au travail.",
+    "body": "VIXERAN® utilise la bactérie ",
+    "bodyEmphasis": "Azotobacter salinestris CECT 9690",
+    "bodyRest": " fixatrice d'azote pour compléter la fertilisation. Les bactéries colonisent la plante et fixent l'azote atmosphérique, apportant une source supplémentaire d'azote fixé biologiquement pour soutenir le développement de la culture pendant l'implantation.",
+    "visualLabel": "Bio-ingénieurs acheminant l'azote à travers une feuille de culture",
     "callouts": {
       "air": {
-        "title": "From air to crop",
-        "body": "Atmospheric nitrogen"
+        "title": "De l'air à la culture",
+        "body": "Azote atmosphérique"
       },
       "fixation": {
-        "title": "Biological nitrogen fixation",
-        "body": "Fixed from the air, delivered to the plant"
+        "title": "Fixation biologique de l'azote",
+        "body": "Fixé depuis l'air, délivré à la plante"
       },
       "biomass": {
-        "title": "Robust biomass",
-        "body": "Early growth the crop can take into winter"
+        "title": "Biomasse robuste",
+        "body": "Une croissance précoce que la culture emporte dans l'hiver"
       },
       "plant": {
-        "title": "In the plant",
-        "body": "Leaves, stems & roots"
+        "title": "Dans la plante",
+        "body": "Feuilles, tiges et racines"
       },
       "establishment": {
-        "title": "Strong establishment",
-        "body": "A foundation built in the first weeks"
+        "title": "Implantation solide",
+        "body": "Des fondations construites dès les premières semaines"
       },
       "winter": {
-        "title": "Reliable overwintering",
-        "body": "Better prepared for winter conditions"
+        "title": "Bon passage de l'hiver",
+        "body": "Mieux préparé aux conditions hivernales"
       }
     }
   },
   "keyBenefits": {
     "eyebrow": "Principaux bénéfices de VIXERAN®",
-    "title": "Key benefits of VIXERAN®",
-    "titleLine1": "Key benefits of",
+    "title": "Principaux bénéfices de VIXERAN®",
+    "titleLine1": "Principaux bénéfices de",
     "titleBrand": "VIXERAN®",
-    "lead": "By helping Oilseed Rape access an additional source of biologically fixed nitrogen, VIXERAN® supports the crop when it is establishing the foundations for the season ahead.",
-    "visualLabel": "Dark soil and a crop leaf behind the key benefits of VIXERAN®",
+    "lead": "En aidant le colza à accéder à une source supplémentaire d'azote fixé biologiquement, VIXERAN® soutient la culture lorsqu'elle pose les fondations de la campagne à venir.",
+    "visualLabel": "Sol sombre et une feuille de culture derrière les bénéfices clés de VIXERAN®",
     "cards": {
       "nitrogen": {
-        "title": "Nitrogen\nefficiency",
-        "body": "With VIXERAN® your crop gains access to a new natural nitrogen source to support crop development.",
-        "body2": "It strengthens plant growth and increases yields by enhancing nutrient uptake"
+        "title": "Efficacité\nde l'azote",
+        "body": "Avec VIXERAN®, votre culture accède à une nouvelle source naturelle d'azote pour soutenir son développement.",
+        "body2": "Il renforce la croissance de la plante et augmente les rendements en améliorant l'absorption des nutriments"
       },
       "tested": {
-        "title": "Tried\nand tested",
-        "body": "Trials show that by applying VIXERAN®, up to 30 kg N per hectare can be fixed from the air.",
-        "body2": "This helps the plant get the nitrogen it needs when it needs it"
+        "title": "Éprouvé\nau champ",
+        "body": "Les essais montrent qu'en appliquant VIXERAN®, jusqu'à 30 kg N par hectare peuvent être fixés à partir de l'air.",
+        "body2": "Cela aide la plante à obtenir l'azote dont elle a besoin, au moment où elle en a besoin"
       },
       "apply": {
-        "title": "Easy\nto apply",
-        "body": "VIXERAN® is applied as a foliar spray using standard equipment.",
-        "body2": "Compatible with many products, it can often be integrated into regular crop spraying programmes."
+        "title": "Facile\nà appliquer",
+        "body": "VIXERAN® s'applique en pulvérisation foliaire avec le matériel habituel.",
+        "body2": "Compatible avec de nombreux produits, il peut souvent être intégré aux programmes de pulvérisation habituels."
       },
       "robust": {
-        "title": "Robust",
-        "body": "VIXERAN® contain a particularly robust bacterium in that it can withstand external stress conditions, making it particularly suitable for foliar applications"
+        "title": "Robuste",
+        "body": "VIXERAN® contient une bactérie particulièrement robuste, capable de résister aux conditions de stress externes, ce qui la rend particulièrement adaptée aux applications foliaires"
       }
     }
   },
   "nitrogenUptake": {
-    "eyebrow": "How VIXERAN® enhances crop",
-    "title": "How VIXERAN® enhances crop nitrogen uptake",
-    "body": "The video demonstrates how the nitrogen-fixing bacteria in VIXERAN® penetrate the plant's leaves, roots, and root zone, fixing freely available nitrogen from the air and converting it into ammonium nitrogen that can be absorbed by the crop. In a dormant state, the bacteria form cysts that protect them against unfavourable factors such as cold. However, when the bacteria come into contact with moisture and warmth, they are activated. The nitrogen that VIXERAN® fixes for the plant is not leached or evaporated.",
+    "eyebrow": "VIXERAN® et l'absorption d'azote",
+    "title": "Comment VIXERAN® améliore l'absorption d'azote par la culture",
+    "body": "La vidéo montre comment les bactéries fixatrices d'azote de VIXERAN® pénètrent dans les feuilles, les racines et la rhizosphère de la plante, fixant l'azote disponible dans l'air et le convertissant en azote ammoniacal que la culture peut absorber.",
+    "body2": "À l'état dormant, les bactéries forment des kystes qui les protègent contre des facteurs défavorables tels que le froid. Cependant, au contact de l'humidité et de la chaleur, elles s'activent. L'azote que VIXERAN® fixe pour la plante n'est ni lessivé ni volatilisé.",
     "videoLabel": "Vidéo du mode d'action de VIXERAN®"
   }
 }
