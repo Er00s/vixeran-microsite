@@ -11,7 +11,7 @@ interface NitrogenBubble {
 }
 
 /**
- * Three N-bubbles that rise a little and fade out on a loop.
+ * Three N-bubbles that descend a little and fade out on a loop.
  * The host is just a positioning box; the parent places it over the photo.
  */
 @Component({
@@ -34,13 +34,13 @@ interface NitrogenBubble {
       height: var(--n-size);
       object-fit: contain;
       will-change: transform, opacity;
-      animation: vx-n-rise var(--n-duration) var(--n-delay) ease-in-out infinite;
+      animation: vx-n-fall var(--n-duration) var(--n-delay) ease-in-out infinite;
     }
 
-    @keyframes vx-n-rise {
+    @keyframes vx-n-fall {
       0% {
         opacity: 0;
-        transform: translate3d(0, 1.25rem, 0) scale(0.9);
+        transform: translate3d(0, -1.25rem, 0) scale(0.9);
       }
       16% {
         opacity: 1;
@@ -50,7 +50,7 @@ interface NitrogenBubble {
       }
       100% {
         opacity: 0;
-        transform: translate3d(var(--n-drift), -4.75rem, 0) scale(1.06);
+        transform: translate3d(var(--n-drift), 4.75rem, 0) scale(1.06);
       }
     }
 

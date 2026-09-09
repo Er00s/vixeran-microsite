@@ -54,8 +54,8 @@ interface Callout {
           </p>
 
           <p
-            class="vx-how-body mt-5 max-w-lg text-[14px] font-medium leading-[1.6] text-white
-                   md:text-[16px]"
+            class="vx-how-body mt-5 max-w-lg text-lg font-medium leading-[1.6] text-white
+                   md:text-2xl"
           >
             {{ 'howItWorks.body' | translate }}
             <em class="italic">{{ 'howItWorks.bodyEmphasis' | translate }}</em>

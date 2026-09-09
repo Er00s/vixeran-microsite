@@ -49,7 +49,7 @@ interface BenefitCard {
             {{ 'keyBenefits.lead' | translate }}
           </p>
 
-          <ul class="vx-benefits-grid grid min-w-0 flex-1 grid-cols-1 justify-center gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
+          <ul class="vx-benefits-grid grid min-w-0 flex-1 grid-cols-1 justify-center gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
             @for (card of cards; track card.titleKey) {
               <li class="vx-benefits-card relative w-full">
                 <span class="vx-benefits-fill" aria-hidden="true"></span>

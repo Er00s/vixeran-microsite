@@ -8,7 +8,7 @@
     "journeyLabel": "Parcours de la campagne",
     "welcome": {
       "title": "Bienvenue sur le chantier",
-      "subtitle": "L'automne, saison des fondations",
+      "subtitle": "L'automne, Saison des fondations",
       "short": "Accueil"
     },
     "foundations": {
@@ -55,8 +55,8 @@
   "welcome": {
     "eyebrow": "Bienvenue sur le chantier",
     "headlineTop": "L'automne",
-    "headlineMid": "est la saison",
-    "headlineBottom": "des fondations",
+    "headlineMid": "est la Saison",
+    "headlineBottom": "des Fondations",
     "subheadline": "Construisez la biomasse, affrontez l'hiver, protégez votre rendement",
     "intro": "VIXERAN® utilise la bactérie ",
     "introEmphasis": "Azotobacter salinestris CECT 9690",

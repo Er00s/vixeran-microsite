@@ -15,7 +15,8 @@ import { LanguageService } from '../../core/services/language.service';
   template: `
     <section
       id="contact"
-      class="vx-slide relative flex min-h-svh flex-col justify-center overflow-hidden py-16 md:py-24"
+      class="vx-slide relative flex min-h-svh flex-col justify-center overflow-hidden
+             pt-16 pb-40 md:pt-24 md:pb-52 lg:pb-44 xl:pb-40 2xl:pb-24"
     >
       <img
         src="assets/all/slide-08/Micrositio-vixeran-FINAL-08.png"
@@ -27,8 +28,8 @@ import { LanguageService } from '../../core/services/language.service';
 
       <img
         aria-hidden="true"
-        class="vx-contact-minion pointer-events-none absolute bottom-0 left-4 z-1
-               w-36 select-none translate-y-[21.2%] sm:w-52 md:left-8 md:w-64 lg:left-14 lg:w-80 xl:left-20 xl:w-140"
+        class="vx-contact-minion pointer-events-none absolute bottom-0 left-2 z-1
+               w-52 select-none translate-y-[21.2%] sm:w-56 md:left-6 md:w-56 lg:left-8 lg:w-72 xl:left-14 xl:w-96 2xl:w-140"
         src="assets/img/minion3.webp"
         alt=""
       />
