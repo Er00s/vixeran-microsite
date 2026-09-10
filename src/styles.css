@@ -667,6 +667,12 @@ html.vx-figma {
   overflow: visible;
 }
 
+/* Continuidad perfecta de fondo entre Slide 07 y Slide 08 (colza + wash verde) */
+.vx-flow-07-08 {
+  position: relative;
+  overflow: visible;
+}
+
 html.vx-figma {
   .vx-slide,
   .vx-slide-bg {

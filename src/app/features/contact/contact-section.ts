@@ -6,7 +6,9 @@ import { LanguageService } from '../../core/services/language.service';
 /**
  * 08 - Ready to build with VIXERAN®?
  *
- * Closing CTA as in the Figma: pill, headline, lead and a single button.
+ * Shares the rapeseed plate with slide 07 via `.vx-flow-07-08` in home
+ * (lower green wash of the shared plate). Closing CTA: pill, headline,
+ * lead and a single button.
  */
 @Component({
   selector: 'app-contact-section',
@@ -18,14 +20,6 @@ import { LanguageService } from '../../core/services/language.service';
       class="vx-slide relative flex min-h-svh flex-col justify-center overflow-hidden
              pt-16 pb-40 md:pt-24 md:pb-52 lg:pb-44 xl:pb-40 2xl:pb-24"
     >
-      <img
-        src="assets/all/slide-08/Micrositio-vixeran-FINAL-08.png"
-        alt=""
-        class="pointer-events-none absolute inset-0 size-full object-cover"
-        loading="lazy"
-        aria-hidden="true"
-      />
-
       <img
         aria-hidden="true"
         class="vx-contact-minion pointer-events-none absolute bottom-0 left-2 z-1

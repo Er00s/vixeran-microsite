@@ -13,9 +13,10 @@ interface Testimonial {
 /**
  * 07 - Building success across Europe / Grower & Expert Experiences.
  *
- * Full-bleed rapeseed plate with copy at the top left and two glass
- * portrait cards along the lower band. The white frame is a CSS border on
- * the card — not the stretched slide-07/card-frame.svg overlay.
+ * Shares the rapeseed plate with slide 08 via `.vx-flow-07-08` in home.
+ * Copy at the top left and two glass portrait cards along the lower band.
+ * The white frame is a CSS border on the card — not the stretched
+ * slide-07/card-frame.svg overlay.
  */
 @Component({
   selector: 'app-success-section',
@@ -26,13 +27,6 @@ interface Testimonial {
       id="success"
       class="vx-slide relative"
     >
-      <img
-        src="assets/all/slide-07/Micrositio-vixeran-FINAL-07.png"
-        class="absolute inset-0 size-full object-cover object-center"
-        loading="lazy"
-        [attr.alt]="'success.visualLabel' | translate"
-      />
-
       <div
         class="vx-success-stage relative z-[2] mx-auto flex h-full min-h-svh
                w-full max-w-[1920px] flex-col justify-between gap-10 px-5 pb-16

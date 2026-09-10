@@ -42,8 +42,17 @@ import { WelcomeSection } from '../../features/welcome/welcome-section';
     <app-foundations-section />
     <app-trials-section />
     <app-nitrogen-uptake-section />
-    <app-success-section />
-    <app-contact-section />
+    <div class="vx-flow-07-08 relative">
+      <img
+        src="assets/all/slide-07/bg-flow-07-08.png"
+        class="pointer-events-none absolute inset-0 size-full object-cover object-center"
+        loading="lazy"
+        alt=""
+        aria-hidden="true"
+      />
+      <app-success-section />
+      <app-contact-section />
+    </div>
   `,
 })
 export class HomePage {}
