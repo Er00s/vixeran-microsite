@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
+import { SpeciesItalicPipe } from '../../shared/pipes/species-italic.pipe';
 
 /**
  * 01 - Autumn is Building Season.
@@ -19,7 +20,7 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
  */
 @Component({
   selector: 'app-welcome-section',
-  imports: [TranslatePipe, NitrogenBubbles],
+  imports: [TranslatePipe, NitrogenBubbles, SpeciesItalicPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
@@ -77,11 +78,13 @@ import { NitrogenBubbles } from '../../shared/components/nitrogen-bubbles';
           <p
             class="vx-hero-intro min-w-0 flex-1 font-sans text-[13px] font-semibold leading-[1.45]
                    text-white sm:text-[16px] sm:leading-[1.5] md:text-[19px] md:leading-[1.55]"
-          >
-            {{ 'welcome.intro' | translate }}
-            <em class="italic">{{ 'welcome.introEmphasis' | translate }}</em>
-            {{ 'welcome.introRest' | translate }}
-          </p>
+            [innerHTML]="
+              ((('welcome.intro' | translate) +
+                ('welcome.introEmphasis' | translate) +
+                ('welcome.introRest' | translate))
+                | speciesItalic)
+            "
+          ></p>
 
           <a
             href="#how-it-works"

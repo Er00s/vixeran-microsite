@@ -10,6 +10,8 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
+import { SpeciesItalicPipe } from '../../shared/pipes/species-italic.pipe';
+
 interface Callout {
   icon: string;
   titleKey: string;
@@ -24,7 +26,7 @@ interface Callout {
  */
 @Component({
   selector: 'app-how-it-works-section',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, SpeciesItalicPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
@@ -56,11 +58,13 @@ interface Callout {
           <p
             class="vx-how-body mt-5 max-w-lg text-lg font-medium leading-[1.6] text-white
                    md:text-2xl"
-          >
-            {{ 'howItWorks.body' | translate }}
-            <em class="italic">{{ 'howItWorks.bodyEmphasis' | translate }}</em>
-            {{ 'howItWorks.bodyRest' | translate }}
-          </p>
+            [innerHTML]="
+              ((('howItWorks.body' | translate) +
+                ('howItWorks.bodyEmphasis' | translate) +
+                ('howItWorks.bodyRest' | translate))
+                | speciesItalic)
+            "
+          ></p>
         </div>
 
         <ul class="vx-how-grid grid w-full grid-cols-1 pt-10 sm:grid-cols-2">

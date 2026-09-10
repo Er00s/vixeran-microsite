@@ -74,6 +74,11 @@
   --color-soil-900: #33281a;
 }
 
+/* Scientific binomial names (e.g. Azotobacter salinestris) */
+.vx-species {
+  font-style: italic;
+}
+
 /* ------------------------------------------------------------
    Base
    ------------------------------------------------------------ */
