@@ -3,6 +3,7 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { shareReplay } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
 import {
   DEFAULT_TRIAL_FILTERS,
   Trial,
@@ -14,27 +15,36 @@ import {
 /**
  * Single access point for trial data.
  *
- * PHASE 1 (current): reads static JSON from `assets/data/`.
- * PHASE 2 (backend): swap the three URLs below for REST endpoints. Nothing
- * else in the application needs to change - the signals stay identical.
+ * PHASE 1 / local: static JSON under `assets/data/` when `apiBaseUrl` is empty.
+ * PHASE 2 / Hostinger: REST endpoints under `environment.apiBaseUrl`.
  */
 @Injectable({ providedIn: 'root' })
 export class TrialsService {
   private readonly http = inject(HttpClient);
 
-  private static readonly TRIALS_URL = 'assets/data/trials.json';
-  private static readonly KPIS_URL = 'assets/data/trial-kpis.json';
+  private static trialsUrl(): string {
+    return environment.apiBaseUrl
+      ? `${environment.apiBaseUrl}/trials`
+      : 'assets/data/trials.json';
+  }
 
-  /** All 51 trials. Empty array until the JSON resolves. */
+  private static kpisUrl(): string {
+    return environment.apiBaseUrl
+      ? `${environment.apiBaseUrl}/kpis`
+      : 'assets/data/trial-kpis.json';
+  }
+
+  /** All trials. Empty array until the request resolves. */
   readonly trials = toSignal(
-    this.http.get<Trial[]>(TrialsService.TRIALS_URL).pipe(shareReplay(1)),
+    this.http.get<Trial[]>(TrialsService.trialsUrl()).pipe(shareReplay(1)),
     { initialValue: [] as Trial[] },
   );
 
-  /** Pre-computed headline figures for the KPI strip. */
-  readonly kpis = toSignal(this.http.get<TrialKpis>(TrialsService.KPIS_URL).pipe(shareReplay(1)), {
-    initialValue: null,
-  });
+  /** Headline figures for the KPI strip (computed on the API when live). */
+  readonly kpis = toSignal(
+    this.http.get<TrialKpis>(TrialsService.kpisUrl()).pipe(shareReplay(1)),
+    { initialValue: null },
+  );
 
   /** Filter state shared by the map. */
   private readonly filtersState = signal<TrialFilters>({ ...DEFAULT_TRIAL_FILTERS });

@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  viewChild,
+} from '@angular/core';
 
 import { ContactSection } from '../../features/contact/contact-section';
 import { FoundationsSection } from '../../features/foundations/foundations-section';
@@ -30,12 +36,17 @@ import { WelcomeSection } from '../../features/welcome/welcome-section';
     <app-welcome-section />
     <div class="vx-flow-02-03 relative">
       <video
+        #flowBg
         class="pointer-events-none absolute inset-0 size-full object-cover object-top"
         src="assets/arrglo-planta.mp4"
         autoplay
         muted
         loop
         playsinline
+        preload="auto"
+        [attr.muted]="'true'"
+        [attr.playsinline]="'true'"
+        [attr.webkit-playsinline]="'true'"
         aria-hidden="true"
       ></video>
       <app-how-it-works-section />
@@ -57,4 +68,34 @@ import { WelcomeSection } from '../../features/welcome/welcome-section';
     </div>
   `,
 })
-export class HomePage {}
+export class HomePage {
+  private readonly flowBg = viewChild<ElementRef<HTMLVideoElement>>('flowBg');
+
+  constructor() {
+    afterNextRender(() => {
+      const video = this.flowBg()?.nativeElement;
+      if (!video) {
+        return;
+      }
+
+      // Browsers require the muted *property* for autoplay; Angular's
+      // boolean attribute alone is often not enough.
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.loop = true;
+
+      const tryPlay = () => {
+        void video.play().catch(() => {
+          // Autoplay can still fail until a gesture; retry on first interaction.
+        });
+      };
+
+      if (video.readyState >= 2) {
+        tryPlay();
+      } else {
+        video.addEventListener('canplay', tryPlay, { once: true });
+      }
+    });
+  }
+}
