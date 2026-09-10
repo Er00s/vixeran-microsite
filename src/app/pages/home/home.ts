@@ -29,13 +29,15 @@ import { WelcomeSection } from '../../features/welcome/welcome-section';
   template: `
     <app-welcome-section />
     <div class="vx-flow-02-03 relative">
-      <img
-        src="assets/all/slide-02/bg-flow-02-03.png"
+      <video
         class="pointer-events-none absolute inset-0 size-full object-cover object-top"
-        loading="lazy"
-        alt=""
+        src="assets/arrglo-planta.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
         aria-hidden="true"
-      />
+      ></video>
       <app-how-it-works-section />
       <app-key-benefits-section />
     </div>
