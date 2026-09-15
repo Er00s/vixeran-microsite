@@ -26,9 +26,11 @@ import { TrialsService } from '../../../core/services/trials.service';
 import {
   WORLD_GEOJSON_URL,
   REGIONS_GEOJSON_URL,
+  COUNTRY_BORDERS_GEOJSON_URL,
   REGIONS_MIN_ZOOM,
   REGION_LABEL_MIN_ZOOM,
   MAP_WATER,
+  countryBorderStyle,
   escapeHtml,
   labelFor,
   labelVisible,
@@ -296,6 +298,7 @@ export class TrialMap implements OnDestroy {
   private cluster?: L.MarkerClusterGroup;
   private landLayer?: L.GeoJSON;
   private regionsLayer?: L.GeoJSON;
+  private countryBordersLayer?: L.GeoJSON;
   private resizeObserver?: ResizeObserver;
   private readonly labelMarkers: { marker: L.Marker; rank: number }[] = [];
   private readonly regionLabelMarkers: L.Marker[] = [];
@@ -364,8 +367,14 @@ export class TrialMap implements OnDestroy {
     map.createPane('countries');
     const countriesPane = map.getPane('countries');
     if (countriesPane) {
-      // Above regions so country borders stay crisp over regional fills.
-      countriesPane.style.zIndex = '360';
+      // Country fills sit under regions; precise borders use countryBorders pane.
+      countriesPane.style.zIndex = '340';
+    }
+    map.createPane('countryBorders');
+    const countryBordersPane = map.getPane('countryBorders');
+    if (countryBordersPane) {
+      // Above regions so national limits stay crisp over regional fills.
+      countryBordersPane.style.zIndex = '360';
     }
     map.createPane('countryLabels');
     const labelPane = map.getPane('countryLabels');
@@ -393,6 +402,7 @@ export class TrialMap implements OnDestroy {
     this.resizeObserver.observe(this.mapHost().nativeElement);
     await this.loadLand();
     await this.loadRegions();
+    await this.loadCountryBorders();
     this.onZoomEnd();
     map.invalidateSize();
     map.setView([54, 15], 4);
@@ -473,6 +483,27 @@ export class TrialMap implements OnDestroy {
     }
   }
 
+  /** National limits dissolved from admin-1 — same geometry as regional fills. */
+  private async loadCountryBorders(): Promise<void> {
+    const leaflet = this.leaflet;
+    const map = this.map;
+    if (!leaflet || !map) {
+      return;
+    }
+
+    try {
+      const response = await fetch(COUNTRY_BORDERS_GEOJSON_URL);
+      const collection = (await response.json()) as { type: 'FeatureCollection'; features: object[] };
+      this.countryBordersLayer = leaflet.geoJSON(collection, {
+        pane: 'countryBorders',
+        interactive: false,
+        style: () => countryBorderStyle(),
+      });
+    } catch {
+      this.countryBordersLayer = undefined;
+    }
+  }
+
   private onZoomEnd(): void {
     this.refreshLabels();
     this.refreshRegionDetail();
@@ -483,6 +514,7 @@ export class TrialMap implements OnDestroy {
     const map = this.map;
     const land = this.landLayer;
     const regions = this.regionsLayer;
+    const borders = this.countryBordersLayer;
     if (!map || !land) {
       return;
     }
@@ -492,16 +524,24 @@ export class TrialMap implements OnDestroy {
       landStyle((feature as EuropeFeature | undefined)?.properties.iso ?? '', zoom),
     );
 
-    if (!regions) {
-      return;
+    const shouldShow = zoom >= REGIONS_MIN_ZOOM;
+
+    if (regions) {
+      const onMap = map.hasLayer(regions);
+      if (shouldShow && !onMap) {
+        regions.addTo(map);
+      } else if (!shouldShow && onMap) {
+        map.removeLayer(regions);
+      }
     }
 
-    const shouldShow = zoom >= REGIONS_MIN_ZOOM;
-    const onMap = map.hasLayer(regions);
-    if (shouldShow && !onMap) {
-      regions.addTo(map);
-    } else if (!shouldShow && onMap) {
-      map.removeLayer(regions);
+    if (borders) {
+      const onMap = map.hasLayer(borders);
+      if (shouldShow && !onMap) {
+        borders.addTo(map);
+      } else if (!shouldShow && onMap) {
+        map.removeLayer(borders);
+      }
     }
   }
 

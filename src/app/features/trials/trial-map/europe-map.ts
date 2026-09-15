@@ -2,6 +2,11 @@
 export const WORLD_GEOJSON_URL = 'assets/data/world.geojson';
 /** Natural Earth admin-1 (states/provinces), shown when zoom >= REGIONS_MIN_ZOOM. */
 export const REGIONS_GEOJSON_URL = 'assets/data/world-regions.geojson';
+/**
+ * Country outlines derived from world-regions (shared edges cancelled per ISO).
+ * Aligns with regional fills — unlike the simplified stroke on world.geojson.
+ */
+export const COUNTRY_BORDERS_GEOJSON_URL = 'assets/data/world-country-borders.geojson';
 export const REGIONS_MIN_ZOOM = 5;
 /** Region name labels appear a bit later than the regional polygons. */
 export const REGION_LABEL_MIN_ZOOM = 6;
@@ -68,9 +73,10 @@ export function landStyle(
 ): { weight: number; color: string; fillColor: string; fillOpacity: number; opacity: number } {
   const showRegions = zoom >= REGIONS_MIN_ZOOM && regionIsos.has(iso);
   return {
-    weight: showRegions ? 2.6 : zoom >= 4 ? 1.6 : 1.2,
-    color: showRegions ? MAP_COUNTRY_BORDER : MAP_BORDER,
-    opacity: 1,
+    // Hide the coarse country stroke once precise borders from regions are shown.
+    weight: showRegions ? 0 : zoom >= 4 ? 1.6 : 1.2,
+    color: MAP_BORDER,
+    opacity: showRegions ? 0 : 1,
     fillColor: landFill(iso),
     fillOpacity: showRegions ? 0 : 1,
   };
@@ -84,6 +90,20 @@ export function regionStyle(
     color: MAP_REGION_BORDER,
     fillColor: regionFill(id),
     fillOpacity: 1,
+  };
+}
+
+export function countryBorderStyle(): {
+  weight: number;
+  color: string;
+  opacity: number;
+  fillOpacity: number;
+} {
+  return {
+    weight: 2.6,
+    color: MAP_COUNTRY_BORDER,
+    opacity: 1,
+    fillOpacity: 0,
   };
 }
 

@@ -1,17 +1,17 @@
 {
-  "trialCount": 51,
+  "trialCount": 84,
   "countryCount": 8,
   "seasons": [
-    "2021-22",
     "2022-23",
     "2023-24",
-    "2024-25"
+    "2024-25",
+    "2025-26"
   ],
   "seasonCount": 4,
-  "avgYieldGainPct": 1.29,
-  "avgBiomassGainPct": 2.49,
-  "trialsWithYieldData": 40,
-  "trialsWithBiomassData": 48,
-  "positiveYieldTrials": 21,
+  "avgYieldGainPct": 3.87,
+  "avgBiomassGainPct": 8.35,
+  "trialsWithYieldData": 49,
+  "trialsWithBiomassData": 72,
+  "positiveYieldTrials": 34,
   "bestYieldGainPct": 23.46
 }
