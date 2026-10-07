@@ -1,5 +1,8 @@
 export const environment = {
   production: true,
-  /** Relative to the deployed Angular origin when API is co-hosted on Hostinger. */
-  apiBaseUrl: '/api',
+  /**
+   * Empty = static JSON under assets/ (GitHub Pages demo has no backend).
+   * Set to `/api` once the Hostinger API is deployed.
+   */
+  apiBaseUrl: '' as string,
 };
